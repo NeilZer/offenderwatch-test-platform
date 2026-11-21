@@ -113,12 +113,17 @@ public class CleanupGuardTests
         target.Responses["DELETE /api/offenders/600"] = (HttpStatusCode.NoContent, "");
         target.Responses["GET /api/offenders/601"] = (HttpStatusCode.OK, """{"id":601,"nationalId":"123456789"}""");
         target.Responses["GET /api/offenders/602"] = (HttpStatusCode.OK, ""); // the app's "200 + empty body" for unknown ids (BUG-08)
+        // After deletion: 600's point is STILL returned (BUG-02 — no cascade); 602's trail is really empty.
+        target.Responses["GET /api/offenders/600/trail"] = (HttpStatusCode.OK, """[{"id":901,"offenderId":600}]""");
+        target.Responses["GET /api/offenders/602/trail"] = (HttpStatusCode.OK, "[]");
 
         var service = new TestDataService(db, target, new RunEvents(new NullHubContext()), NullLogger<TestDataService>.Instance);
         await service.RegisterAsync(run.Id, new IngestTestDataInput("Offender", "3", "301287465", null, "Seeded Peretz", null), default);
         await service.RegisterAsync(run.Id, new IngestTestDataInput("Offender", "600", "990000600", null, "Ours", null), default);
         await service.RegisterAsync(run.Id, new IngestTestDataInput("Offender", "601", "990000601", null, "Re-used id", null), default);
         await service.RegisterAsync(run.Id, new IngestTestDataInput("Offender", "602", "990000602", null, "Vanished", null), default);
+        await service.RegisterAsync(run.Id, new IngestTestDataInput("LocationPoint", "901", null, "600", "Point of 600", null), default);
+        await service.RegisterAsync(run.Id, new IngestTestDataInput("LocationPoint", "902", null, "602", "Point of 602", null), default);
 
         var report = await service.CleanAsync(env.Id, default);
 
@@ -130,6 +135,9 @@ public class CleanupGuardTests
         Assert.Equal(TestDataState.CleanedByPlatform, states["600"]);
         Assert.Equal(TestDataState.AlreadyGone, states["601"]); // identity changed → left untouched
         Assert.Equal(TestDataState.AlreadyGone, states["602"]);
+        // Point states are VERIFIED against the application, never assumed:
+        Assert.Equal(TestDataState.OrphanedInApplication, states["901"]); // still returned after its offender was deleted
+        Assert.Equal(TestDataState.RemovedWithParent, states["902"]);     // really gone
     }
 }
 

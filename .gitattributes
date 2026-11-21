@@ -1,0 +1,5 @@
+# Evidence is immutable and verified by SHA-256 (TM-08): git must store and check out these files
+# BYTE FOR BYTE. Without this, line-ending conversion (core.autocrlf) changes .md/.log/.json files and
+# their hashes stop matching on a fresh clone.
+data/** -text
+*.db binary

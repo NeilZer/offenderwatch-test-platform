@@ -7,7 +7,8 @@ tasks. The technical design is in `README.md`.
 
 ## 1. Starting the platform
 
-The automation suite must be next to this folder: `Desktop\SuperCom` and `Desktop\SuperCom-Platform`.
+The automation suite must be in the **same parent folder** as the platform, named either `SuperCom` or
+`offenderwatch-qa-suite` (what `git clone` creates). The platform finds it automatically; `SUITE_DIR` overrides.
 
 **Option A — without Docker** (needs .NET 8 SDK and Node 20):
 ```powershell
@@ -15,10 +16,10 @@ cd C:\Users\Neil\Desktop\SuperCom-Platform
 npm start
 ```
 
-**Option B — with Docker** (needs Docker Desktop running, about 4 GB free disk):
+**Option B — with Docker** (needs Docker Desktop running, about 15 GB free disk for the build):
 ```powershell
 cd C:\Users\Neil\Desktop\SuperCom-Platform
-docker compose up --build
+npm run docker
 ```
 
 Wait for **"Now listening on: http://…:5080"**, then open **http://localhost:5080**.
@@ -96,6 +97,8 @@ This works the same for old runs: open any past run, or **Open** in a test's his
 - Only records created by test runs are deleted, through the application's own API.
 - The 11 original offenders (protected ids, `1-11`) are **never** touched.
 - Every record is re-checked before deletion; anything that doesn't match is left alone and reported.
+- Location points can't be deleted on their own. After their offender is deleted the platform checks the
+  application: still there = **"Left in the app — BUG-02"**, really gone = **"Removed with its offender (verified)"**.
 
 ### Schedule a nightly run
 **Schedules → + Add schedule** → pick **Every night at 02:00** (or type a cron expression) → environment →

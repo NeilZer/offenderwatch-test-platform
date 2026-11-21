@@ -14,7 +14,14 @@ public class PlatformOptions
 /// <summary>"Suite" section: where the Part 3 automation lives and how to start it.</summary>
 public class SuiteOptions
 {
+    /// <summary>Explicit path to the suite. When empty or missing, the candidates below are tried.</summary>
     public string WorkingDirectory { get; set; } = "";
+    /// <summary>
+    /// Where the suite may live relative to the API project, in order: "SuperCom" (the original layout) and
+    /// "offenderwatch-qa-suite" (the name a plain `git clone` gives). The first folder containing
+    /// playwright.config.ts wins, so the platform works with either layout without configuration.
+    /// </summary>
+    public List<string> WorkingDirectoryCandidates { get; set; } = new();
     /// <summary>Command line without project filter, e.g. "npx playwright test".</summary>
     public string Command { get; set; } = "npx playwright test";
     /// <summary>Scope name → extra CLI arguments, e.g. "api" → "--project=api".</summary>
@@ -48,9 +55,7 @@ public class PlatformPaths
         DataDirectory = Path.GetFullPath(Path.Combine(contentRoot, platform.DataDirectory));
         EvidenceDirectory = Path.Combine(DataDirectory, "evidence");
         DatabaseFile = Path.Combine(DataDirectory, "platform.db");
-        SuiteDirectory = string.IsNullOrWhiteSpace(suite.WorkingDirectory)
-            ? ""
-            : Path.GetFullPath(Path.Combine(contentRoot, suite.WorkingDirectory));
+        SuiteDirectory = ResolveSuiteDirectory(contentRoot, suite);
         Directory.CreateDirectory(EvidenceDirectory);
     }
 
@@ -58,6 +63,17 @@ public class PlatformPaths
     public string EvidenceDirectory { get; }
     public string DatabaseFile { get; }
     public string SuiteDirectory { get; }
+
+    /// <summary>The configured folder if it exists, else the first candidate that contains a Playwright suite.</summary>
+    public static string ResolveSuiteDirectory(string contentRoot, SuiteOptions suite)
+    {
+        var options = new[] { suite.WorkingDirectory }.Concat(suite.WorkingDirectoryCandidates)
+            .Where(p => !string.IsNullOrWhiteSpace(p))
+            .Select(p => Path.GetFullPath(Path.Combine(contentRoot, p)))
+            .ToList();
+        return options.FirstOrDefault(p => File.Exists(Path.Combine(p, "playwright.config.ts")))
+               ?? options.FirstOrDefault() ?? "";
+    }
 
     public string RunDirectory(int runId) => Path.Combine(EvidenceDirectory, $"run-{runId:D5}");
     public string RunnerOutputFile(int runId) => Path.Combine(RunDirectory(runId), "runner-output.log");

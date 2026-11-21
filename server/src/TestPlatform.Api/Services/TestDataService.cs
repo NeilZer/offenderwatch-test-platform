@@ -166,18 +166,60 @@ public class TestDataService(PlatformDbContext db, IHttpClientFactory http, RunE
         return json.RootElement.TryGetProperty("nationalId", out var nid) ? (true, nid.GetString()) : (true, null);
     }
 
-    /// <summary>Location points go with their offender (the app has no endpoint to delete a point).</summary>
+    /// <summary>
+    /// After an offender is deleted, decide what happened to its location points — by ASKING the application,
+    /// never by assumption: points the trail still returns are "left in the application" (BUG-02 — the app
+    /// does not cascade, and has no endpoint to delete a single point); only points that are really gone are
+    /// "removed with their offender". If the check itself fails, the points are reported as left (the safe,
+    /// observed default under BUG-02) with the reason in the note.
+    /// </summary>
     private async Task ResolveChildrenAsync(TestDataRecord parent, CancellationToken ct)
     {
-        if (parent.Kind != TestDataKind.Offender || parent.State == TestDataState.Active || parent.State == TestDataState.CleanupFailed) return;
+        if (parent.Kind != TestDataKind.Offender || CleanupGuard.IsWaitingForCleanup(parent.State)) return;
         var children = await db.TestData
             .Where(t => t.Kind == TestDataKind.LocationPoint && t.ParentExternalId == parent.ExternalId
                         && t.EnvironmentBaseUrl == parent.EnvironmentBaseUrl && t.State == TestDataState.Active)
             .ToListAsync(ct);
+        if (children.Count == 0) return;
+
+        var (stillPresent, checkError) = await ReadTrailPointIdsAsync(parent.EnvironmentBaseUrl, parent.ExternalId, ct);
         foreach (var child in children)
         {
-            Resolve(child, TestDataState.RemovedWithParent,
-                "Removed together with its offender. Note: the application keeps orphaned points (BUG-02).");
+            if (checkError is null && !stillPresent.Contains(child.ExternalId))
+            {
+                Resolve(child, TestDataState.RemovedWithParent, "Verified: no longer returned by the application after its offender was deleted.");
+            }
+            else
+            {
+                Resolve(child, TestDataState.OrphanedInApplication, checkError is null
+                    ? "Verified: still returned by the application after its offender was deleted (BUG-02). The app has no endpoint to delete a single point."
+                    : $"Assumed still in the application (BUG-02) — the check failed: {checkError}");
+            }
+        }
+    }
+
+    /// <summary>Ids of the points the application still returns for an offender (empty when the trail is gone).</summary>
+    private async Task<(IReadOnlySet<string> Ids, string? Error)> ReadTrailPointIdsAsync(string baseUrl, string offenderId, CancellationToken ct)
+    {
+        try
+        {
+            var client = http.CreateClient("target");
+            client.BaseAddress = new Uri(baseUrl.EndsWith('/') ? baseUrl : baseUrl + "/");
+            var response = await client.GetAsync($"api/offenders/{offenderId}/trail", ct);
+            if (response.StatusCode == HttpStatusCode.NotFound) return (new HashSet<string>(), null);
+            response.EnsureSuccessStatusCode();
+            var body = await response.Content.ReadAsStringAsync(ct);
+            if (string.IsNullOrWhiteSpace(body)) return (new HashSet<string>(), null);
+            using var json = JsonDocument.Parse(body);
+            var ids = json.RootElement.ValueKind == JsonValueKind.Array
+                ? json.RootElement.EnumerateArray().Select(p => p.TryGetProperty("id", out var id) ? id.ToString() : "").ToHashSet()
+                : new HashSet<string>();
+            return (ids, null);
+        }
+        catch (Exception ex) when (ex is HttpRequestException or TaskCanceledException or JsonException)
+        {
+            logger.LogWarning(ex, "Could not verify the trail of offender {Id}", offenderId);
+            return (new HashSet<string>(), ex.Message);
         }
     }
 

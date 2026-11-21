@@ -17,20 +17,21 @@ progress live, and keeps the **full history** of every test with its evidence.
 
 ## 1. Run it on a clean machine
 
-The Part 3 suite must sit next to this folder (`Desktop/SuperCom` and `Desktop/SuperCom-Platform`), or you can set
-`Suite:WorkingDirectory`. Pick one of two ways. Both are one command and both were verified.
+Get both repositories side by side, in one parent folder. The folder names don't matter: the platform finds the
+suite as `SuperCom` or `offenderwatch-qa-suite`, or wherever `SUITE_DIR` points.
 
-**A — Docker** (needs only Docker Desktop; about 4 GB of disk for the image):
 ```bash
-cd SuperCom-Platform
-docker compose up --build
+git clone https://github.com/NeilZer/offenderwatch-qa-suite.git
+git clone https://github.com/NeilZer/offenderwatch-test-platform.git
+cd offenderwatch-test-platform
 ```
 
-**B — without Docker** (needs .NET SDK 8+ and Node 20+):
-```bash
-cd SuperCom-Platform
-npm start
-```
+Then pick one of two ways. Both are one command.
+
+**A — without Docker** (needs .NET SDK 8+ and Node 20+): `npm start`
+
+**B — Docker** (needs Docker Desktop and about 15 GB of free disk for the build): `npm run docker`
+(or `SUITE_DIR=<path to the suite> docker compose up --build`)
 
 `npm start`:
 - checks the prerequisites;
@@ -155,6 +156,8 @@ Schema from scratch: the EF Core migrations run automatically at start-up. The e
 
 `data/evidence/run-00015/result-01234/03-test-failed-1.png`, with the path, size and **SHA-256** stored in SQLite.
 
+- **Byte-exact in git:** `.gitattributes` marks `data/**` as `-text`, so git never changes line endings; every
+  hash also verifies in a fresh clone on Windows, macOS or Linux.
 - **Why not blobs:** screenshots and traces are MBs. Keeping them out of SQLite keeps the database small,
   fast to back up and easy to inspect. The files can be opened directly.
 - **Immutable anyway:**
@@ -232,8 +235,13 @@ run produced it (`Domain/ReleaseVerdict.cs`, unit-tested):
 7. "Leave test data for clean-up" in the Start-run dialog skips the scenarios' own teardown, to demonstrate the
    clean-up.
 
-Location points go with their offender: the app has no endpoint to delete a point, and it keeps orphaned points
-anyway (**BUG-02**, documented in Part 2).
+**Location points are checked, never assumed.** The application has no endpoint to delete a single point.
+When an offender is deleted, the platform asks the application for its trail:
+- points still returned are marked **"Left in the application (BUG-02)"**: the app doesn't cascade the delete;
+- only points that are really gone are marked **"Removed with its offender (verified)"**.
+
+The 286 older records that had been labelled "removed" by assumption were all checked against the live
+application on 21/11/2026, found still present, and relabelled by migration `VerifiedOrphanedPoints`.
 
 ---
 
@@ -245,7 +253,7 @@ anyway (**BUG-02**, documented in Part 2).
 | **B-02** Run comparison | ✅ | **Runs** → tick two runs → **⇄ Compare**. Shows regressed, recovered, status changed, new / missing, and the change in totals. Try runs #14 → #15, or #19 → #22. |
 | **B-03** Regression notifications | ✅ | **Notifications**: set a Slack/Teams webhook. A test that **passed the previous time it ran on that environment** and now fails **unexpectedly** triggers it. Known-bug failures never do, and a partial run in between doesn't hide a regression. Every notification is logged, even without a webhook. See run #15. |
 | **B-04** Scheduled runs | ✅ | **Schedules**: cron + time zone, presets (nightly 02:00…). Stored in SQLite, so it survives a restart (tested); its runs show trigger **Scheduled** (run #17). Occurrences missed while the API was down are skipped, not replayed in a burst. |
-| **B-05** One-command startup | ✅ both verified | **Docker:** `docker compose up --build`. Verified with Docker Desktop 29.9: a 3.7 GB image (Playwright browsers + ASP.NET Core 8 + the suite) on a fresh volume; a full suite run inside the container gave the same 26 passed / 45 known bug as on Windows, with screenshots stored and verified. The container keeps its database on its own named volume, so it never shares a SQLite file with a platform on the host. Session keys are stored on the data volume, so sign-ins survive a container restart. **Without Docker:** `npm start`. |
+| **B-05** One-command startup | ✅ both verified | **Docker:** `npm run docker` (finds the suite folder) or `docker compose up --build`. Verified with Docker Desktop 29.9: a 3.7 GB image (Playwright browsers + ASP.NET Core 8 + the suite) on a fresh volume; a full suite run inside the container gave the same 26 passed / 45 known bug as on Windows, with screenshots stored and verified. The container keeps its database on its own named volume, so it never shares a SQLite file with a platform on the host. Session keys are stored on the data volume, so sign-ins survive a container restart. **Without Docker:** `npm start`. |
 | **B-06** Platform self-tests | ✅ | `npm test`: **60 tests**: history/transitions, flakiness, the go/no-go rules, the clean-up guard end to end (real SQLite from the real migrations + a fake OffenderWatch API; only our own record gets a DELETE; failed clean-ups are retried), append-only triggers, notifier rules, evidence storage (read-only, hash, no partial file after a failed upload, content-type safety). |
 | **B-07** Authentication | ✅ | Sign in as `viewer`: every action button is disabled with a tooltip, and the API answers **403**. The runner uses its own token on the ingestion endpoints only. |
 
@@ -306,6 +314,10 @@ generic 500, never a stack trace. The client shows the server's message in plain
 
 ## 8. Known limitations
 
+- **Docker build after the last restructure:** the build now uses two named contexts (platform + suite), so
+  folder names no longer matter. `docker compose config` was validated for both folder layouts, but the image
+  was not rebuilt after this change: the development machine didn't have the ~15 GB of free disk the build
+  needs. The previous layout was fully built and verified (see B-05).
 - One active run per environment: the suite shares one live instance and asserts exact counter changes.
 - The ingestion token and demo passwords are in `appsettings.json` for the assignment. In production they would
   come from a secret store, and sign-in would get rate limiting.

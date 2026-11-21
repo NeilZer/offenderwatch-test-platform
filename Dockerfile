@@ -1,18 +1,20 @@
-# B-05 — one-command startup in Docker:  docker compose up --build   (from SuperCom-Platform/)
-# Build context: the folder that contains BOTH SuperCom-Platform/ and the Part 3 suite SuperCom/.
+# B-05 — one-command startup in Docker:   npm run docker      (or: docker compose up --build)
+# Two build contexts, so folder names never matter:
+#   .      this platform folder (whatever it is called)
+#   suite  the Part 3 suite folder, passed by docker-compose.yml (SUITE_DIR)
 
 # 1) React client → static files
 FROM node:20-bookworm AS client
 WORKDIR /src/client
-COPY SuperCom-Platform/client/package*.json ./
+COPY client/package*.json ./
 RUN npm ci --no-audit --no-fund
-COPY SuperCom-Platform/client/ ./
+COPY client/ ./
 RUN npx vite build --outDir /out/wwwroot --emptyOutDir
 
 # 2) ASP.NET Core API → published binaries
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS server
 WORKDIR /src
-COPY SuperCom-Platform/server/ ./
+COPY server/ ./
 RUN dotnet publish src/TestPlatform.Api -c Release -o /out/app
 
 # 3) Runtime = Playwright image (Node + matching browsers) + ASP.NET Core 8 runtime,
@@ -26,11 +28,11 @@ RUN apt-get update \
  && ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet \
  && rm /tmp/dotnet-install.sh
 
-# The Part 3 suite (dependencies installed for Linux inside the image)
+# The Part 3 suite (from the "suite" build context; dependencies installed for Linux)
 WORKDIR /suite
-COPY SuperCom/package*.json ./
+COPY --from=suite package*.json ./
 RUN npm ci --no-audit --no-fund
-COPY SuperCom/ ./
+COPY --from=suite . ./
 
 # The platform: API + built client in its wwwroot
 WORKDIR /app

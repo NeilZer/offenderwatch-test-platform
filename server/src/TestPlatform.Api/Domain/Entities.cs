@@ -150,7 +150,12 @@ public class TestDataRecord
 
 public enum TestDataKind { Offender, LocationPoint }
 
-public enum TestDataState { Active, DeletedByTest, CleanedByPlatform, AlreadyGone, Protected, CleanupFailed, RemovedWithParent }
+/// <summary>
+/// Lifecycle of a test-data record. For location points the state is VERIFIED against the application after
+/// their offender is deleted: RemovedWithParent only when the point is really gone; OrphanedInApplication when
+/// the application still returns it (BUG-02: no cascade delete, and there is no endpoint to delete one point).
+/// </summary>
+public enum TestDataState { Active, DeletedByTest, CleanedByPlatform, AlreadyGone, Protected, CleanupFailed, RemovedWithParent, OrphanedInApplication }
 
 /// <summary>Recurring run (B-04). Survives restarts because it lives in the database.</summary>
 public class Schedule

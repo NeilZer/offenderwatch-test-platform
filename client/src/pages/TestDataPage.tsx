@@ -19,7 +19,8 @@ const STATE_LABEL: Record<string, { label: string; tone: string }> = {
   AlreadyGone: { label: 'Already gone', tone: 'neutral' },
   Protected: { label: 'Protected (seeded)', tone: 'info' },
   CleanupFailed: { label: 'Clean-up failed — retried next time', tone: 'critical' },
-  RemovedWithParent: { label: 'Removed with its offender', tone: 'neutral' },
+  RemovedWithParent: { label: 'Removed with its offender (verified)', tone: 'good' },
+  OrphanedInApplication: { label: 'Left in the app — BUG-02', tone: 'serious' },
 };
 
 export function TestDataPage() {
@@ -53,6 +54,7 @@ export function TestDataPage() {
   // Still in the application: never cleaned, or a previous clean-up attempt failed (it is retried).
   const waiting = (state: string) => state === 'Active' || state === 'CleanupFailed';
   const activeCount = (records.data ?? []).filter((r) => waiting(r.state)).length;
+  const orphanCount = (records.data ?? []).filter((r) => r.state === 'OrphanedInApplication').length;
   const env = environments.find((e) => e.id === environmentId);
 
   async function clean() {
@@ -80,6 +82,11 @@ export function TestDataPage() {
         </select>
         <label className="check"><input type="checkbox" checked={activeOnly} onChange={(e) => setActiveOnly(e.target.checked)} /> Only data still in the application</label>
         <span className={`pill ${activeCount ? 'serious' : 'good'}`}>{activeCount} record(s) waiting for clean-up</span>
+        {orphanCount > 0 && (
+          <span className="pill neutral" title="The application keeps a deleted offender's points and has no endpoint to delete a single point (BUG-02). Verified against the application.">
+            {orphanCount} point(s) left in the app (BUG-02)
+          </span>
+        )}
       </div>
       {env && <p className="muted small">Protected seeded ids on {env.name}: <b>{env.protectedIds}</b> — never deleted, even if a run registers them.</p>}
       <ErrorBox message={actionError ?? records.error} />

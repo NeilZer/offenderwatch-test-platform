@@ -1,10 +1,12 @@
-# B-05 — one command, from this folder:   docker compose up --build    →   http://localhost:5080
-# The image contains the API, the built React client and the Part 3 suite with its browsers.
+# B-05 — one command:   npm run docker   (finds the suite folder for you)
+#                  or:  SUITE_DIR=../offenderwatch-qa-suite docker compose up --build
+# Then open http://localhost:5080
 services:
   platform:
     build:
-      context: ..                              # parent folder: needs SuperCom-Platform/ AND SuperCom/
-      dockerfile: SuperCom-Platform/Dockerfile # SuperCom-Platform/Dockerfile.dockerignore limits what is sent
+      context: .                                # this platform folder — its name does not matter
+      additional_contexts:
+        suite: ${SUITE_DIR:-../SuperCom}       # the Part 3 suite (npm run docker sets SUITE_DIR automatically)
     ports:
       - "5080:5080"
     volumes:

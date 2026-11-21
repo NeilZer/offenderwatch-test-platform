@@ -1,0 +1,10 @@
+# Build context = this folder (the platform). The suite comes from the separate "suite" context.
+**/node_modules
+**/bin
+**/obj
+**/*.tsbuildinfo
+client/dist
+server/src/TestPlatform.Api/wwwroot
+data
+.git
+*.zip
