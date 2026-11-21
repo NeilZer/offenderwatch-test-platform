@@ -1,0 +1,11 @@
+{
+  "name": "test-management-platform",
+  "private": true,
+  "description": "Part 5 — test management platform for the OffenderWatch suite (ASP.NET Core + React + SQLite + SignalR)",
+  "scripts": {
+    "start": "node scripts/start.mjs",
+    "dev:api": "dotnet run --project server/src/TestPlatform.Api",
+    "dev:client": "npm --prefix client run dev",
+    "test": "dotnet test server/tests/TestPlatform.Tests"
+  }
+}

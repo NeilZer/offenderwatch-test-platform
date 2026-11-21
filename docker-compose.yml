@@ -1,0 +1,16 @@
+# B-05 — one command, from this folder:   docker compose up --build    →   http://localhost:5080
+# The image contains the API, the built React client and the Part 3 suite with its browsers.
+services:
+  platform:
+    build:
+      context: ..                              # parent folder: needs SuperCom-Platform/ AND SuperCom/
+      dockerfile: SuperCom-Platform/Dockerfile # SuperCom-Platform/Dockerfile.dockerignore limits what is sent
+    ports:
+      - "5080:5080"
+    volumes:
+      # Own named volume: the container never shares a SQLite file with a platform running on the host.
+      - platform-data:/data
+    restart: unless-stopped
+
+volumes:
+  platform-data:
