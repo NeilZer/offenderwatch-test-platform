@@ -1,0 +1,36 @@
+11:51:28.640 ▶ TC-39 last seen shows the most recent timestamp
+   tests/ui/02-trail-map.ui.spec.ts · project ui
+11:51:28.640   → Before Hooks
+11:51:28.648   ✓ Before Hooks (10 ms)
+11:51:28.649   → Wait for selector locator('section.detail-panel').locator('.latest-card')
+11:51:28.668   ✓ Wait for selector locator('section.detail-panel').locator('.latest-card') (18 ms)
+11:51:28.669   → Evaluate locator('section.detail-panel').locator('.latest-card').locator('.latest-grid > div b')
+11:51:28.683   ✓ Evaluate locator('section.detail-panel').locator('.latest-card').locator('.latest-grid > div b') (12 ms)
+11:51:28.694   → Expect "toBe"
+11:51:28.695   ✗ Error: expect(received).toBe(expected) // Object.is equality Expect "toBe" (1 ms)
+11:51:28.696   → After Hooks
+11:51:28.822     → afterEach hook
+11:51:28.824       → Screenshot
+11:51:28.949       ✓ Screenshot (126 ms)
+11:51:28.953     ✓ afterEach hook (130 ms)
+11:51:29.033     → afterAll hook
+11:51:29.048       → the shared screen must not raise browser errors
+11:51:29.048       ✓ the shared screen must not raise browser errors (0 ms)
+11:51:29.115       → Close context
+11:51:29.119       ✓ Close context (4 ms)
+11:51:29.130     ✓ afterAll hook (97 ms)
+11:51:29.130   ✓ After Hooks (435 ms)
+11:51:29.131   → Worker Cleanup
+11:51:29.188   ✓ Worker Cleanup (58 ms)
+11:51:29.344 ■ Failed in 304 ms
+
+--- error 1 ---
+Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: "09/08/2026, 11:29"
+Received: "09/08/2026, 14:29"
+Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: "09/08/2026, 11:29"
+Received: "09/08/2026, 14:29"
+    at C:\Users\Neil\Desktop\SuperCom\tests\ui\02-trail-map.ui.spec.ts:149:29

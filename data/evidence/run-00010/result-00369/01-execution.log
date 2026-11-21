@@ -1,0 +1,36 @@
+11:44:21.576 ▶ TC-16 rejects a duplicate national ID
+   tests/api/03-offenders-create.api.spec.ts · project api
+11:44:21.577   → Before Hooks
+11:44:21.584       → Create request context
+11:44:21.585       ✓ Create request context (1 ms)
+11:44:21.590   ✓ Before Hooks (14 ms)
+11:44:21.590   → POST api/offenders
+11:44:21.592     → POST "api/offenders"
+11:44:21.676     ✓ POST "api/offenders" (84 ms)
+11:44:21.678   ✓ POST api/offenders (88 ms)
+11:44:21.689   → [BUG-09] duplicate national ID must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 201 {"id":680,"firstName":"Yael","lastName":"Golan","nationalId":"305412876","dateOfBirth":"1985-04-17","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T11:44:21.8046335Z"}
+11:44:21.690   ✗ Error: [BUG-09] duplicate national ID must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 201 {"id":680,"firstName":"Yael","lastName":"Golan","nationalId":"305412876","dateOfBirth":"1985-04-17","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T11:44:21.8046335Z"} [BUG-09] duplicate national ID must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 201 {"id":680,"firstName":"Yael","lastName":"Golan","nationalId":"305412876","dateOfBirth":"1985-04-17","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T11:44:21.8046335Z"} (0 ms)
+11:44:21.690   → After Hooks
+11:44:21.690       → DELETE api/offenders/680
+11:44:21.691         → DELETE "api/offenders/680"
+11:44:21.772         ✓ DELETE "api/offenders/680" (81 ms)
+11:44:21.773       ✓ DELETE api/offenders/680 (83 ms)
+11:44:21.795   ✓ After Hooks (105 ms)
+11:44:21.796 ■ ExpectedFailure in 200 ms
+   annotation known-bug: BUG-09 — Duplicate national ID is accepted on create
+   annotation fail: BUG-09: Duplicate national ID is accepted on create
+
+--- error 1 ---
+Error: [BUG-09] duplicate national ID must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 201 {"id":680,"firstName":"Yael","lastName":"Golan","nationalId":"305412876","dateOfBirth":"1985-04-17","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T11:44:21.8046335Z"}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 201
+Error: [BUG-09] duplicate national ID must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 201 {"id":680,"firstName":"Yael","lastName":"Golan","nationalId":"305412876","dateOfBirth":"1985-04-17","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T11:44:21.8046335Z"}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 201
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\03-offenders-create.api.spec.ts:68:120

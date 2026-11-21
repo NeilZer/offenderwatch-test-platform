@@ -1,0 +1,40 @@
+11:57:20.711 ▶ TC-41 location rejects signal below 1
+   tests/api/05-trail.api.spec.ts · project api
+11:57:20.711   → Before Hooks
+11:57:20.715       → Create request context
+11:57:20.715       ✓ Create request context (0 ms)
+11:57:20.717   ✓ Before Hooks (6 ms)
+11:57:20.717   → POST api/offenders
+11:57:20.718     → POST "api/offenders"
+11:57:20.802     ✓ POST "api/offenders" (83 ms)
+11:57:20.803   ✓ POST api/offenders (86 ms)
+11:57:20.810   → POST api/offenders/956/locations
+11:57:20.812     → POST "api/offenders/956/locations"
+11:57:20.894     ✓ POST "api/offenders/956/locations" (82 ms)
+11:57:20.896   ✓ POST api/offenders/956/locations (85 ms)
+11:57:20.897   → [BUG-14] signal below 1 must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/956/locations -> 201 {"ok":true}
+11:57:20.899   ✗ Error: [BUG-14] signal below 1 must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/956/locations -> 201 {"ok":true} [BUG-14] signal below 1 must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/956/locations -> 201 {"ok":true} (1 ms)
+11:57:20.899   → After Hooks
+11:57:20.899       → DELETE api/offenders/956
+11:57:20.900         → DELETE "api/offenders/956"
+11:57:20.989         ✓ DELETE "api/offenders/956" (90 ms)
+11:57:20.990       ✓ DELETE api/offenders/956 (91 ms)
+11:57:21.009   ✓ After Hooks (111 ms)
+11:57:21.010 ■ ExpectedFailure in 285 ms
+   annotation known-bug: BUG-14 — Location points are not validated: invalid coordinates, negative speed, battery and signal out of range all accepted
+   annotation fail: BUG-14: Location points are not validated: invalid coordinates, negative speed, battery and signal out of range all accepted
+
+--- error 1 ---
+Error: [BUG-14] signal below 1 must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/956/locations -> 201 {"ok":true}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 201
+Error: [BUG-14] signal below 1 must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/956/locations -> 201 {"ok":true}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 201
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\05-trail.api.spec.ts:60:108

@@ -1,0 +1,32 @@
+11:54:31.868 ▶ TC-51 trail of an unknown offender returns 404
+   tests/api/05-trail.api.spec.ts · project api
+11:54:31.868   → Before Hooks
+11:54:31.873       → Create request context
+11:54:31.873       ✓ Create request context (0 ms)
+11:54:31.875   ✓ Before Hooks (8 ms)
+11:54:31.877   → GET api/offenders/987654/trail
+11:54:31.878     → GET "api/offenders/987654/trail"
+11:54:31.945     ✓ GET "api/offenders/987654/trail" (67 ms)
+11:54:31.946   ✓ GET api/offenders/987654/trail (70 ms)
+11:54:31.947   → [BUG-08] unknown offender trail must be 404: GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/987654/trail -> 200 []
+11:54:31.948   ✗ Error: [BUG-08] unknown offender trail must be 404: GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/987654/trail -> 200 [] [BUG-08] unknown offender trail must be 404: GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/987654/trail -> 200 [] (1 ms)
+11:54:31.948   → After Hooks
+11:54:31.966   ✓ After Hooks (18 ms)
+11:54:31.967 ■ ExpectedFailure in 80 ms
+   annotation known-bug: BUG-08 — Unknown offender id returns 200 (empty body / empty trail) instead of 404
+   annotation fail: BUG-08: Unknown offender id returns 200 (empty body / empty trail) instead of 404
+
+--- error 1 ---
+Error: [BUG-08] unknown offender trail must be 404: GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/987654/trail -> 200 []
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 404
+Received: 200
+Error: [BUG-08] unknown offender trail must be 404: GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/987654/trail -> 200 []
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 404
+Received: 200
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\05-trail.api.spec.ts:93:116

@@ -1,0 +1,27 @@
+11:26:25.863 ▶ TC-52 mutating an unknown offender returns 404
+   tests/api/04-offenders-update-delete.api.spec.ts · project api
+11:26:25.863   → Before Hooks
+11:26:25.869       → Create request context
+11:26:25.869       ✓ Create request context (1 ms)
+11:26:25.872   ✓ Before Hooks (10 ms)
+11:26:25.872   → PUT api/offenders/987654
+11:26:25.872     → PUT "api/offenders/987654"
+11:26:25.941     ✓ PUT "api/offenders/987654" (68 ms)
+11:26:25.953   ✓ PUT api/offenders/987654 (82 ms)
+11:26:25.953   → DELETE api/offenders/987654
+11:26:25.954     → DELETE "api/offenders/987654"
+11:26:26.020     ✓ DELETE "api/offenders/987654" (65 ms)
+11:26:26.020   ✓ DELETE api/offenders/987654 (67 ms)
+11:26:26.020   → POST api/offenders/987654/locations
+11:26:26.021     → POST "api/offenders/987654/locations"
+11:26:26.087     ✓ POST "api/offenders/987654/locations" (66 ms)
+11:26:26.087   ✓ POST api/offenders/987654/locations (67 ms)
+11:26:26.088   → PUT https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/987654 -> 404 {"error":"Offender not found."}
+11:26:26.088   ✓ PUT https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/987654 -> 404 {"error":"Offender not found."} (0 ms)
+11:26:26.088   → DELETE https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/987654 -> 404 {"error":"Offender not found."}
+11:26:26.089   ✓ DELETE https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/987654 -> 404 {"error":"Offender not found."} (0 ms)
+11:26:26.089   → POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/987654/locations -> 404 {"error":"Offender not found."}
+11:26:26.089   ✓ POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/987654/locations -> 404 {"error":"Offender not found."} (0 ms)
+11:26:26.089   → After Hooks
+11:26:26.096   ✓ After Hooks (7 ms)
+11:26:26.097 ■ Passed in 223 ms

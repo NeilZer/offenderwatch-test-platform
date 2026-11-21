@@ -1,0 +1,40 @@
+11:53:37.058 ▶ TC-41 location rejects latitude above 90
+   tests/api/05-trail.api.spec.ts · project api
+11:53:37.068   → Before Hooks
+11:53:37.073       → Create request context
+11:53:37.073       ✓ Create request context (1 ms)
+11:53:37.075   ✓ Before Hooks (8 ms)
+11:53:37.076   → POST api/offenders
+11:53:37.077     → POST "api/offenders"
+11:53:37.157     ✓ POST "api/offenders" (80 ms)
+11:53:37.158   ✓ POST api/offenders (82 ms)
+11:53:37.165   → POST api/offenders/832/locations
+11:53:37.166     → POST "api/offenders/832/locations"
+11:53:37.251     ✓ POST "api/offenders/832/locations" (84 ms)
+11:53:37.252   ✓ POST api/offenders/832/locations (87 ms)
+11:53:37.254   → [BUG-14] latitude above 90 must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/832/locations -> 201 {"ok":true}
+11:53:37.255   ✗ Error: [BUG-14] latitude above 90 must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/832/locations -> 201 {"ok":true} [BUG-14] latitude above 90 must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/832/locations -> 201 {"ok":true} (0 ms)
+11:53:37.255   → After Hooks
+11:53:37.255       → DELETE api/offenders/832
+11:53:37.256         → DELETE "api/offenders/832"
+11:53:37.338         ✓ DELETE "api/offenders/832" (81 ms)
+11:53:37.339       ✓ DELETE api/offenders/832 (84 ms)
+11:53:37.361   ✓ After Hooks (106 ms)
+11:53:37.362 ■ ExpectedFailure in 279 ms
+   annotation known-bug: BUG-14 — Location points are not validated: invalid coordinates, negative speed, battery and signal out of range all accepted
+   annotation fail: BUG-14: Location points are not validated: invalid coordinates, negative speed, battery and signal out of range all accepted
+
+--- error 1 ---
+Error: [BUG-14] latitude above 90 must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/832/locations -> 201 {"ok":true}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 201
+Error: [BUG-14] latitude above 90 must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/832/locations -> 201 {"ok":true}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 201
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\05-trail.api.spec.ts:60:108

@@ -1,0 +1,40 @@
+11:51:01.662 ▶ TC-17 rejects date of birth in the future
+   tests/api/03-offenders-create.api.spec.ts · project api
+11:51:01.662   → Before Hooks
+11:51:01.663       → Create request context
+11:51:01.664       ✓ Create request context (1 ms)
+11:51:01.665   ✓ Before Hooks (6 ms)
+11:51:01.666   → GET api/stats
+11:51:01.667     → GET "api/stats"
+11:51:01.729     ✓ GET "api/stats" (62 ms)
+11:51:01.730   ✓ GET api/stats (64 ms)
+11:51:01.730   → POST api/offenders
+11:51:01.731     → POST "api/offenders"
+11:51:01.812     ✓ POST "api/offenders" (81 ms)
+11:51:01.813   ✓ POST api/offenders (83 ms)
+11:51:01.823   → [BUG-11] date of birth in the future must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 201 {"id":779,"firstName":"Omer","lastName":"Sasson","nationalId":"990575990","dateOfBirth":"2027-11-21","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T11:51:01.9471881Z"}
+11:51:01.824   ✗ Error: [BUG-11] date of birth in the future must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 201 {"id":779,"firstName":"Omer","lastName":"Sasson","nationalId":"990575990","dateOfBirth":"2027-11-21","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T11:51:01.9471881Z"} [BUG-11] date of birth in the future must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 201 {"id":779,"firstName":"Omer","lastName":"Sasson","nationalId":"990575990","dateOfBirth":"2027-11-21","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T11:51:01.9471881Z"} (0 ms)
+11:51:01.824   → After Hooks
+11:51:01.824       → DELETE api/offenders/779
+11:51:01.825         → DELETE "api/offenders/779"
+11:51:01.907         ✓ DELETE "api/offenders/779" (82 ms)
+11:51:01.908       ✓ DELETE api/offenders/779 (84 ms)
+11:51:01.930   ✓ After Hooks (106 ms)
+11:51:01.931 ■ ExpectedFailure in 256 ms
+   annotation known-bug: BUG-11 — Date of birth is not validated: future dates and non-dates are accepted
+   annotation fail: BUG-11: Date of birth is not validated: future dates and non-dates are accepted
+
+--- error 1 ---
+Error: [BUG-11] date of birth in the future must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 201 {"id":779,"firstName":"Omer","lastName":"Sasson","nationalId":"990575990","dateOfBirth":"2027-11-21","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T11:51:01.9471881Z"}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 201
+Error: [BUG-11] date of birth in the future must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 201 {"id":779,"firstName":"Omer","lastName":"Sasson","nationalId":"990575990","dateOfBirth":"2027-11-21","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T11:51:01.9471881Z"}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 201
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\03-offenders-create.api.spec.ts:48:99

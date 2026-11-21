@@ -1,0 +1,40 @@
+11:53:33.525 ▶ TC-24 PUT rejects a national ID that belongs to another offender
+   tests/api/04-offenders-update-delete.api.spec.ts · project api
+11:53:33.525   → Before Hooks
+11:53:33.531       → Create request context
+11:53:33.532       ✓ Create request context (0 ms)
+11:53:33.534   ✓ Before Hooks (10 ms)
+11:53:33.535   → POST api/offenders
+11:53:33.536     → POST "api/offenders"
+11:53:33.617     ✓ POST "api/offenders" (81 ms)
+11:53:33.617   ✓ POST api/offenders (83 ms)
+11:53:33.625   → PUT api/offenders/827
+11:53:33.626     → PUT "api/offenders/827"
+11:53:33.708     ✓ PUT "api/offenders/827" (81 ms)
+11:53:33.709   ✓ PUT api/offenders/827 (84 ms)
+11:53:33.710   → [BUG-13] duplicate national ID on update must be rejected: PUT https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/827 -> 200 {"id":827,"firstName":"Guy","lastName":"Golan","nationalId":"305412876","dateOfBirth":"1985-04-17","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T11:53:33.7552864Z"}
+11:53:33.710   ✗ Error: [BUG-13] duplicate national ID on update must be rejected: PUT https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/827 -> 200 {"id":827,"firstName":"Guy","lastName":"Golan","nationalId":"305412876","dateOfBirth":"1985-04-17","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T11:53:33.7552864Z"} [BUG-13] duplicate national ID on update must be rejected: PUT https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/827 -> 200 {"id":827,"firstName":"Guy","lastName":"Golan","nationalId":"305412876","dateOfBirth":"1985-04-17","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T11:53:33.7552864Z"} (0 ms)
+11:53:33.711   → After Hooks
+11:53:33.711       → DELETE api/offenders/827
+11:53:33.712         → DELETE "api/offenders/827"
+11:53:33.795         ✓ DELETE "api/offenders/827" (83 ms)
+11:53:33.796       ✓ DELETE api/offenders/827 (86 ms)
+11:53:33.826   ✓ After Hooks (116 ms)
+11:53:33.827 ■ ExpectedFailure in 281 ms
+   annotation known-bug: BUG-13 — PUT /api/offenders/{id} performs no validation at all
+   annotation fail: BUG-13: PUT /api/offenders/{id} performs no validation at all
+
+--- error 1 ---
+Error: [BUG-13] duplicate national ID on update must be rejected: PUT https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/827 -> 200 {"id":827,"firstName":"Guy","lastName":"Golan","nationalId":"305412876","dateOfBirth":"1985-04-17","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T11:53:33.7552864Z"}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 200
+Error: [BUG-13] duplicate national ID on update must be rejected: PUT https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/827 -> 200 {"id":827,"firstName":"Guy","lastName":"Golan","nationalId":"305412876","dateOfBirth":"1985-04-17","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T11:53:33.7552864Z"}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 200
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\04-offenders-update-delete.api.spec.ts:62:130

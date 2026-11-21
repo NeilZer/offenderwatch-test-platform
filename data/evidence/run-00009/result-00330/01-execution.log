@@ -1,0 +1,64 @@
+11:43:41.988 ▶ TC-10 lower-case search in the UI finds the offender
+   tests/ui/01-roster.ui.spec.ts · project ui
+11:43:41.995   → Before Hooks
+11:43:41.997     → beforeEach hook
+11:43:42.014         → Create context
+11:43:42.020         ✓ Create context (5 ms)
+11:43:42.026         → Create page
+11:43:42.120         ✓ Create page (94 ms)
+11:43:42.123       → Wait for event "response"
+11:43:42.125       → Wait for event "response"
+11:43:42.127       → Navigate to "./"
+11:43:42.676       ✓ Navigate to "./" (549 ms)
+11:43:42.744       ✓ Wait for event "response" (618 ms)
+11:43:42.745       ✓ Wait for event "response" (623 ms)
+11:43:42.756       → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+11:43:42.806       ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (50 ms)
+11:43:42.808       → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+11:43:42.823       ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (15 ms)
+11:43:42.823     ✓ beforeEach hook (826 ms)
+11:43:42.823   ✓ Before Hooks (829 ms)
+11:43:42.837   → Wait for event "response"
+11:43:42.840   → Fill "cohen" locator('section.list-panel').locator('input.search')
+11:43:42.871   ✓ Fill "cohen" locator('section.list-panel').locator('input.search') (31 ms)
+11:43:42.934   ✓ Wait for event "response" (96 ms)
+11:43:42.942   → Expect "toBeVisible" locator('td.empty')
+11:43:42.958   ✓ Expect "toBeVisible" locator('td.empty') (17 ms)
+11:43:42.960   → [BUG-07] "cohen" must find Cohen, David locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Cohen, David' })
+11:43:45.983   ✗ Error: [BUG-07] "cohen" must find Cohen, David [BUG-07] "cohen" must find Cohen, David locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Cohen, David' }) (3022 ms)
+11:43:45.983   → After Hooks
+11:43:46.041       → Close context
+11:43:46.045       ✓ Close context (3 ms)
+11:43:46.069   ✓ After Hooks (85 ms)
+11:43:46.070 ■ ExpectedFailure in 4031 ms
+   annotation known-bug: BUG-07 — Search is case-sensitive ("cohen" finds nothing)
+   annotation fail: BUG-07: Search is case-sensitive ("cohen" finds nothing)
+
+--- error 1 ---
+Error: [BUG-07] "cohen" must find Cohen, David
+
+expect(locator).toBeVisible() failed
+
+Locator: locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Cohen, David' })
+Expected: visible
+Timeout: 3000ms
+Error: element(s) not found
+
+Call log:
+  - [BUG-07] "cohen" must find Cohen, David with timeout 3000ms
+  - waiting for locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Cohen, David' })
+
+Error: [BUG-07] "cohen" must find Cohen, David
+
+expect(locator).toBeVisible() failed
+
+Locator: locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Cohen, David' })
+Expected: visible
+Timeout: 3000ms
+Error: element(s) not found
+
+Call log:
+  - [BUG-07] "cohen" must find Cohen, David with timeout 3000ms
+  - waiting for locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Cohen, David' })
+
+    at C:\Users\Neil\Desktop\SuperCom\tests\ui\01-roster.ui.spec.ts:73:150

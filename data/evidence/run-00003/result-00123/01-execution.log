@@ -1,0 +1,40 @@
+11:28:00.307 ▶ TC-18 rejects status outside Active/Inactive
+   tests/api/03-offenders-create.api.spec.ts · project api
+11:28:00.307   → Before Hooks
+11:28:00.311       → Create request context
+11:28:00.311       ✓ Create request context (0 ms)
+11:28:00.315   ✓ Before Hooks (9 ms)
+11:28:00.315   → GET api/stats
+11:28:00.315     → GET "api/stats"
+11:28:00.383     ✓ GET "api/stats" (68 ms)
+11:28:00.384   ✓ GET api/stats (69 ms)
+11:28:00.384   → POST api/offenders
+11:28:00.384     → POST "api/offenders"
+11:28:00.465     ✓ POST "api/offenders" (81 ms)
+11:28:00.465   ✓ POST api/offenders (81 ms)
+11:28:00.474   → [BUG-12] status outside Active/Inactive must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 201 {"id":565,"firstName":"Ariel","lastName":"Nachum","nationalId":"997538204","dateOfBirth":"1985-04-17","riskLevel":"Medium","status":"Deleted","createdAt":"2026-11-21T11:28:00.5799801Z"}
+11:28:00.474   ✗ Error: [BUG-12] status outside Active/Inactive must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 201 {"id":565,"firstName":"Ariel","lastName":"Nachum","nationalId":"997538204","dateOfBirth":"1985-04-17","riskLevel":"Medium","status":"Deleted","createdAt":"2026-11-21T11:28:00.5799801Z"} [BUG-12] status outside Active/Inactive must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 201 {"id":565,"firstName":"Ariel","lastName":"Nachum","nationalId":"997538204","dateOfBirth":"1985-04-17","riskLevel":"Medium","status":"Deleted","createdAt":"2026-11-21T11:28:00.5799801Z"} (1 ms)
+11:28:00.474   → After Hooks
+11:28:00.474       → DELETE api/offenders/565
+11:28:00.475         → DELETE "api/offenders/565"
+11:28:00.557         ✓ DELETE "api/offenders/565" (82 ms)
+11:28:00.558       ✓ DELETE api/offenders/565 (84 ms)
+11:28:00.571   ✓ After Hooks (97 ms)
+11:28:00.572 ■ ExpectedFailure in 255 ms
+   annotation known-bug: BUG-12 — Risk level and Status accept any string (e.g. "Critical", "Deleted")
+   annotation fail: BUG-12: Risk level and Status accept any string (e.g. "Critical", "Deleted")
+
+--- error 1 ---
+Error: [BUG-12] status outside Active/Inactive must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 201 {"id":565,"firstName":"Ariel","lastName":"Nachum","nationalId":"997538204","dateOfBirth":"1985-04-17","riskLevel":"Medium","status":"Deleted","createdAt":"2026-11-21T11:28:00.5799801Z"}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 201
+Error: [BUG-12] status outside Active/Inactive must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 201 {"id":565,"firstName":"Ariel","lastName":"Nachum","nationalId":"997538204","dateOfBirth":"1985-04-17","riskLevel":"Medium","status":"Deleted","createdAt":"2026-11-21T11:28:00.5799801Z"}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 201
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\03-offenders-create.api.spec.ts:48:99

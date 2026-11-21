@@ -1,0 +1,27 @@
+13:49:15.176 ▶ TC-14 rejects whitespace-only first name
+   tests/api/03-offenders-create.api.spec.ts · project api
+13:49:15.176   → Before Hooks
+13:49:15.183       → Create request context
+13:49:15.183       ✓ Create request context (1 ms)
+13:49:15.188   ✓ Before Hooks (13 ms)
+13:49:15.188   → GET api/stats
+13:49:15.189     → GET "api/stats"
+13:49:15.254     ✓ GET "api/stats" (65 ms)
+13:49:15.255   ✓ GET api/stats (68 ms)
+13:49:15.256   → POST api/offenders
+13:49:15.257     → POST "api/offenders"
+13:49:15.321     ✓ POST "api/offenders" (65 ms)
+13:49:15.322   ✓ POST api/offenders (67 ms)
+13:49:15.323   → [FR-03] whitespace-only first name must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 400 {"error":"First name is required."}
+13:49:15.323   ✓ [FR-03] whitespace-only first name must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 400 {"error":"First name is required."} (1 ms)
+13:49:15.323   → error description must be present
+13:49:15.324   ✓ error description must be present (0 ms)
+13:49:15.324   → GET api/stats
+13:49:15.325     → GET "api/stats"
+13:49:15.389     ✓ GET "api/stats" (64 ms)
+13:49:15.389   ✓ GET api/stats (66 ms)
+13:49:15.390   → nothing may be saved
+13:49:15.390   ✓ nothing may be saved (0 ms)
+13:49:15.390   → After Hooks
+13:49:15.410   ✓ After Hooks (19 ms)
+13:49:15.410 ■ Passed in 219 ms

@@ -1,0 +1,40 @@
+11:27:31.761 ▶ TC-41 location rejects latitude missing (null)
+   tests/api/05-trail.api.spec.ts · project api
+11:27:31.762   → Before Hooks
+11:27:31.766       → Create request context
+11:27:31.768       ✓ Create request context (2 ms)
+11:27:31.772   ✓ Before Hooks (10 ms)
+11:27:31.772   → POST api/offenders
+11:27:31.772     → POST "api/offenders"
+11:27:31.862     ✓ POST "api/offenders" (90 ms)
+11:27:31.862   ✓ POST api/offenders (91 ms)
+11:27:31.868   → POST api/offenders/553/locations
+11:27:31.869     → POST "api/offenders/553/locations"
+11:27:31.934     ✓ POST "api/offenders/553/locations" (65 ms)
+11:27:31.935   ✓ POST api/offenders/553/locations (67 ms)
+11:27:31.935   → [BUG-18] latitude missing (null) must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/553/locations -> 400 <empty body>
+11:27:31.936   ✓ [BUG-18] latitude missing (null) must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/553/locations -> 400 <empty body> (1 ms)
+11:27:31.936   → [BUG-18] 400 must carry an error description
+11:27:31.937   ✗ Error: [BUG-18] 400 must carry an error description [BUG-18] 400 must carry an error description (0 ms)
+11:27:31.937   → After Hooks
+11:27:31.937       → DELETE api/offenders/553
+11:27:31.937         → DELETE "api/offenders/553"
+11:27:32.024         ✓ DELETE "api/offenders/553" (87 ms)
+11:27:32.024       ✓ DELETE api/offenders/553 (87 ms)
+11:27:32.042   ✓ After Hooks (106 ms)
+11:27:32.043 ■ ExpectedFailure in 268 ms
+   annotation known-bug: BUG-18 — Malformed request body returns 400 with an empty body (no error description)
+   annotation fail: BUG-18: Malformed request body returns 400 with an empty body (no error description)
+
+--- error 1 ---
+Error: [BUG-18] 400 must carry an error description
+
+expect(received).toBeTruthy()
+
+Received: undefined
+Error: [BUG-18] 400 must carry an error description
+
+expect(received).toBeTruthy()
+
+Received: undefined
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\05-trail.api.spec.ts:61:116

@@ -1,0 +1,68 @@
+11:45:54.822 ▶ TC-48 trail-point total drops when an offender with a trail is deleted
+   tests/api/06-stats.api.spec.ts · project api
+11:45:54.822   → Before Hooks
+11:45:54.826       → Create request context
+11:45:54.826       ✓ Create request context (0 ms)
+11:45:54.828   ✓ Before Hooks (6 ms)
+11:45:54.828   → POST api/offenders
+11:45:54.830     → POST "api/offenders"
+11:45:54.911     ✓ POST "api/offenders" (81 ms)
+11:45:54.912   ✓ POST api/offenders (84 ms)
+11:45:54.920   → POST api/offenders/743/locations
+11:45:54.921     → POST "api/offenders/743/locations"
+11:45:55.003     ✓ POST "api/offenders/743/locations" (83 ms)
+11:45:55.004   ✓ POST api/offenders/743/locations (85 ms)
+11:45:55.004   → POST api/offenders/743/locations
+11:45:55.005     → POST "api/offenders/743/locations"
+11:45:55.087     ✓ POST "api/offenders/743/locations" (81 ms)
+11:45:55.087   ✓ POST api/offenders/743/locations (83 ms)
+11:45:55.088   → POST api/offenders/743/locations
+11:45:55.089     → POST "api/offenders/743/locations"
+11:45:55.171     ✓ POST "api/offenders/743/locations" (82 ms)
+11:45:55.172   ✓ POST api/offenders/743/locations (84 ms)
+11:45:55.172   → POST api/offenders/743/locations
+11:45:55.173     → POST "api/offenders/743/locations"
+11:45:55.256     ✓ POST "api/offenders/743/locations" (84 ms)
+11:45:55.258   ✓ POST api/offenders/743/locations (86 ms)
+11:45:55.258   → GET api/offenders/743/trail
+11:45:55.260     → GET "api/offenders/743/trail"
+11:45:55.324     ✓ GET "api/offenders/743/trail" (64 ms)
+11:45:55.325   ✓ GET api/offenders/743/trail (67 ms)
+11:45:55.387   → GET api/stats
+11:45:55.387     → GET "api/stats"
+11:45:55.451     ✓ GET "api/stats" (63 ms)
+11:45:55.451   ✓ GET api/stats (65 ms)
+11:45:55.452   → DELETE api/offenders/743
+11:45:55.452     → DELETE "api/offenders/743"
+11:45:55.535     ✓ DELETE "api/offenders/743" (83 ms)
+11:45:55.537   ✓ DELETE api/offenders/743 (86 ms)
+11:45:55.538   → Expect "toBe"
+11:45:55.538   ✓ Expect "toBe" (1 ms)
+11:45:55.548   → GET api/stats
+11:45:55.551     → GET "api/stats"
+11:45:55.615     ✓ GET "api/stats" (65 ms)
+11:45:55.616   ✓ GET api/stats (68 ms)
+11:45:55.617   → Expect "toBe"
+11:45:55.617   ✓ Expect "toBe" (1 ms)
+11:45:55.617   → [BUG-02] deleting 4 points must lower the total by 4
+11:45:55.618   ✗ Error: [BUG-02] deleting 4 points must lower the total by 4 [BUG-02] deleting 4 points must lower the total by 4 (0 ms)
+11:45:55.618   → After Hooks
+11:45:55.630   ✓ After Hooks (12 ms)
+11:45:55.632 ■ ExpectedFailure in 796 ms
+   annotation known-bug: BUG-02 — Deleting an offender leaves their trail points in the system and in the trail-point total
+   annotation fail: BUG-02: Deleting an offender leaves their trail points in the system and in the trail-point total
+
+--- error 1 ---
+Error: [BUG-02] deleting 4 points must lower the total by 4
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 4
+Received: 0
+Error: [BUG-02] deleting 4 points must lower the total by 4
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 4
+Received: 0
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\06-stats.api.spec.ts:60:167

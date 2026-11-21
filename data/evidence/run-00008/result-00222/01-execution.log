@@ -1,0 +1,40 @@
+11:41:24.179 ▶ TC-15 rejects missing national ID
+   tests/api/03-offenders-create.api.spec.ts · project api
+11:41:24.179   → Before Hooks
+11:41:24.186       → Create request context
+11:41:24.187       ✓ Create request context (0 ms)
+11:41:24.193   ✓ Before Hooks (13 ms)
+11:41:24.193   → GET api/stats
+11:41:24.193     → GET "api/stats"
+11:41:24.257     ✓ GET "api/stats" (66 ms)
+11:41:24.258   ✓ GET api/stats (68 ms)
+11:41:24.258   → POST api/offenders
+11:41:24.259     → POST "api/offenders"
+11:41:24.342     ✓ POST "api/offenders" (83 ms)
+11:41:24.343   ✓ POST api/offenders (85 ms)
+11:41:24.354   → [BUG-10] missing national ID must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 201 {"id":597,"firstName":"Noam","lastName":"Nachum","nationalId":"","dateOfBirth":"1985-04-17","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T11:41:24.4665167Z"}
+11:41:24.356   ✗ Error: [BUG-10] missing national ID must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 201 {"id":597,"firstName":"Noam","lastName":"Nachum","nationalId":"","dateOfBirth":"1985-04-17","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T11:41:24.4665167Z"} [BUG-10] missing national ID must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 201 {"id":597,"firstName":"Noam","lastName":"Nachum","nationalId":"","dateOfBirth":"1985-04-17","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T11:41:24.4665167Z"} (0 ms)
+11:41:24.356   → After Hooks
+11:41:24.356       → DELETE api/offenders/597
+11:41:24.358         → DELETE "api/offenders/597"
+11:41:24.439         ✓ DELETE "api/offenders/597" (82 ms)
+11:41:24.440       ✓ DELETE api/offenders/597 (84 ms)
+11:41:24.467   ✓ After Hooks (111 ms)
+11:41:24.468 ■ ExpectedFailure in 269 ms
+   annotation known-bug: BUG-10 — Required fields Last name and National ID are not enforced
+   annotation fail: BUG-10: Required fields Last name and National ID are not enforced
+
+--- error 1 ---
+Error: [BUG-10] missing national ID must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 201 {"id":597,"firstName":"Noam","lastName":"Nachum","nationalId":"","dateOfBirth":"1985-04-17","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T11:41:24.4665167Z"}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 201
+Error: [BUG-10] missing national ID must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 201 {"id":597,"firstName":"Noam","lastName":"Nachum","nationalId":"","dateOfBirth":"1985-04-17","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T11:41:24.4665167Z"}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 201
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\03-offenders-create.api.spec.ts:48:99

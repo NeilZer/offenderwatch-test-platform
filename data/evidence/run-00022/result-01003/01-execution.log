@@ -1,0 +1,320 @@
+12:55:36.026 ▶ TC-29 roster dates of birth are DD/MM/YYYY and match the stored value
+   tests/ui/01-roster.ui.spec.ts · project ui
+12:55:36.026   → Before Hooks
+12:55:36.026     → beforeEach hook
+12:55:36.032         → Create context
+12:55:36.039         ✓ Create context (4 ms)
+12:55:36.041         → Create page
+12:55:36.109         ✓ Create page (69 ms)
+12:55:36.112       → Wait for event "response"
+12:55:36.114       → Wait for event "response"
+12:55:36.115       → Navigate to "./"
+12:55:36.641       ✓ Navigate to "./" (526 ms)
+12:55:36.706       ✓ Wait for event "response" (594 ms)
+12:55:36.712       ✓ Wait for event "response" (598 ms)
+12:55:36.718       → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+12:55:36.757       ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (39 ms)
+12:55:36.758       → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+12:55:36.769       ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (12 ms)
+12:55:36.769     ✓ beforeEach hook (745 ms)
+12:55:36.771       → Create request context
+12:55:36.771       ✓ Create request context (1 ms)
+12:55:36.774   ✓ Before Hooks (749 ms)
+12:55:36.774   → GET api/offenders?page=1&pageSize=1000
+12:55:36.776     → GET "api/offenders?page=1&pageSize=1000"
+12:55:36.846     ✓ GET "api/offenders?page=1&pageSize=1000" (70 ms)
+12:55:36.847   ✓ GET api/offenders?page=1&pageSize=1000 (72 ms)
+12:55:36.861   → Evaluate locator('table.grid:not(.trail-grid) tbody tr')
+12:55:36.892   ✓ Evaluate locator('table.grid:not(.trail-grid) tbody tr') (32 ms)
+12:55:36.912   → Wait for event "response"
+12:55:36.914   → Click locator('section.list-panel').getByRole('button', { name: 'Next ›', exact: true })
+12:55:36.966   ✓ Click locator('section.list-panel').getByRole('button', { name: 'Next ›', exact: true }) (51 ms)
+12:55:37.023   ✓ Wait for event "response" (110 ms)
+12:55:37.031   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+12:55:37.042   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (11 ms)
+12:55:37.043   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+12:55:37.054   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (11 ms)
+12:55:37.064   → Evaluate locator('table.grid:not(.trail-grid) tbody tr')
+12:55:37.072   ✓ Evaluate locator('table.grid:not(.trail-grid) tbody tr') (8 ms)
+12:55:37.094   → Wait for event "response"
+12:55:37.096   → Click locator('section.list-panel').getByRole('button', { name: 'Next ›', exact: true })
+12:55:37.141   ✓ Click locator('section.list-panel').getByRole('button', { name: 'Next ›', exact: true }) (44 ms)
+12:55:37.202   ✓ Wait for event "response" (109 ms)
+12:55:37.209   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+12:55:37.225   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (16 ms)
+12:55:37.226   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+12:55:37.237   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (11 ms)
+12:55:37.247   → Evaluate locator('table.grid:not(.trail-grid) tbody tr')
+12:55:37.257   ✓ Evaluate locator('table.grid:not(.trail-grid) tbody tr') (10 ms)
+12:55:37.269   → Wait for event "response"
+12:55:37.270   → Click locator('section.list-panel').getByRole('button', { name: 'Next ›', exact: true })
+12:55:37.310   ✓ Click locator('section.list-panel').getByRole('button', { name: 'Next ›', exact: true }) (39 ms)
+12:55:37.370   ✓ Wait for event "response" (101 ms)
+12:55:37.375   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+12:55:37.386   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (11 ms)
+12:55:37.387   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+12:55:37.401   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (14 ms)
+12:55:37.412   → Evaluate locator('table.grid:not(.trail-grid) tbody tr')
+12:55:37.421   ✓ Evaluate locator('table.grid:not(.trail-grid) tbody tr') (9 ms)
+12:55:37.434   → Wait for event "response"
+12:55:37.435   → Click locator('section.list-panel').getByRole('button', { name: 'Next ›', exact: true })
+12:55:37.483   ✓ Click locator('section.list-panel').getByRole('button', { name: 'Next ›', exact: true }) (48 ms)
+12:55:37.541   ✓ Wait for event "response" (107 ms)
+12:55:37.547   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+12:55:37.557   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (10 ms)
+12:55:37.558   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+12:55:37.572   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (13 ms)
+12:55:37.582   → Evaluate locator('table.grid:not(.trail-grid) tbody tr')
+12:55:37.591   ✓ Evaluate locator('table.grid:not(.trail-grid) tbody tr') (9 ms)
+12:55:37.601   → Wait for event "response"
+12:55:37.603   → Click locator('section.list-panel').getByRole('button', { name: 'Next ›', exact: true })
+12:55:37.650   ✓ Click locator('section.list-panel').getByRole('button', { name: 'Next ›', exact: true }) (46 ms)
+12:55:37.709   ✓ Wait for event "response" (108 ms)
+12:55:37.717   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+12:55:37.727   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (10 ms)
+12:55:37.729   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+12:55:37.747   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (18 ms)
+12:55:37.755   → Evaluate locator('table.grid:not(.trail-grid) tbody tr')
+12:55:37.764   ✓ Evaluate locator('table.grid:not(.trail-grid) tbody tr') (9 ms)
+12:55:37.774   → Wait for event "response"
+12:55:37.776   → Click locator('section.list-panel').getByRole('button', { name: 'Next ›', exact: true })
+12:55:37.804   ✓ Click locator('section.list-panel').getByRole('button', { name: 'Next ›', exact: true }) (28 ms)
+12:55:37.866   ✓ Wait for event "response" (92 ms)
+12:55:37.873   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+12:55:37.885   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (12 ms)
+12:55:37.886   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+12:55:37.895   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (9 ms)
+12:55:37.904   → Evaluate locator('table.grid:not(.trail-grid) tbody tr')
+12:55:37.913   ✓ Evaluate locator('table.grid:not(.trail-grid) tbody tr') (10 ms)
+12:55:37.924   → [BUG-04] displayed DOB must equal the stored DOB
+12:55:37.930   ✗ Error: [BUG-04] displayed DOB must equal the stored DOB [BUG-04] displayed DOB must equal the stored DOB (3 ms)
+12:55:37.930   → After Hooks
+12:55:38.044       → Close context
+12:55:38.049       ✓ Close context (5 ms)
+12:55:38.063   ✓ After Hooks (134 ms)
+12:55:38.065 ■ ExpectedFailure in 2012 ms
+   annotation known-bug: BUG-04 — Date of birth is displayed one month too early (January shows as month "00")
+   annotation fail: BUG-04: Date of birth is displayed one month too early (January shows as month "00")
+
+--- error 1 ---
+Error: [BUG-04] displayed DOB must equal the stored DOB
+
+expect(received).toEqual(expected) // deep equality
+
+- Expected  -   1
++ Received  + 102
+
+- Array []
++ Array [
++   Object {
++     "expected": "15/06/1995",
++     "name": ", ApiTest",
++     "shown": "15/05/1995",
++   },
++   Object {
++     "expected": "09/05/1995",
++     "name": "Azulay, Dana3",
++     "shown": "09/04/1995",
++   },
++   Object {
++     "expected": "01/10/1987",
++     "name": "Cohen, David",
++     "shown": "01/09/1987",
++   },
++   Object {
++     "expected": "05/05/1990",
++     "name": "Colman, Dup",
++     "shown": "05/04/1990",
++   },
++   Object {
++     "expected": "02/12/1980",
++     "name": "Dahan, Avi",
++     "shown": "02/11/1980",
++   },
++   Object {
++     "expected": "15/06/1995",
++     "name": "Duplicate, ApiTest",
++     "shown": "15/05/1995",
++   },
++   Object {
++     "expected": "05/05/1990",
++     "name": "Enum, Test",
++     "shown": "05/04/1990",
++   },
++   Object {
++     "expected": "05/05/1990",
++     "name": "Enum, Test",
++     "shown": "05/04/1990",
++   },
++   Object {
++     "expected": "15/06/2030",
++     "name": "Future, ApiTest",
++     "shown": "15/05/2030",
++   },
++   Object {
++     "expected": "25/04/1978",
++     "name": "Gabay, Eli",
++     "shown": "25/03/1978",
++   },
++   Object {
++     "expected": "15/10/1971",
++     "name": "Malka, Itzik",
++     "shown": "15/09/1971",
++   },
++   Object {
++     "expected": "12/01/1988",
++     "name": "Mizrahi, Rachel",
++     "shown": "12/00/1988",
++   },
++   Object {
++     "expected": "18/07/1992",
++     "name": "Ohana, Maya",
++     "shown": "18/06/1992",
++   },
++   Object {
++     "expected": "04/06/1975",
++     "name": "Peretz, Michael",
++     "shown": "04/05/1975",
++   },
++   Object {
++     "expected": "05/05/1990",
++     "name": "Points, Auto",
++     "shown": "05/04/1990",
++   },
++   Object {
++     "expected": "28/07/1990",
++     "name": "QAAUTO727582962, QAAUTOFirst",
++     "shown": "28/06/1990",
++   },
++   Object {
++     "expected": "19/08/2026",
++     "name": "rr, rr",
++     "shown": "19/07/2026",
++   },
++   Object {
++     "expected": "01/05/2027",
++     "name": "Tester, Future",
++     "shown": "01/04/2027",
++   },
++   Object {
++     "expected": "01/05/2027",
++     "name": "Tester, Future",
++     "shown": "01/04/2027",
++   },
++   Object {
++     "expected": "01/01/2035",
++     "name": "Traveler, Future",
++     "shown": "01/00/2035",
++   },
++ ]
+Error: [BUG-04] displayed DOB must equal the stored DOB
+
+expect(received).toEqual(expected) // deep equality
+
+- Expected  -   1
++ Received  + 102
+
+- Array []
++ Array [
++   Object {
++     "expected": "15/06/1995",
++     "name": ", ApiTest",
++     "shown": "15/05/1995",
++   },
++   Object {
++     "expected": "09/05/1995",
++     "name": "Azulay, Dana3",
++     "shown": "09/04/1995",
++   },
++   Object {
++     "expected": "01/10/1987",
++     "name": "Cohen, David",
++     "shown": "01/09/1987",
++   },
++   Object {
++     "expected": "05/05/1990",
++     "name": "Colman, Dup",
++     "shown": "05/04/1990",
++   },
++   Object {
++     "expected": "02/12/1980",
++     "name": "Dahan, Avi",
++     "shown": "02/11/1980",
++   },
++   Object {
++     "expected": "15/06/1995",
++     "name": "Duplicate, ApiTest",
++     "shown": "15/05/1995",
++   },
++   Object {
++     "expected": "05/05/1990",
++     "name": "Enum, Test",
++     "shown": "05/04/1990",
++   },
++   Object {
++     "expected": "05/05/1990",
++     "name": "Enum, Test",
++     "shown": "05/04/1990",
++   },
++   Object {
++     "expected": "15/06/2030",
++     "name": "Future, ApiTest",
++     "shown": "15/05/2030",
++   },
++   Object {
++     "expected": "25/04/1978",
++     "name": "Gabay, Eli",
++     "shown": "25/03/1978",
++   },
++   Object {
++     "expected": "15/10/1971",
++     "name": "Malka, Itzik",
++     "shown": "15/09/1971",
++   },
++   Object {
++     "expected": "12/01/1988",
++     "name": "Mizrahi, Rachel",
++     "shown": "12/00/1988",
++   },
++   Object {
++     "expected": "18/07/1992",
++     "name": "Ohana, Maya",
++     "shown": "18/06/1992",
++   },
++   Object {
++     "expected": "04/06/1975",
++     "name": "Peretz, Michael",
++     "shown": "04/05/1975",
++   },
++   Object {
++     "expected": "05/05/1990",
++     "name": "Points, Auto",
++     "shown": "05/04/1990",
++   },
++   Object {
++     "expected": "28/07/1990",
++     "name": "QAAUTO727582962, QAAUTOFirst",
++     "shown": "28/06/1990",
++   },
++   Object {
++     "expected": "19/08/2026",
++     "name": "rr, rr",
++     "shown": "19/07/2026",
++   },
++   Object {
++     "expected": "01/05/2027",
++     "name": "Tester, Future",
++     "shown": "01/04/2027",
++   },
++   Object {
++     "expected": "01/05/2027",
++     "name": "Tester, Future",
++     "shown": "01/04/2027",
++   },
++   Object {
++     "expected": "01/01/2035",
++     "name": "Traveler, Future",
++     "shown": "01/00/2035",
++   },
++ ]
+    at C:\Users\Neil\Desktop\SuperCom\tests\ui\01-roster.ui.spec.ts:102:89

@@ -1,0 +1,41 @@
+12:28:27.926 ▶ TC-35 map shows one marker per trail point and a trail line
+   tests/ui/02-trail-map.ui.spec.ts · project ui
+12:28:27.931   → Before Hooks
+12:28:27.931     → beforeAll hook
+12:28:27.953       → Create request context
+12:28:27.954       ✓ Create request context (1 ms)
+12:28:27.959       → GET api/offenders/1/trail
+12:28:27.963         → GET "api/offenders/1/trail"
+12:28:28.034         ✓ GET "api/offenders/1/trail" (73 ms)
+12:28:28.035       ✓ GET api/offenders/1/trail (76 ms)
+12:28:28.086     ✗ Error: ENOSPC: no space left on device, write beforeAll hook (155 ms)
+12:28:28.086   ✗ Error: ENOSPC: no space left on device, write Before Hooks (157 ms)
+12:28:28.086   → After Hooks
+12:28:28.087     → afterAll hook
+12:28:28.124     ✗ Error: apiRequestContext._wrapApiCall: ENOSPC: no space left on device, open 'C:\Users\Neil\Desktop\SuperCom\reports\artifacts\.playwright-artifacts-2\6ce53797a13a62827c5bff06d04fceb6.zip' afterAll hook (37 ms)
+12:28:28.124   ✗ Error: apiRequestContext._wrapApiCall: ENOSPC: no space left on device, open 'C:\Users\Neil\Desktop\SuperCom\reports\artifacts\.playwright-artifacts-2\6ce53797a13a62827c5bff06d04fceb6.zip' After Hooks (38 ms)
+12:28:28.124   → Worker Cleanup
+12:28:28.408   ✓ Worker Cleanup (283 ms)
+12:28:28.508 ■ Failed in 0 ms
+
+--- error 1 ---
+Error: apiRequestContext._wrapApiCall: ENOSPC: no space left on device, write
+Error: apiRequestContext._wrapApiCall: ENOSPC: no space left on device, write
+    at C:\Users\Neil\Desktop\SuperCom\tests\ui\02-trail-map.ui.spec.ts:36:19
+
+--- error 2 ---
+Error: ENOSPC: no space left on device, write
+Error: ENOSPC: no space left on device, write
+
+--- error 3 ---
+TypeError: Cannot read properties of undefined (reading 'pageErrors')
+TypeError: Cannot read properties of undefined (reading 'pageErrors')
+    at C:\Users\Neil\Desktop\SuperCom\tests\ui\02-trail-map.ui.spec.ts:46:19
+
+--- error 4 ---
+Error: apiRequestContext._wrapApiCall: ENOSPC: no space left on device, open 'C:\Users\Neil\Desktop\SuperCom\reports\artifacts\.playwright-artifacts-2\6ce53797a13a62827c5bff06d04fceb6.zip'
+Error: apiRequestContext._wrapApiCall: ENOSPC: no space left on device, open 'C:\Users\Neil\Desktop\SuperCom\reports\artifacts\.playwright-artifacts-2\6ce53797a13a62827c5bff06d04fceb6.zip'
+
+--- error 5 ---
+Error: End of central directory record signature not found. Either not a zip file, or file is truncated.
+Error: End of central directory record signature not found. Either not a zip file, or file is truncated.

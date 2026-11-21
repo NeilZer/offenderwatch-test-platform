@@ -1,0 +1,25 @@
+11:51:04.817 ▶ TC-28 DELETE returns 204, repeated DELETE returns 404
+   tests/api/04-offenders-update-delete.api.spec.ts · project api
+11:51:04.818   → Before Hooks
+11:51:04.820       → Create request context
+11:51:04.820       ✓ Create request context (0 ms)
+11:51:04.822   ✓ Before Hooks (7 ms)
+11:51:04.823   → POST api/offenders
+11:51:04.823     → POST "api/offenders"
+11:51:04.944     ✓ POST "api/offenders" (121 ms)
+11:51:04.945   ✓ POST api/offenders (122 ms)
+11:51:04.953   → DELETE api/offenders/789
+11:51:04.954     → DELETE "api/offenders/789"
+11:51:05.034     ✓ DELETE "api/offenders/789" (80 ms)
+11:51:05.035   ✓ DELETE api/offenders/789 (82 ms)
+11:51:05.035   → DELETE api/offenders/789
+11:51:05.036     → DELETE "api/offenders/789"
+11:51:05.099     ✓ DELETE "api/offenders/789" (62 ms)
+11:51:05.100   ✓ DELETE api/offenders/789 (65 ms)
+11:51:05.110   → DELETE https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/789 -> 204 <empty body>
+11:51:05.110   ✓ DELETE https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/789 -> 204 <empty body> (0 ms)
+11:51:05.111   → DELETE https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/789 -> 404 {"error":"Offender not found."}
+11:51:05.111   ✓ DELETE https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/789 -> 404 {"error":"Offender not found."} (0 ms)
+11:51:05.111   → After Hooks
+11:51:05.119   ✓ After Hooks (8 ms)
+11:51:05.119 ■ Passed in 293 ms

@@ -1,0 +1,40 @@
+13:49:18.014 ▶ TC-24 PUT rejects date of birth in the future
+   tests/api/04-offenders-update-delete.api.spec.ts · project api
+13:49:18.014   → Before Hooks
+13:49:18.018       → Create request context
+13:49:18.025       ✓ Create request context (7 ms)
+13:49:18.029   ✓ Before Hooks (16 ms)
+13:49:18.029   → POST api/offenders
+13:49:18.029     → POST "api/offenders"
+13:49:18.111     ✓ POST "api/offenders" (81 ms)
+13:49:18.112   ✓ POST api/offenders (83 ms)
+13:49:18.119   → PUT api/offenders/1098
+13:49:18.120     → PUT "api/offenders/1098"
+13:49:18.203     ✓ PUT "api/offenders/1098" (84 ms)
+13:49:18.204   ✓ PUT api/offenders/1098 (86 ms)
+13:49:18.205   → [BUG-13] PUT with date of birth in the future must be rejected: PUT https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1098 -> 200 {"id":1098,"firstName":"Tamar","lastName":"Elbaz","nationalId":"990286250","dateOfBirth":"2027-11-21","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T13:49:18.3467239Z"}
+13:49:18.206   ✗ Error: [BUG-13] PUT with date of birth in the future must be rejected: PUT https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1098 -> 200 {"id":1098,"firstName":"Tamar","lastName":"Elbaz","nationalId":"990286250","dateOfBirth":"2027-11-21","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T13:49:18.3467239Z"} [BUG-13] PUT with date of birth in the future must be rejected: PUT https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1098 -> 200 {"id":1098,"firstName":"Tamar","lastName":"Elbaz","nationalId":"990286250","dateOfBirth":"2027-11-21","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T13:49:18.3467239Z"} (1 ms)
+13:49:18.206   → After Hooks
+13:49:18.206       → DELETE api/offenders/1098
+13:49:18.207         → DELETE "api/offenders/1098"
+13:49:18.287         ✓ DELETE "api/offenders/1098" (81 ms)
+13:49:18.288       ✓ DELETE api/offenders/1098 (83 ms)
+13:49:18.303   ✓ After Hooks (98 ms)
+13:49:18.304 ■ ExpectedFailure in 277 ms
+   annotation known-bug: BUG-13 — PUT /api/offenders/{id} performs no validation at all
+   annotation fail: BUG-13: PUT /api/offenders/{id} performs no validation at all
+
+--- error 1 ---
+Error: [BUG-13] PUT with date of birth in the future must be rejected: PUT https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1098 -> 200 {"id":1098,"firstName":"Tamar","lastName":"Elbaz","nationalId":"990286250","dateOfBirth":"2027-11-21","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T13:49:18.3467239Z"}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 200
+Error: [BUG-13] PUT with date of birth in the future must be rejected: PUT https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1098 -> 200 {"id":1098,"firstName":"Tamar","lastName":"Elbaz","nationalId":"990286250","dateOfBirth":"2027-11-21","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T13:49:18.3467239Z"}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 200
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\04-offenders-update-delete.api.spec.ts:45:117

@@ -1,0 +1,78 @@
+11:54:49.936 ▶ TC-37 an out-of-range signal value does not crash the console
+   tests/ui/02-trail-map.ui.spec.ts · project ui
+11:54:49.955   → Before Hooks
+11:54:49.964       → Launch browser
+11:54:50.080       ✓ Launch browser (116 ms)
+11:54:50.084       → Create context
+11:54:50.095       ✓ Create context (11 ms)
+11:54:50.112       → Create page
+11:54:50.234       ✓ Create page (122 ms)
+11:54:50.239       → Create request context
+11:54:50.241       ✓ Create request context (3 ms)
+11:54:50.245   ✓ Before Hooks (291 ms)
+11:54:50.249   → POST api/offenders
+11:54:50.254     → POST "api/offenders"
+11:54:50.533     ✓ POST "api/offenders" (279 ms)
+11:54:50.538   ✓ POST api/offenders (289 ms)
+11:54:50.612   → POST api/offenders/886/locations
+11:54:50.613     → POST "api/offenders/886/locations"
+11:54:50.695     ✓ POST "api/offenders/886/locations" (82 ms)
+11:54:50.696   ✓ POST api/offenders/886/locations (84 ms)
+11:54:50.697   → GET api/offenders/886/trail
+11:54:50.697     → GET "api/offenders/886/trail"
+11:54:50.762     ✓ GET "api/offenders/886/trail" (65 ms)
+11:54:50.763   ✓ GET api/offenders/886/trail (66 ms)
+11:54:50.804   → Wait for event "response"
+11:54:50.805   → Wait for event "response"
+11:54:50.806   → Navigate to "./"
+11:54:51.340   ✓ Navigate to "./" (534 ms)
+11:54:51.411   ✓ Wait for event "response" (607 ms)
+11:54:51.413   ✓ Wait for event "response" (608 ms)
+11:54:51.427   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+11:54:51.459   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (32 ms)
+11:54:51.460   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+11:54:51.469   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (9 ms)
+11:54:51.480   → Wait for event "response"
+11:54:51.481   → Fill "990824915" locator('section.list-panel').locator('input.search')
+11:54:51.511   ✓ Fill "990824915" locator('section.list-panel').locator('input.search') (30 ms)
+11:54:51.571   ✓ Wait for event "response" (91 ms)
+11:54:51.576   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+11:54:51.585   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (9 ms)
+11:54:51.586   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+11:54:51.596   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (10 ms)
+11:54:51.598   → Wait for event "response"
+11:54:51.600   → Click locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Segal, Daniel' })
+11:54:51.654   ✓ Click locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Segal, Daniel' }) (54 ms)
+11:54:51.695   ✓ Wait for event "response" (97 ms)
+11:54:51.697   → trail should render (or the app should visibly crash)
+11:54:51.724     → trail should render (or the app should visibly crash)
+11:54:51.725     ✓ trail should render (or the app should visibly crash) (1 ms)
+11:54:51.725   ✓ trail should render (or the app should visibly crash) (28 ms)
+11:54:51.737   → [BUG-15] console must not go blank
+11:54:51.740   ✗ Error: [BUG-15] console must not go blank [BUG-15] console must not go blank (2 ms)
+11:54:51.741   → After Hooks
+11:54:51.825       → DELETE api/offenders/886
+11:54:51.826         → DELETE "api/offenders/886"
+11:54:51.909         ✓ DELETE "api/offenders/886" (83 ms)
+11:54:51.911       ✓ DELETE api/offenders/886 (86 ms)
+11:54:52.038       → Close context
+11:54:52.043       ✓ Close context (5 ms)
+11:54:52.054   ✓ After Hooks (313 ms)
+11:54:52.055 ■ ExpectedFailure in 1955 ms
+   annotation known-bug: BUG-15 — A trail point with signal outside 1–5 crashes the whole console to a blank page
+   annotation fail: BUG-15: A trail point with signal outside 1–5 crashes the whole console to a blank page
+
+--- error 1 ---
+Error: [BUG-15] console must not go blank
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: false
+Received: true
+Error: [BUG-15] console must not go blank
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: false
+Received: true
+    at C:\Users\Neil\Desktop\SuperCom\tests\ui\02-trail-map.ui.spec.ts:162:92

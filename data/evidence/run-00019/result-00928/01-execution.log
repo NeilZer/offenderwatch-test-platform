@@ -1,0 +1,124 @@
+12:28:15.003 ▶ TC-02 pager reaches every offender and shows ceil(total/5) pages
+   tests/ui/01-roster.ui.spec.ts · project ui
+12:28:15.055   → Before Hooks
+12:28:15.057     → beforeEach hook
+12:28:15.099         → Launch browser
+12:28:15.278         ✓ Launch browser (179 ms)
+12:28:15.288         → Create context
+12:28:15.305         ✓ Create context (17 ms)
+12:28:15.340         → Create page
+12:28:15.555         ✓ Create page (215 ms)
+12:28:15.569       → Wait for event "response"
+12:28:15.573       → Wait for event "response"
+12:28:15.576       → Navigate to "./"
+12:28:16.209       ✓ Navigate to "./" (632 ms)
+12:28:16.288       ✓ Wait for event "response" (719 ms)
+12:28:16.290       ✓ Wait for event "response" (717 ms)
+12:28:16.319       → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+12:28:16.392       ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (73 ms)
+12:28:16.397       → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+12:28:16.418       ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (21 ms)
+12:28:16.418     ✓ beforeEach hook (1361 ms)
+12:28:16.421       → Create request context
+12:28:16.423       ✓ Create request context (2 ms)
+12:28:16.432   ✓ Before Hooks (1377 ms)
+12:28:16.436   → GET api/offenders?page=1&pageSize=1000
+12:28:16.443     → GET "api/offenders?page=1&pageSize=1000"
+12:28:16.750     ✓ GET "api/offenders?page=1&pageSize=1000" (307 ms)
+12:28:16.756   ✓ GET api/offenders?page=1&pageSize=1000 (320 ms)
+12:28:16.804   → Evaluate locator('table.grid:not(.trail-grid) tbody tr')
+12:28:16.848   ✓ Evaluate locator('table.grid:not(.trail-grid) tbody tr') (42 ms)
+12:28:16.872   → Wait for event "response"
+12:28:16.875   → Click locator('section.list-panel').getByRole('button', { name: 'Next ›', exact: true })
+12:28:16.948   ✓ Click locator('section.list-panel').getByRole('button', { name: 'Next ›', exact: true }) (73 ms)
+12:28:17.004   ✓ Wait for event "response" (132 ms)
+12:28:17.022   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+12:28:17.053   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (31 ms)
+12:28:17.055   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+12:28:17.073   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (18 ms)
+12:28:17.093   → Evaluate locator('table.grid:not(.trail-grid) tbody tr')
+12:28:17.120   ✓ Evaluate locator('table.grid:not(.trail-grid) tbody tr') (27 ms)
+12:28:17.142   → Wait for event "response"
+12:28:17.146   → Click locator('section.list-panel').getByRole('button', { name: 'Next ›', exact: true })
+12:28:17.231   ✓ Click locator('section.list-panel').getByRole('button', { name: 'Next ›', exact: true }) (87 ms)
+12:28:17.277   ✓ Wait for event "response" (136 ms)
+12:28:17.302   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+12:28:17.325   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (24 ms)
+12:28:17.327   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+12:28:17.348   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (20 ms)
+12:28:17.361   → Evaluate locator('table.grid:not(.trail-grid) tbody tr')
+12:28:17.391   ✓ Evaluate locator('table.grid:not(.trail-grid) tbody tr') (29 ms)
+12:28:17.421   → Wait for event "response"
+12:28:17.424   → Click locator('section.list-panel').getByRole('button', { name: 'Next ›', exact: true })
+12:28:17.603   ✓ Click locator('section.list-panel').getByRole('button', { name: 'Next ›', exact: true }) (180 ms)
+12:28:17.658   ✓ Wait for event "response" (237 ms)
+12:28:17.673   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+12:28:17.692   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (20 ms)
+12:28:17.694   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+12:28:17.708   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (14 ms)
+12:28:17.725   → Evaluate locator('table.grid:not(.trail-grid) tbody tr')
+12:28:17.749   ✓ Evaluate locator('table.grid:not(.trail-grid) tbody tr') (24 ms)
+12:28:17.771   → Wait for event "response"
+12:28:17.774   → Click locator('section.list-panel').getByRole('button', { name: 'Next ›', exact: true })
+12:28:17.907   ✓ Click locator('section.list-panel').getByRole('button', { name: 'Next ›', exact: true }) (133 ms)
+12:28:17.950   ✓ Wait for event "response" (177 ms)
+12:28:17.961   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+12:28:17.986   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (25 ms)
+12:28:17.988   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+12:28:18.005   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (17 ms)
+12:28:18.023   → Evaluate locator('table.grid:not(.trail-grid) tbody tr')
+12:28:18.040   ✓ Evaluate locator('table.grid:not(.trail-grid) tbody tr') (17 ms)
+12:28:18.060   → Wait for event "response"
+12:28:18.065   → Click locator('section.list-panel').getByRole('button', { name: 'Next ›', exact: true })
+12:28:18.138   ✓ Click locator('section.list-panel').getByRole('button', { name: 'Next ›', exact: true }) (74 ms)
+12:28:18.190   ✓ Wait for event "response" (130 ms)
+12:28:18.200   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+12:28:18.221   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (21 ms)
+12:28:18.222   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+12:28:18.239   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (17 ms)
+12:28:18.258   → Evaluate locator('table.grid:not(.trail-grid) tbody tr')
+12:28:18.282   ✓ Evaluate locator('table.grid:not(.trail-grid) tbody tr') (24 ms)
+12:28:18.304   → Wait for event "response"
+12:28:18.307   → Click locator('section.list-panel').getByRole('button', { name: 'Next ›', exact: true })
+12:28:18.405   ✓ Click locator('section.list-panel').getByRole('button', { name: 'Next ›', exact: true }) (98 ms)
+12:28:18.472   ✓ Wait for event "response" (168 ms)
+12:28:18.496   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+12:28:18.517   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (23 ms)
+12:28:18.519   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+12:28:18.542   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (23 ms)
+12:28:18.569   → Evaluate locator('table.grid:not(.trail-grid) tbody tr')
+12:28:18.586   ✓ Evaluate locator('table.grid:not(.trail-grid) tbody tr') (17 ms)
+12:28:18.614   → no offender shown twice
+12:28:18.626   ✗ Error: no offender shown twice no offender shown twice (12 ms)
+12:28:18.626   → After Hooks
+12:28:18.824       → Close context
+12:28:18.836       ✓ Close context (12 ms)
+12:28:18.856   ✓ After Hooks (230 ms)
+12:28:18.858 ■ ExpectedFailure in 3546 ms
+   annotation known-bug: BUG-01 — Pager hides the last (partial) page: totalPages is floor(total/pageSize) instead of ceiling
+   annotation fail: BUG-01: Pager hides the last (partial) page: totalPages is floor(total/pageSize) instead of ceiling
+
+--- error 1 ---
+Error: no offender shown twice
+
+expect(received).toEqual(expected) // deep equality
+
+- Expected  - 1
++ Received  + 3
+
+- Array []
++ Array [
++   "string, string|string",
++ ]
+Error: no offender shown twice
+
+expect(received).toEqual(expected) // deep equality
+
+- Expected  - 1
++ Received  + 3
+
+- Array []
++ Array [
++   "string, string|string",
++ ]
+    at C:\Users\Neil\Desktop\SuperCom\tests\ui\01-roster.ui.spec.ts:55:66

@@ -1,0 +1,42 @@
+13:50:37.860 ▶ TC-04 following totalPages reaches every offender exactly once
+   tests/api/01-offenders-paging.api.spec.ts · project api
+13:50:37.860   → Before Hooks
+13:50:37.870       → Create request context
+13:50:37.870       ✓ Create request context (2 ms)
+13:50:37.872   ✓ Before Hooks (15 ms)
+13:50:37.873   → GET api/offenders?page=1&pageSize=1000
+13:50:37.873     → GET "api/offenders?page=1&pageSize=1000"
+13:50:37.939     ✓ GET "api/offenders?page=1&pageSize=1000" (65 ms)
+13:50:37.940   ✓ GET api/offenders?page=1&pageSize=1000 (68 ms)
+13:50:37.940   → GET api/offenders?page=1&pageSize=5
+13:50:37.941     → GET "api/offenders?page=1&pageSize=5"
+13:50:38.004     ✓ GET "api/offenders?page=1&pageSize=5" (63 ms)
+13:50:38.006   ✓ GET api/offenders?page=1&pageSize=5 (65 ms)
+13:50:38.006   → GET api/offenders?page=2&pageSize=5
+13:50:38.007     → GET "api/offenders?page=2&pageSize=5"
+13:50:38.072     ✓ GET "api/offenders?page=2&pageSize=5" (66 ms)
+13:50:38.074   ✓ GET api/offenders?page=2&pageSize=5 (67 ms)
+13:50:38.075   → no offender may appear on two pages
+13:50:38.075   ✓ no offender may appear on two pages (0 ms)
+13:50:38.076   → [BUG-01] pages 1..2 must contain all 11 offenders
+13:50:38.080   ✗ Error: [BUG-01] pages 1..2 must contain all 11 offenders [BUG-01] pages 1..2 must contain all 11 offenders (1 ms)
+13:50:38.080   → After Hooks
+13:50:38.096   ✓ After Hooks (18 ms)
+13:50:38.098 ■ ExpectedFailure in 218 ms
+   annotation known-bug: BUG-01 — Pager hides the last (partial) page: totalPages is floor(total/pageSize) instead of ceiling
+   annotation fail: BUG-01: Pager hides the last (partial) page: totalPages is floor(total/pageSize) instead of ceiling
+
+--- error 1 ---
+Error: [BUG-01] pages 1..2 must contain all 11 offenders
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 11
+Received: 10
+Error: [BUG-01] pages 1..2 must contain all 11 offenders
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 11
+Received: 10
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\01-offenders-paging.api.spec.ts:73:120

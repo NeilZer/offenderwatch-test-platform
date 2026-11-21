@@ -1,0 +1,49 @@
+11:41:21.540 ▶ TC-06 out-of-range and invalid paging parameters are handled gracefully
+   tests/api/01-offenders-paging.api.spec.ts · project api
+11:41:21.544   → Before Hooks
+11:41:21.551       → Create request context
+11:41:21.551       ✓ Create request context (1 ms)
+11:41:21.557   ✓ Before Hooks (11 ms)
+11:41:21.557   → GET api/offenders?page=999&pageSize=5
+11:41:21.557     → GET "api/offenders?page=999&pageSize=5"
+11:41:21.621     ✓ GET "api/offenders?page=999&pageSize=5" (65 ms)
+11:41:21.622   ✓ GET api/offenders?page=999&pageSize=5 (67 ms)
+11:41:21.623   → Expect "toBe"
+11:41:21.623   ✓ Expect "toBe" (0 ms)
+11:41:21.624   → Expect "toEqual"
+11:41:21.624   ✓ Expect "toEqual" (0 ms)
+11:41:21.625   → Expect "toBeGreaterThan"
+11:41:21.625   ✓ Expect "toBeGreaterThan" (0 ms)
+11:41:21.626   → GET api/offenders?page=0&pageSize=5
+11:41:21.627     → GET "api/offenders?page=0&pageSize=5"
+11:41:21.691     ✓ GET "api/offenders?page=0&pageSize=5" (64 ms)
+11:41:21.692   ✓ GET api/offenders?page=0&pageSize=5 (66 ms)
+11:41:21.693   → {"page":0,"pageSize":5} -> GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?page=0&pageSize=5 -> 200 {"items":[{"id":10,"firstName":"Noa","lastName":"Amar","nationalId":"205432198","dateOfBirth":"1998-02-06","riskLevel":"Medium","status":"Active","createdAt":"2026-06-10T17:15:00.000Z"},{"id":6,"first…
+11:41:21.693   ✓ {"page":0,"pageSize":5} -> GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?page=0&pageSize=5 -> 200 {"items":[{"id":10,"firstName":"Noa","lastName":"Amar","nationalId":"205432198","dateOfBirth":"1998-02-06","riskLevel":"Medium","status":"Active","createdAt":"2026-06-10T17:15:00.000Z"},{"id":6,"first… (1 ms)
+11:41:21.693   → clamped page must be >= 1
+11:41:21.694   ✓ clamped page must be >= 1 (1 ms)
+11:41:21.694   → clamped pageSize must be >= 1
+11:41:21.694   ✓ clamped pageSize must be >= 1 (0 ms)
+11:41:21.695   → GET api/offenders?page=-1&pageSize=-5
+11:41:21.696     → GET "api/offenders?page=-1&pageSize=-5"
+11:41:21.760     ✓ GET "api/offenders?page=-1&pageSize=-5" (65 ms)
+11:41:21.761   ✓ GET api/offenders?page=-1&pageSize=-5 (66 ms)
+11:41:21.761   → {"page":-1,"pageSize":-5} -> GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?page=-1&pageSize=-5 -> 200 {"items":[{"id":10,"firstName":"Noa","lastName":"Amar","nationalId":"205432198","dateOfBirth":"1998-02-06","riskLevel":"Medium","status":"Active","createdAt":"2026-06-10T17:15:00.000Z"},{"id":6,"first…
+11:41:21.762   ✓ {"page":-1,"pageSize":-5} -> GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?page=-1&pageSize=-5 -> 200 {"items":[{"id":10,"firstName":"Noa","lastName":"Amar","nationalId":"205432198","dateOfBirth":"1998-02-06","riskLevel":"Medium","status":"Active","createdAt":"2026-06-10T17:15:00.000Z"},{"id":6,"first… (0 ms)
+11:41:21.762   → clamped page must be >= 1
+11:41:21.762   ✓ clamped page must be >= 1 (0 ms)
+11:41:21.763   → clamped pageSize must be >= 1
+11:41:21.763   ✓ clamped pageSize must be >= 1 (1 ms)
+11:41:21.763   → GET api/offenders?page=1&pageSize=0
+11:41:21.763     → GET "api/offenders?page=1&pageSize=0"
+11:41:21.827     ✓ GET "api/offenders?page=1&pageSize=0" (64 ms)
+11:41:21.828   ✓ GET api/offenders?page=1&pageSize=0 (65 ms)
+11:41:21.829   → {"page":1,"pageSize":0} -> GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?page=1&pageSize=0 -> 200 {"items":[{"id":10,"firstName":"Noa","lastName":"Amar","nationalId":"205432198","dateOfBirth":"1998-02-06","riskLevel":"Medium","status":"Active","createdAt":"2026-06-10T17:15:00.000Z"},{"id":6,"first…
+11:41:21.829   ✓ {"page":1,"pageSize":0} -> GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?page=1&pageSize=0 -> 200 {"items":[{"id":10,"firstName":"Noa","lastName":"Amar","nationalId":"205432198","dateOfBirth":"1998-02-06","riskLevel":"Medium","status":"Active","createdAt":"2026-06-10T17:15:00.000Z"},{"id":6,"first… (0 ms)
+11:41:21.829   → clamped page must be >= 1
+11:41:21.829   ✓ clamped page must be >= 1 (0 ms)
+11:41:21.830   → clamped pageSize must be >= 1
+11:41:21.830   ✓ clamped pageSize must be >= 1 (0 ms)
+11:41:21.830   → After Hooks
+11:41:21.839   ✓ After Hooks (9 ms)
+11:41:21.839 ■ Passed in 283 ms

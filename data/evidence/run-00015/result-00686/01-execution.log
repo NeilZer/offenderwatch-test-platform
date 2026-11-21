@@ -1,0 +1,29 @@
+11:54:22.664 ▶ TC-23 PUT with a full valid payload persists every field
+   tests/api/04-offenders-update-delete.api.spec.ts · project api
+11:54:22.665   → Before Hooks
+11:54:22.670       → Create request context
+11:54:22.671       ✓ Create request context (0 ms)
+11:54:22.673   ✓ Before Hooks (8 ms)
+11:54:22.674   → POST api/offenders
+11:54:22.675     → POST "api/offenders"
+11:54:22.764     ✓ POST "api/offenders" (89 ms)
+11:54:22.764   ✓ POST api/offenders (91 ms)
+11:54:22.772   → PUT api/offenders/862
+11:54:22.772     → PUT "api/offenders/862"
+11:54:22.856     ✓ PUT "api/offenders/862" (83 ms)
+11:54:22.858   ✓ PUT api/offenders/862 (86 ms)
+11:54:22.859   → PUT https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/862 -> 200 {"id":862,"firstName":"Ron","lastName":"Friedman","nationalId":"991464870","dateOfBirth":"1979-12-31","riskLevel":"High","status":"Inactive","createdAt":"2026-11-21T11:54:22.8998089Z"}
+11:54:22.859   ✓ PUT https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/862 -> 200 {"id":862,"firstName":"Ron","lastName":"Friedman","nationalId":"991464870","dateOfBirth":"1979-12-31","riskLevel":"High","status":"Inactive","createdAt":"2026-11-21T11:54:22.8998089Z"} (0 ms)
+11:54:22.859   → GET api/offenders/862
+11:54:22.860     → GET "api/offenders/862"
+11:54:22.925     ✓ GET "api/offenders/862" (65 ms)
+11:54:22.927   ✓ GET api/offenders/862 (68 ms)
+11:54:22.928   → Expect "toMatchObject"
+11:54:22.928   ✓ Expect "toMatchObject" (0 ms)
+11:54:22.929   → After Hooks
+11:54:22.930       → DELETE api/offenders/862
+11:54:22.932         → DELETE "api/offenders/862"
+11:54:23.015         ✓ DELETE "api/offenders/862" (83 ms)
+11:54:23.016       ✓ DELETE api/offenders/862 (86 ms)
+11:54:23.041   ✓ After Hooks (113 ms)
+11:54:23.042 ■ Passed in 364 ms

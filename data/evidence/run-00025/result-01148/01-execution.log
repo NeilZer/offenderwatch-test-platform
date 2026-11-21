@@ -1,0 +1,40 @@
+13:49:18.305 ▶ TC-24 PUT rejects risk level outside Low/Medium/High
+   tests/api/04-offenders-update-delete.api.spec.ts · project api
+13:49:18.305   → Before Hooks
+13:49:18.309       → Create request context
+13:49:18.309       ✓ Create request context (0 ms)
+13:49:18.312   ✓ Before Hooks (7 ms)
+13:49:18.312   → POST api/offenders
+13:49:18.314     → POST "api/offenders"
+13:49:18.396     ✓ POST "api/offenders" (83 ms)
+13:49:18.397   ✓ POST api/offenders (84 ms)
+13:49:18.403   → PUT api/offenders/1099
+13:49:18.404     → PUT "api/offenders/1099"
+13:49:18.488     ✓ PUT "api/offenders/1099" (84 ms)
+13:49:18.489   ✓ PUT api/offenders/1099 (86 ms)
+13:49:18.490   → [BUG-13] PUT with risk level outside Low/Medium/High must be rejected: PUT https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1099 -> 200 {"id":1099,"firstName":"Shira","lastName":"Klein","nationalId":"991486744","dateOfBirth":"1985-04-17","riskLevel":"Extreme","status":"Active","createdAt":"2026-11-21T13:49:18.6299519Z"}
+13:49:18.490   ✗ Error: [BUG-13] PUT with risk level outside Low/Medium/High must be rejected: PUT https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1099 -> 200 {"id":1099,"firstName":"Shira","lastName":"Klein","nationalId":"991486744","dateOfBirth":"1985-04-17","riskLevel":"Extreme","status":"Active","createdAt":"2026-11-21T13:49:18.6299519Z"} [BUG-13] PUT with risk level outside Low/Medium/High must be rejected: PUT https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1099 -> 200 {"id":1099,"firstName":"Shira","lastName":"Klein","nationalId":"991486744","dateOfBirth":"1985-04-17","riskLevel":"Extreme","status":"Active","createdAt":"2026-11-21T13:49:18.6299519Z"} (0 ms)
+13:49:18.490   → After Hooks
+13:49:18.490       → DELETE api/offenders/1099
+13:49:18.491         → DELETE "api/offenders/1099"
+13:49:18.572         ✓ DELETE "api/offenders/1099" (81 ms)
+13:49:18.572       ✓ DELETE api/offenders/1099 (82 ms)
+13:49:18.589   ✓ After Hooks (98 ms)
+13:49:18.590 ■ ExpectedFailure in 271 ms
+   annotation known-bug: BUG-13 — PUT /api/offenders/{id} performs no validation at all
+   annotation fail: BUG-13: PUT /api/offenders/{id} performs no validation at all
+
+--- error 1 ---
+Error: [BUG-13] PUT with risk level outside Low/Medium/High must be rejected: PUT https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1099 -> 200 {"id":1099,"firstName":"Shira","lastName":"Klein","nationalId":"991486744","dateOfBirth":"1985-04-17","riskLevel":"Extreme","status":"Active","createdAt":"2026-11-21T13:49:18.6299519Z"}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 200
+Error: [BUG-13] PUT with risk level outside Low/Medium/High must be rejected: PUT https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1099 -> 200 {"id":1099,"firstName":"Shira","lastName":"Klein","nationalId":"991486744","dateOfBirth":"1985-04-17","riskLevel":"Extreme","status":"Active","createdAt":"2026-11-21T13:49:18.6299519Z"}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 200
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\04-offenders-update-delete.api.spec.ts:45:117

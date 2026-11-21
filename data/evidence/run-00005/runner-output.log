@@ -1,0 +1,3 @@
+Error: No tests found
+
+[platform] begin failed: Platform rejected POST http://localhost:5080/api/ingest/runs/5/begin: 400 {"type":"https://tools.ietf.org/html/rfc9110#section-15.5.1","title":"Invalid request","status":400,"detail":"A run needs at least one scenario"}

@@ -1,0 +1,42 @@
+12:27:45.269 ▶ TC-26 deleted offender returns 404 on GET
+   tests/api/04-offenders-update-delete.api.spec.ts · project api
+12:27:45.284   → Before Hooks
+12:27:45.299       → Create request context
+12:27:45.300       ✓ Create request context (1 ms)
+12:27:45.304   ✓ Before Hooks (20 ms)
+12:27:45.305   → POST api/offenders
+12:27:45.306     → POST "api/offenders"
+12:27:45.436     ✓ POST "api/offenders" (130 ms)
+12:27:45.438   ✓ POST api/offenders (133 ms)
+12:27:45.455   → DELETE api/offenders/1447
+12:27:45.457     → DELETE "api/offenders/1447"
+12:27:45.640     ✓ DELETE "api/offenders/1447" (183 ms)
+12:27:45.642   ✓ DELETE api/offenders/1447 (187 ms)
+12:27:45.642   → Expect "toBe"
+12:27:45.642   ✓ Expect "toBe" (1 ms)
+12:27:45.656   → GET api/offenders/1447
+12:27:45.658     → GET "api/offenders/1447"
+12:27:45.723     ✓ GET "api/offenders/1447" (65 ms)
+12:27:45.724   ✓ GET api/offenders/1447 (68 ms)
+12:27:45.725   → [BUG-08] GET deleted offender must be 404: GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/offenders/1447 -> 200 <empty body>
+12:27:45.727   ✗ Error: [BUG-08] GET deleted offender must be 404: GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/offenders/1447 -> 200 <empty body> [BUG-08] GET deleted offender must be 404: GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/offenders/1447 -> 200 <empty body> (0 ms)
+12:27:45.727   → After Hooks
+12:27:45.750   ✓ After Hooks (23 ms)
+12:27:45.751 ■ ExpectedFailure in 438 ms
+   annotation known-bug: BUG-08 — Unknown offender id returns 200 (empty body / empty trail) instead of 404
+   annotation fail: BUG-08: Unknown offender id returns 200 (empty body / empty trail) instead of 404
+
+--- error 1 ---
+Error: [BUG-08] GET deleted offender must be 404: GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/offenders/1447 -> 200 <empty body>
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 404
+Received: 200
+Error: [BUG-08] GET deleted offender must be 404: GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/offenders/1447 -> 200 <empty body>
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 404
+Received: 200
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\04-offenders-update-delete.api.spec.ts:94:114

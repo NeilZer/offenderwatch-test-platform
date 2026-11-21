@@ -1,0 +1,32 @@
+11:44:24.980 ▶ TC-50 GET unknown offender returns 404
+   tests/api/04-offenders-update-delete.api.spec.ts · project api
+11:44:24.980   → Before Hooks
+11:44:24.986       → Create request context
+11:44:24.986       ✓ Create request context (0 ms)
+11:44:24.988   ✓ Before Hooks (10 ms)
+11:44:24.989   → GET api/offenders/987654
+11:44:24.990     → GET "api/offenders/987654"
+11:44:25.053     ✓ GET "api/offenders/987654" (63 ms)
+11:44:25.054   ✓ GET api/offenders/987654 (65 ms)
+11:44:25.055   → [BUG-08] unknown offender must be 404: GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/987654 -> 200 <empty body>
+11:44:25.056   ✗ Error: [BUG-08] unknown offender must be 404: GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/987654 -> 200 <empty body> [BUG-08] unknown offender must be 404: GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/987654 -> 200 <empty body> (0 ms)
+11:44:25.056   → After Hooks
+11:44:25.067   ✓ After Hooks (12 ms)
+11:44:25.068 ■ ExpectedFailure in 74 ms
+   annotation known-bug: BUG-08 — Unknown offender id returns 200 (empty body / empty trail) instead of 404
+   annotation fail: BUG-08: Unknown offender id returns 200 (empty body / empty trail) instead of 404
+
+--- error 1 ---
+Error: [BUG-08] unknown offender must be 404: GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/987654 -> 200 <empty body>
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 404
+Received: 200
+Error: [BUG-08] unknown offender must be 404: GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/987654 -> 200 <empty body>
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 404
+Received: 200
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\04-offenders-update-delete.api.spec.ts:126:110

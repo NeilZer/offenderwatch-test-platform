@@ -1,0 +1,64 @@
+11:51:16.127 ▶ TC-02 pager reaches every offender and shows ceil(total/5) pages
+   tests/ui/01-roster.ui.spec.ts · project ui
+11:51:16.128   → Before Hooks
+11:51:16.128     → beforeEach hook
+11:51:16.135         → Create context
+11:51:16.138         ✓ Create context (3 ms)
+11:51:16.141         → Create page
+11:51:16.204         ✓ Create page (63 ms)
+11:51:16.206       → Wait for event "response"
+11:51:16.207       → Wait for event "response"
+11:51:16.208       → Navigate to "./"
+11:51:16.726       ✓ Navigate to "./" (518 ms)
+11:51:16.793       ✓ Wait for event "response" (587 ms)
+11:51:16.795       ✓ Wait for event "response" (588 ms)
+11:51:16.800       → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+11:51:16.832       ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (32 ms)
+11:51:16.833       → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+11:51:16.853       ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (20 ms)
+11:51:16.853     ✓ beforeEach hook (727 ms)
+11:51:16.854       → Create request context
+11:51:16.855       ✓ Create request context (0 ms)
+11:51:16.859   ✓ Before Hooks (733 ms)
+11:51:16.861   → GET api/offenders?page=1&pageSize=1000
+11:51:16.863     → GET "api/offenders?page=1&pageSize=1000"
+11:51:16.932     ✓ GET "api/offenders?page=1&pageSize=1000" (69 ms)
+11:51:16.933   ✓ GET api/offenders?page=1&pageSize=1000 (72 ms)
+11:51:16.952   → Evaluate locator('table.grid:not(.trail-grid) tbody tr')
+11:51:16.977   ✓ Evaluate locator('table.grid:not(.trail-grid) tbody tr') (25 ms)
+11:51:16.991   → Wait for event "response"
+11:51:16.992   → Click locator('section.list-panel').getByRole('button', { name: 'Next ›', exact: true })
+11:51:17.031   ✓ Click locator('section.list-panel').getByRole('button', { name: 'Next ›', exact: true }) (39 ms)
+11:51:17.091   ✓ Wait for event "response" (100 ms)
+11:51:17.097   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+11:51:17.106   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (9 ms)
+11:51:17.108   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+11:51:17.116   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (9 ms)
+11:51:17.124   → Evaluate locator('table.grid:not(.trail-grid) tbody tr')
+11:51:17.133   ✓ Evaluate locator('table.grid:not(.trail-grid) tbody tr') (9 ms)
+11:51:17.143   → no offender shown twice
+11:51:17.143   ✓ no offender shown twice (0 ms)
+11:51:17.143   → [BUG-01] pages must be ceil(11/5)
+11:51:17.147   ✗ Error: [BUG-01] pages must be ceil(11/5) [BUG-01] pages must be ceil(11/5) (2 ms)
+11:51:17.147   → After Hooks
+11:51:17.207       → Close context
+11:51:17.210       ✓ Close context (4 ms)
+11:51:17.228   ✓ After Hooks (81 ms)
+11:51:17.229 ■ ExpectedFailure in 1072 ms
+   annotation known-bug: BUG-01 — Pager hides the last (partial) page: totalPages is floor(total/pageSize) instead of ceiling
+   annotation fail: BUG-01: Pager hides the last (partial) page: totalPages is floor(total/pageSize) instead of ceiling
+
+--- error 1 ---
+Error: [BUG-01] pages must be ceil(11/5)
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 3
+Received: 2
+Error: [BUG-01] pages must be ceil(11/5)
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 3
+Received: 2
+    at C:\Users\Neil\Desktop\SuperCom\tests\ui\01-roster.ui.spec.ts:56:92

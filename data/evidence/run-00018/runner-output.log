@@ -1,0 +1,25 @@
+
+Running 20 tests using 1 worker
+
+  ok  1 [ui] › tests\ui\01-roster.ui.spec.ts:25:7 › UI · offender roster › TC-01 first page lists 5 offenders sorted by last name @TC-01 @FR-01 @ui (5.5s)
+  x   2 [ui] › tests\ui\01-roster.ui.spec.ts:44:7 › UI · offender roster › TC-02 pager reaches every offender and shows ceil(total/5) pages @TC-02 @FR-01 @ui (1.2s)
+  x   3 [ui] › tests\ui\01-roster.ui.spec.ts:66:7 › UI · offender roster › TC-10 lower-case search in the UI finds the offender @TC-10 @FR-02 @ui (4.0s)
+  x   4 [ui] › tests\ui\01-roster.ui.spec.ts:82:7 › UI · offender roster › TC-29 roster dates of birth are DD/MM/YYYY and match the stored value @TC-29 @FR-06 @ui (1.2s)
+  x   5 [ui] › tests\ui\01-roster.ui.spec.ts:111:7 › UI · offender roster › TC-30 detail header shows the stored date of birth @TC-30 @FR-06 @ui (1.3s)
+  ok  6 [ui] › tests\ui\02-trail-map.ui.spec.ts:55:7 › UI · trail, map & latest reading (one page, Cohen selected once) › TC-35 map shows one marker per trail point and a trail line @TC-35 @FR-07 @ui (48ms)
+  x   7 [ui] › tests\ui\02-trail-map.ui.spec.ts:66:7 › UI · trail, map & latest reading (one page, Cohen selected once) › TC-33 trail table is ordered oldest to newest @TC-33 @FR-07 @ui (227ms)
+  x   8 [ui] › tests\ui\02-trail-map.ui.spec.ts:79:7 › UI · trail, map & latest reading (one page, Cohen selected once) › TC-34 map line starts at the oldest point and ends at the newest @TC-34 @FR-07 @ui (230ms)
+  ok  9 [ui] › tests\ui\02-trail-map.ui.spec.ts:102:7 › UI · trail, map & latest reading (one page, Cohen selected once) › TC-36 clicking a map point shows its recorded data @TC-36 @FR-08 @ui (1.6s)
+  x  10 [ui] › tests\ui\02-trail-map.ui.spec.ts:122:7 › UI · trail, map & latest reading (one page, Cohen selected once) › TC-38 latest reading shows the most recent point @TC-38 @FR-09 @ui (214ms)
+  ok 11 [ui] › tests\ui\02-trail-map.ui.spec.ts:140:7 › UI · trail, map & latest reading (one page, Cohen selected once) › TC-39 last seen shows the most recent timestamp @TC-39 @FR-09 @ui (221ms)
+  x  12 [ui] › tests\ui\02-trail-map.ui.spec.ts:154:7 › UI · robustness of the trail view (own page — this test crashes the console) › TC-37 an out-of-range signal value does not crash the console @TC-37 @FR-08 @ui @negative (1.6s)
+  ok 13 [ui] › tests\ui\03-offender-crud.ui.spec.ts:15:7 › UI · create, edit, delete offender › TC-12 operator creates a valid offender @TC-12 @FR-03 @FR-11 @ui (1.7s)
+  ok 14 [ui] › tests\ui\03-offender-crud.ui.spec.ts:45:7 › UI · create, edit, delete offender › TC-19 empty create form shows an error and saves nothing @TC-19 @FR-03 @ui @negative (1.2s)
+  x  15 [ui] › tests\ui\03-offender-crud.ui.spec.ts:65:7 › UI · create, edit, delete offender › TC-21 editing the first name keeps the other fields unchanged @TC-21 @FR-04 @ui (1.5s)
+  x  16 [ui] › tests\ui\03-offender-crud.ui.spec.ts:90:7 › UI · create, edit, delete offender › TC-22 changing risk level in the form persists the shown value @TC-22 @FR-04 @ui (1.4s)
+  ok 17 [ui] › tests\ui\03-offender-crud.ui.spec.ts:113:7 › UI · create, edit, delete offender › TC-25 delete requires confirmation and removes the offender @TC-25 @FR-05 @ui (1.5s)
+  ok 18 [ui] › tests\ui\04-locations-and-stats.ui.spec.ts:14:7 › UI · add location & live counters › TC-46 top-bar counters equal the stats API @TC-46 @FR-11 @ui (858ms)
+  ok 19 [ui] › tests\ui\04-locations-and-stats.ui.spec.ts:26:7 › UI · add location & live counters › TC-40 operator adds a valid location point @TC-40 @FR-10 @FR-11 @ui (1.9s)
+  x  20 [ui] › tests\ui\04-locations-and-stats.ui.spec.ts:47:7 › UI · add location & live counters › TC-43 invalid location values are rejected with a visible error @TC-43 @FR-10 @ui @negative (1.8s)
+
+  20 passed (32.9s)

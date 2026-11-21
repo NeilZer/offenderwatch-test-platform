@@ -1,0 +1,27 @@
+11:57:11.111 ▶ TC-14 rejects missing first name
+   tests/api/03-offenders-create.api.spec.ts · project api
+11:57:11.112   → Before Hooks
+11:57:11.116       → Create request context
+11:57:11.116       ✓ Create request context (1 ms)
+11:57:11.119   ✓ Before Hooks (9 ms)
+11:57:11.120   → GET api/stats
+11:57:11.121     → GET "api/stats"
+11:57:11.185     ✓ GET "api/stats" (65 ms)
+11:57:11.187   ✓ GET api/stats (67 ms)
+11:57:11.187   → POST api/offenders
+11:57:11.189     → POST "api/offenders"
+11:57:11.254     ✓ POST "api/offenders" (64 ms)
+11:57:11.255   ✓ POST api/offenders (67 ms)
+11:57:11.256   → [FR-03] missing first name must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 400 {"error":"First name is required."}
+11:57:11.256   ✓ [FR-03] missing first name must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 400 {"error":"First name is required."} (0 ms)
+11:57:11.257   → error description must be present
+11:57:11.257   ✓ error description must be present (0 ms)
+11:57:11.257   → GET api/stats
+11:57:11.258     → GET "api/stats"
+11:57:11.322     ✓ GET "api/stats" (64 ms)
+11:57:11.324   ✓ GET api/stats (67 ms)
+11:57:11.325   → nothing may be saved
+11:57:11.325   ✓ nothing may be saved (1 ms)
+11:57:11.325   → After Hooks
+11:57:11.338   ✓ After Hooks (12 ms)
+11:57:11.339 ■ Passed in 214 ms

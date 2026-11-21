@@ -1,0 +1,52 @@
+11:43:53.767 ▶ TC-38 latest reading shows the most recent point
+   tests/ui/02-trail-map.ui.spec.ts · project ui
+11:43:53.768   → Before Hooks
+11:43:53.784   ✓ Before Hooks (12 ms)
+11:43:53.785   → Wait for selector locator('section.detail-panel').locator('.latest-card')
+11:43:53.800   ✓ Wait for selector locator('section.detail-panel').locator('.latest-card') (19 ms)
+11:43:53.817   → Evaluate locator('section.detail-panel').locator('.latest-card').locator('.latest-grid > div b')
+11:43:53.817   ✓ Evaluate locator('section.detail-panel').locator('.latest-card').locator('.latest-grid > div b') (13 ms)
+11:43:53.829   → [BUG-05] readings must come from the newest point #1 (2026-08-09T11:29:00.000Z)
+11:43:53.830   ✗ Error: [BUG-05] readings must come from the newest point #1 (2026-08-09T11:29:00.000Z) [BUG-05] readings must come from the newest point #1 (2026-08-09T11:29:00.000Z) (0 ms)
+11:43:53.830   → After Hooks
+11:43:53.983     → afterEach hook
+11:43:53.985       → Screenshot
+11:43:54.152       ✓ Screenshot (168 ms)
+11:43:54.157     ✓ afterEach hook (173 ms)
+11:43:54.198   ✓ After Hooks (369 ms)
+11:43:54.199 ■ ExpectedFailure in 378 ms
+   annotation known-bug: BUG-05 — "Latest reading" shows the speed, battery and signal of the OLDEST trail point
+   annotation fail: BUG-05: "Latest reading" shows the speed, battery and signal of the OLDEST trail point
+
+--- error 1 ---
+Error: [BUG-05] readings must come from the newest point #1 (2026-08-09T11:29:00.000Z)
+
+expect(received).toEqual(expected) // deep equality
+
+- Expected  - 3
++ Received  + 3
+
+  Object {
+-   "batteryPct": 68,
+-   "signal": 1,
+-   "speedKmh": 23,
++   "batteryPct": 87,
++   "signal": 4,
++   "speedKmh": 38.4,
+  }
+Error: [BUG-05] readings must come from the newest point #1 (2026-08-09T11:29:00.000Z)
+
+expect(received).toEqual(expected) // deep equality
+
+- Expected  - 3
++ Received  + 3
+
+  Object {
+-   "batteryPct": 68,
+-   "signal": 1,
+-   "speedKmh": 23,
++   "batteryPct": 87,
++   "signal": 4,
++   "speedKmh": 38.4,
+  }
+    at C:\Users\Neil\Desktop\SuperCom\tests\ui\02-trail-map.ui.spec.ts:137:7

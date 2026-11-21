@@ -1,0 +1,70 @@
+12:27:58.492 ▶ TC-01 first page lists 5 offenders sorted by last name
+   tests/ui/01-roster.ui.spec.ts · project ui
+12:27:58.524   → Before Hooks
+12:27:58.525     → beforeEach hook
+12:27:58.544         → Launch browser
+12:28:00.414         ✓ Launch browser (1870 ms)
+12:28:00.421         → Create context
+12:28:00.433         ✓ Create context (12 ms)
+12:28:00.450         → Create page
+12:28:00.782         ✓ Create page (332 ms)
+12:28:00.810       → Wait for event "response"
+12:28:00.815       → Wait for event "response"
+12:28:00.818       → Navigate to "./"
+12:28:09.403       ✓ Navigate to "./" (8586 ms)
+12:28:09.507       ✓ Wait for event "response" (8696 ms)
+12:28:09.509       ✓ Wait for event "response" (8694 ms)
+12:28:09.638       → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+12:28:09.754       ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (116 ms)
+12:28:09.757       → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+12:28:09.784       ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (27 ms)
+12:28:09.784     ✓ beforeEach hook (11259 ms)
+12:28:09.787       → Create request context
+12:28:09.789       ✓ Create request context (2 ms)
+12:28:09.793   ✓ Before Hooks (11270 ms)
+12:28:09.795   → GET api/offenders?page=1&pageSize=1000
+12:28:09.804     → GET "api/offenders?page=1&pageSize=1000"
+12:28:10.105     ✓ GET "api/offenders?page=1&pageSize=1000" (301 ms)
+12:28:10.117   ✓ GET api/offenders?page=1&pageSize=1000 (323 ms)
+12:28:10.223   → Evaluate locator('table.grid:not(.trail-grid) tbody tr')
+12:28:10.317   ✓ Evaluate locator('table.grid:not(.trail-grid) tbody tr') (99 ms)
+12:28:10.320   → Expect "toHaveLength"
+12:28:10.320   ✓ Expect "toHaveLength" (1 ms)
+12:28:10.322   → Expect "toEqual"
+12:28:10.336   ✗ Error: expect(received).toEqual(expected) // deep equality Expect "toEqual" (12 ms)
+12:28:10.336   → After Hooks
+12:28:12.291       → Close context
+12:28:12.371       ✓ Close context (80 ms)
+12:28:12.403   ✓ After Hooks (2066 ms)
+12:28:12.403   → Worker Cleanup
+12:28:12.943   ✓ Worker Cleanup (539 ms)
+12:28:13.213 ■ Failed in 11947 ms
+
+--- error 1 ---
+Error: expect(received).toEqual(expected) // deep equality
+
+- Expected  - 1
++ Received  + 1
+
+  Array [
+-   ", ",
++   ",",
+    ", ApiTest",
+    "Azulay, Dana3",
+    "Cohen, David",
+    "Colman, Dup",
+  ]
+Error: expect(received).toEqual(expected) // deep equality
+
+- Expected  - 1
++ Received  + 1
+
+  Array [
+-   ", ",
++   ",",
+    ", ApiTest",
+    "Azulay, Dana3",
+    "Cohen, David",
+    "Colman, Dup",
+  ]
+    at C:\Users\Neil\Desktop\SuperCom\tests\ui\01-roster.ui.spec.ts:35:19

@@ -1,0 +1,48 @@
+11:41:59.652 ▶ TC-34 map line starts at the oldest point and ends at the newest
+   tests/ui/02-trail-map.ui.spec.ts · project ui
+11:41:59.656   → Before Hooks
+11:41:59.671   ✓ Before Hooks (15 ms)
+11:41:59.678   → Evaluate locator('.map.leaflet-container').locator('path.leaflet-interactive:not([fill="none"])')
+11:41:59.695   ✓ Evaluate locator('.map.leaflet-container').locator('path.leaflet-interactive:not([fill="none"])') (21 ms)
+11:41:59.711   → line start must sit on a marker
+11:41:59.711   ✓ line start must sit on a marker (1 ms)
+11:41:59.712   → [BUG-06] line must run from the oldest to the newest point
+11:41:59.714   ✗ Error: [BUG-06] line must run from the oldest to the newest point [BUG-06] line must run from the oldest to the newest point (1 ms)
+11:41:59.715   → After Hooks
+11:41:59.864     → afterEach hook
+11:41:59.865       → Screenshot
+11:42:00.028       ✓ Screenshot (163 ms)
+11:42:00.037     ✓ afterEach hook (171 ms)
+11:42:00.065   ✓ After Hooks (351 ms)
+11:42:00.067 ■ ExpectedFailure in 364 ms
+   annotation known-bug: BUG-06 — Trail is returned and drawn in insertion order, not chronological order
+   annotation fail: BUG-06: Trail is returned and drawn in insertion order, not chronological order
+
+--- error 1 ---
+Error: [BUG-06] line must run from the oldest to the newest point
+
+expect(received).toEqual(expected) // deep equality
+
+- Expected  - 2
++ Received  + 2
+
+  Object {
+-   "end": 1,
+-   "start": 7,
++   "end": 16,
++   "start": 1,
+  }
+Error: [BUG-06] line must run from the oldest to the newest point
+
+expect(received).toEqual(expected) // deep equality
+
+- Expected  - 2
++ Received  + 2
+
+  Object {
+-   "end": 1,
+-   "start": 7,
++   "end": 16,
++   "start": 1,
+  }
+    at C:\Users\Neil\Desktop\SuperCom\tests\ui\02-trail-map.ui.spec.ts:95:135

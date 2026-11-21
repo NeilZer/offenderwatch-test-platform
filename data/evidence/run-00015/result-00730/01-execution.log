@@ -1,0 +1,65 @@
+11:54:58.410 ▶ TC-25 delete requires confirmation and removes the offender
+   tests/ui/03-offender-crud.ui.spec.ts · project ui
+11:54:58.410   → Before Hooks
+11:54:58.414       → Create context
+11:54:58.417       ✓ Create context (3 ms)
+11:54:58.421       → Create page
+11:54:58.488       ✓ Create page (67 ms)
+11:54:58.489       → Create request context
+11:54:58.490       ✓ Create request context (1 ms)
+11:54:58.492   ✓ Before Hooks (84 ms)
+11:54:58.493   → POST api/offenders
+11:54:58.494     → POST "api/offenders"
+11:54:58.578     ✓ POST "api/offenders" (84 ms)
+11:54:58.578   ✓ POST api/offenders (85 ms)
+11:54:58.588   → Wait for event "response"
+11:54:58.589   → Wait for event "response"
+11:54:58.590   → Navigate to "./"
+11:54:59.103   ✓ Navigate to "./" (513 ms)
+11:54:59.170   ✓ Wait for event "response" (581 ms)
+11:54:59.178   ✓ Wait for event "response" (589 ms)
+11:54:59.181   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+11:54:59.217   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (36 ms)
+11:54:59.218   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+11:54:59.228   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (10 ms)
+11:54:59.238   → Wait for event "response"
+11:54:59.239   → Fill "995420673" locator('section.list-panel').locator('input.search')
+11:54:59.264   ✓ Fill "995420673" locator('section.list-panel').locator('input.search') (25 ms)
+11:54:59.325   ✓ Wait for event "response" (87 ms)
+11:54:59.330   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+11:54:59.338   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (8 ms)
+11:54:59.340   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+11:54:59.350   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (11 ms)
+11:54:59.351   → Click locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Elbaz, Daniel' }).getByRole('button', { name: 'Delete', exact: true })
+11:54:59.400   → Dismiss dialog
+11:54:59.402   ✓ Dismiss dialog (2 ms)
+11:54:59.408   ✓ Click locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Elbaz, Daniel' }).getByRole('button', { name: 'Delete', exact: true }) (57 ms)
+11:54:59.409   → a confirmation prompt must appear
+11:54:59.410   ✓ a confirmation prompt must appear (1 ms)
+11:54:59.411   → dismissing must keep the offender locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Elbaz, Daniel' })
+11:54:59.420   ✓ dismissing must keep the offender locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Elbaz, Daniel' }) (9 ms)
+11:54:59.422   → Wait for event "response"
+11:54:59.423   → Click locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Elbaz, Daniel' }).getByRole('button', { name: 'Delete', exact: true })
+11:54:59.474   → Accept dialog
+11:54:59.476   ✓ Accept dialog (2 ms)
+11:54:59.481   ✓ Click locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Elbaz, Daniel' }).getByRole('button', { name: 'Delete', exact: true }) (58 ms)
+11:54:59.561   ✓ Wait for event "response" (139 ms)
+11:54:59.563   → Wait for event "response"
+11:54:59.624   ✓ Wait for event "response" (61 ms)
+11:54:59.637   → Expect "not toBeNull"
+11:54:59.637   ✓ Expect "not toBeNull" (0 ms)
+11:54:59.638   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Elbaz, Daniel' })
+11:54:59.647   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Elbaz, Daniel' }) (9 ms)
+11:54:59.648   → Expect "toHaveText" locator('.banner.toast')
+11:54:59.655   ✓ Expect "toHaveText" locator('.banner.toast') (7 ms)
+11:54:59.655   → GET api/offenders?search=995420673&page=1&pageSize=1000
+11:54:59.656     → GET "api/offenders?search=995420673&page=1&pageSize=1000"
+11:54:59.720     ✓ GET "api/offenders?search=995420673&page=1&pageSize=1000" (64 ms)
+11:54:59.722   ✓ GET api/offenders?search=995420673&page=1&pageSize=1000 (67 ms)
+11:54:59.723   → Expect "not toContain"
+11:54:59.723   ✓ Expect "not toContain" (0 ms)
+11:54:59.724   → After Hooks
+11:54:59.798       → Close context
+11:54:59.801       ✓ Close context (3 ms)
+11:54:59.807   ✓ After Hooks (83 ms)
+11:54:59.807 ■ Passed in 1384 ms

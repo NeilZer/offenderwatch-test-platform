@@ -1,0 +1,6 @@
+
+Running 1 test using 1 worker
+
+  ok 1 [api] › tests\api\06-stats.api.spec.ts:30:7 › API · statistics › TC-47 counters update after creating offenders and points @TC-47 @API-05 @FR-11 (2.2s)
+
+  1 passed (3.2s)

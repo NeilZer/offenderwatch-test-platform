@@ -1,0 +1,85 @@
+12:56:03.208 ▶ TC-40 operator adds a valid location point
+   tests/ui/04-locations-and-stats.ui.spec.ts · project ui
+12:56:03.209   → Before Hooks
+12:56:03.217       → Create context
+12:56:03.221       ✓ Create context (4 ms)
+12:56:03.225       → Create page
+12:56:03.297       ✓ Create page (72 ms)
+12:56:03.299       → Create request context
+12:56:03.301       ✓ Create request context (2 ms)
+12:56:03.304   ✓ Before Hooks (97 ms)
+12:56:03.305   → POST api/offenders
+12:56:03.306     → POST "api/offenders"
+12:56:03.393     ✓ POST "api/offenders" (87 ms)
+12:56:03.394   ✓ POST api/offenders (89 ms)
+12:56:03.405   → Wait for event "response"
+12:56:03.406   → Wait for event "response"
+12:56:03.408   → Navigate to "./"
+12:56:03.946   ✓ Navigate to "./" (538 ms)
+12:56:04.014   ✓ Wait for event "response" (610 ms)
+12:56:04.016   ✓ Wait for event "response" (610 ms)
+12:56:04.021   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+12:56:04.058   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (37 ms)
+12:56:04.059   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+12:56:04.072   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (13 ms)
+12:56:04.083   → Wait for event "response"
+12:56:04.084   → Fill "997496730" locator('section.list-panel').locator('input.search')
+12:56:04.109   ✓ Fill "997496730" locator('section.list-panel').locator('input.search') (24 ms)
+12:56:04.172   ✓ Wait for event "response" (89 ms)
+12:56:04.177   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+12:56:04.186   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (9 ms)
+12:56:04.188   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+12:56:04.199   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (11 ms)
+12:56:04.200   → Wait for event "response"
+12:56:04.201   → Click locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Golan, Omer' })
+12:56:04.282   ✓ Click locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Golan, Omer' }) (81 ms)
+12:56:04.319   ✓ Wait for event "response" (119 ms)
+12:56:04.321   → Wait for selector locator('header.topbar').locator('.stats .stat').filter({ has: locator('span').filter({ hasText: /^Offenders$/ }) }).locator('b')
+12:56:04.336   ✓ Wait for selector locator('header.topbar').locator('.stats .stat').filter({ has: locator('span').filter({ hasText: /^Offenders$/ }) }).locator('b') (15 ms)
+12:56:04.368   → Click locator('section.detail-panel').getByRole('button', { name: '+ Add location', exact: true })
+12:56:04.426   ✓ Click locator('section.detail-panel').getByRole('button', { name: '+ Add location', exact: true }) (58 ms)
+12:56:04.430   → Fill "32.0901" locator('section.detail-panel').getByPlaceholder('Latitude', { exact: true })
+12:56:04.468   ✓ Fill "32.0901" locator('section.detail-panel').getByPlaceholder('Latitude', { exact: true }) (39 ms)
+12:56:04.470   → Fill "34.7802" locator('section.detail-panel').getByPlaceholder('Longitude', { exact: true })
+12:56:04.508   ✓ Fill "34.7802" locator('section.detail-panel').getByPlaceholder('Longitude', { exact: true }) (38 ms)
+12:56:04.510   → Fill "18.5" locator('section.detail-panel').getByPlaceholder('Speed km/h', { exact: true })
+12:56:04.550   ✓ Fill "18.5" locator('section.detail-panel').getByPlaceholder('Speed km/h', { exact: true }) (38 ms)
+12:56:04.551   → Fill "77" locator('section.detail-panel').getByPlaceholder('Battery %', { exact: true })
+12:56:04.586   ✓ Fill "77" locator('section.detail-panel').getByPlaceholder('Battery %', { exact: true }) (35 ms)
+12:56:04.589   → Fill "4" locator('section.detail-panel').getByPlaceholder('Signal 1-5', { exact: true })
+12:56:04.618   ✓ Fill "4" locator('section.detail-panel').getByPlaceholder('Signal 1-5', { exact: true }) (30 ms)
+12:56:04.620   → Wait for event "response"
+12:56:04.622   → Wait for event "response"
+12:56:04.624   → Click locator('section.detail-panel').locator('form.loc-form').getByRole('button', { name: 'Add', exact: true })
+12:56:04.720   ✓ Click locator('section.detail-panel').locator('form.loc-form').getByRole('button', { name: 'Add', exact: true }) (96 ms)
+12:56:04.791   ✓ Wait for event "response" (169 ms)
+12:56:04.863   ✓ Wait for event "response" (243 ms)
+12:56:04.866   → Expect "toBe"
+12:56:04.866   ✓ Expect "toBe" (0 ms)
+12:56:04.866   → Expect "toHaveCount" locator('section.detail-panel').locator('.trail-grid tbody tr')
+12:56:04.926   ✓ Expect "toHaveCount" locator('section.detail-panel').locator('.trail-grid tbody tr') (60 ms)
+12:56:04.929   → Evaluate locator('section.detail-panel').locator('.trail-grid tbody tr')
+12:56:04.976   ✓ Evaluate locator('section.detail-panel').locator('.trail-grid tbody tr') (48 ms)
+12:56:04.977   → Expect "toMatchObject"
+12:56:04.979   ✓ Expect "toMatchObject" (1 ms)
+12:56:04.980   → Expect "poll toBe"
+12:56:04.983     → Wait for selector locator('header.topbar').locator('.stats .stat').filter({ has: locator('span').filter({ hasText: /^Offenders$/ }) }).locator('b')
+12:56:04.999     ✓ Wait for selector locator('header.topbar').locator('.stats .stat').filter({ has: locator('span').filter({ hasText: /^Offenders$/ }) }).locator('b') (16 ms)
+12:56:05.053     → Expect "toBe"
+12:56:05.053     ✓ Expect "toBe" (0 ms)
+12:56:05.053   ✓ Expect "poll toBe" (73 ms)
+12:56:05.054   → GET api/offenders/1513/trail
+12:56:05.055     → GET "api/offenders/1513/trail"
+12:56:05.126     ✓ GET "api/offenders/1513/trail" (71 ms)
+12:56:05.130   ✓ GET api/offenders/1513/trail (74 ms)
+12:56:05.132   → Expect "toHaveLength"
+12:56:05.132   ✓ Expect "toHaveLength" (0 ms)
+12:56:05.133   → After Hooks
+12:56:05.305       → DELETE api/offenders/1513
+12:56:05.307         → DELETE "api/offenders/1513"
+12:56:05.397         ✓ DELETE "api/offenders/1513" (90 ms)
+12:56:05.398       ✓ DELETE api/offenders/1513 (93 ms)
+12:56:05.417       → Close context
+12:56:05.421       ✓ Close context (4 ms)
+12:56:05.430   ✓ After Hooks (297 ms)
+12:56:05.430 ■ Passed in 2200 ms

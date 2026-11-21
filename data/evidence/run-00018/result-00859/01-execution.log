@@ -1,0 +1,170 @@
+12:05:36.035 ▶ TC-29 roster dates of birth are DD/MM/YYYY and match the stored value
+   tests/ui/01-roster.ui.spec.ts · project ui
+12:05:36.035   → Before Hooks
+12:05:36.035     → beforeEach hook
+12:05:36.040         → Create context
+12:05:36.043         ✓ Create context (3 ms)
+12:05:36.051         → Create page
+12:05:36.120         ✓ Create page (73 ms)
+12:05:36.122       → Wait for event "response"
+12:05:36.124       → Wait for event "response"
+12:05:36.125       → Navigate to "./"
+12:05:36.658       ✓ Navigate to "./" (533 ms)
+12:05:36.727       ✓ Wait for event "response" (604 ms)
+12:05:36.732       ✓ Wait for event "response" (608 ms)
+12:05:36.736       → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+12:05:36.771       ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (35 ms)
+12:05:36.772       → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+12:05:36.783       ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (12 ms)
+12:05:36.783     ✓ beforeEach hook (751 ms)
+12:05:36.784       → Create request context
+12:05:36.785       ✓ Create request context (0 ms)
+12:05:36.787   ✓ Before Hooks (755 ms)
+12:05:36.787   → GET api/offenders?page=1&pageSize=1000
+12:05:36.788     → GET "api/offenders?page=1&pageSize=1000"
+12:05:36.853     ✓ GET "api/offenders?page=1&pageSize=1000" (65 ms)
+12:05:36.855   ✓ GET api/offenders?page=1&pageSize=1000 (68 ms)
+12:05:36.867   → Evaluate locator('table.grid:not(.trail-grid) tbody tr')
+12:05:36.904   ✓ Evaluate locator('table.grid:not(.trail-grid) tbody tr') (37 ms)
+12:05:36.922   → Wait for event "response"
+12:05:36.924   → Click locator('section.list-panel').getByRole('button', { name: 'Next ›', exact: true })
+12:05:36.972   ✓ Click locator('section.list-panel').getByRole('button', { name: 'Next ›', exact: true }) (48 ms)
+12:05:37.032   ✓ Wait for event "response" (110 ms)
+12:05:37.041   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+12:05:37.055   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (15 ms)
+12:05:37.056   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+12:05:37.068   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (13 ms)
+12:05:37.078   → Evaluate locator('table.grid:not(.trail-grid) tbody tr')
+12:05:37.088   ✓ Evaluate locator('table.grid:not(.trail-grid) tbody tr') (10 ms)
+12:05:37.100   → [BUG-04] displayed DOB must equal the stored DOB
+12:05:37.106   ✗ Error: [BUG-04] displayed DOB must equal the stored DOB [BUG-04] displayed DOB must equal the stored DOB (5 ms)
+12:05:37.107   → After Hooks
+12:05:37.201       → Close context
+12:05:37.205       ✓ Close context (4 ms)
+12:05:37.228   ✓ After Hooks (122 ms)
+12:05:37.229 ■ ExpectedFailure in 1161 ms
+   annotation known-bug: BUG-04 — Date of birth is displayed one month too early (January shows as month "00")
+   annotation fail: BUG-04: Date of birth is displayed one month too early (January shows as month "00")
+
+--- error 1 ---
+Error: [BUG-04] displayed DOB must equal the stored DOB
+
+expect(received).toEqual(expected) // deep equality
+
+- Expected  -  1
++ Received  + 52
+
+- Array []
++ Array [
++   Object {
++     "expected": "06/02/1998",
++     "name": "Amar, Noa",
++     "shown": "06/01/1998",
++   },
++   Object {
++     "expected": "09/05/1995",
++     "name": "Azulay, Dana",
++     "shown": "09/04/1995",
++   },
++   Object {
++     "expected": "30/09/1969",
++     "name": "Biton, Yosef",
++     "shown": "30/08/1969",
++   },
++   Object {
++     "expected": "07/03/1982",
++     "name": "Cohen, David",
++     "shown": "07/02/1982",
++   },
++   Object {
++     "expected": "02/12/1980",
++     "name": "Dahan, Avi",
++     "shown": "02/11/1980",
++   },
++   Object {
++     "expected": "25/04/1978",
++     "name": "Gabay, Eli",
++     "shown": "25/03/1978",
++   },
++   Object {
++     "expected": "23/11/1990",
++     "name": "Levi, Sara",
++     "shown": "23/10/1990",
++   },
++   Object {
++     "expected": "15/10/1971",
++     "name": "Malka, Itzik",
++     "shown": "15/09/1971",
++   },
++   Object {
++     "expected": "12/01/1988",
++     "name": "Mizrahi, Rachel",
++     "shown": "12/00/1988",
++   },
++   Object {
++     "expected": "18/07/1992",
++     "name": "Ohana, Maya",
++     "shown": "18/06/1992",
++   },
++ ]
+Error: [BUG-04] displayed DOB must equal the stored DOB
+
+expect(received).toEqual(expected) // deep equality
+
+- Expected  -  1
++ Received  + 52
+
+- Array []
++ Array [
++   Object {
++     "expected": "06/02/1998",
++     "name": "Amar, Noa",
++     "shown": "06/01/1998",
++   },
++   Object {
++     "expected": "09/05/1995",
++     "name": "Azulay, Dana",
++     "shown": "09/04/1995",
++   },
++   Object {
++     "expected": "30/09/1969",
++     "name": "Biton, Yosef",
++     "shown": "30/08/1969",
++   },
++   Object {
++     "expected": "07/03/1982",
++     "name": "Cohen, David",
++     "shown": "07/02/1982",
++   },
++   Object {
++     "expected": "02/12/1980",
++     "name": "Dahan, Avi",
++     "shown": "02/11/1980",
++   },
++   Object {
++     "expected": "25/04/1978",
++     "name": "Gabay, Eli",
++     "shown": "25/03/1978",
++   },
++   Object {
++     "expected": "23/11/1990",
++     "name": "Levi, Sara",
++     "shown": "23/10/1990",
++   },
++   Object {
++     "expected": "15/10/1971",
++     "name": "Malka, Itzik",
++     "shown": "15/09/1971",
++   },
++   Object {
++     "expected": "12/01/1988",
++     "name": "Mizrahi, Rachel",
++     "shown": "12/00/1988",
++   },
++   Object {
++     "expected": "18/07/1992",
++     "name": "Ohana, Maya",
++     "shown": "18/06/1992",
++   },
++ ]
+    at C:\Users\Neil\Desktop\SuperCom\tests\ui\01-roster.ui.spec.ts:102:89

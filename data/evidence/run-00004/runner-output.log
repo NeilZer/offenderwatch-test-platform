@@ -1,0 +1,19 @@
+
+Running 51 tests using 1 worker
+
+  ok  1 [api] › tests\api\01-offenders-paging.api.spec.ts:18:7 › API · offender list & paging › TC-05 list response contract and last-name sort order @TC-05 @API-01 @FR-01 (361ms)
+  x   2 [api] › tests\api\01-offenders-paging.api.spec.ts:39:7 › API · offender list & paging › TC-03 totalPages equals ceil(total / pageSize) for every page size @TC-03 @API-01 @FR-01 (798ms)
+  x   3 [api] › tests\api\01-offenders-paging.api.spec.ts:60:7 › API · offender list & paging › TC-04 following totalPages reaches every offender exactly once @TC-04 @API-01 @FR-01 (213ms)
+  ok  4 [api] › tests\api\01-offenders-paging.api.spec.ts:83:7 › API · offender list & paging › TC-06 out-of-range and invalid paging parameters are handled gracefully @TC-06 @API-01 (295ms)
+  ok  5 [api] › tests\api\02-offenders-search.api.spec.ts:26:9 › API · offender search › TC-08 search by last name (exact) "Cohen" finds Cohen @TC-08 @FR-02 (91ms)
+  ok  6 [api] › tests\api\02-offenders-search.api.spec.ts:26:9 › API · offender search › TC-08 search by last name (middle substring) "ohe" finds Cohen @TC-08 @FR-02 (77ms)
+  ok  7 [api] › tests\api\02-offenders-search.api.spec.ts:26:9 › API · offender search › TC-08 search by first name (prefix) "Dav" finds Cohen @TC-08 @FR-02 (80ms)
+  ok  8 [api] › tests\api\02-offenders-search.api.spec.ts:26:9 › API · offender search › TC-08 search by national ID (suffix) "412876" finds Cohen @TC-08 @FR-02 (189ms)
+  x   9 [api] › tests\api\02-offenders-search.api.spec.ts:40:9 › API · offender search › TC-09 case-insensitive search "cohen" finds Cohen @TC-09 @FR-02 (81ms)
+  x  10 [api] › tests\api\02-offenders-search.api.spec.ts:40:9 › API · offender search › TC-09 case-insensitive search "COHEN" finds Cohen @TC-09 @FR-02 (78ms)
+  x  11 [api] › tests\api\02-offenders-search.api.spec.ts:40:9 › API · offender search › TC-09 case-insensitive search "dAVID" finds Cohen @TC-09 @FR-02 (79ms)
+  ok 12 [api] › tests\api\02-offenders-search.api.spec.ts:55:7 › API · offender search › TC-11 special characters and no-match terms return an empty result @TC-11 @FR-02 (364ms)
+  ok 13 [api] › tests\api\03-offenders-create.api.spec.ts:19:7 › API · create offender › TC-13 valid offender is created with 201 and stored as sent @TC-13 @FR-03 @API-02 (394ms)
+  ok 14 [api] › tests\api\03-offenders-create.api.spec.ts:40:9 › API · create offender › TC-14 rejects missing first name @TC-14 @FR-03 @API-03 @negative (207ms)
+  ok 15 [api] › tests\api\03-offenders-create.api.spec.ts:40:9 › API · create offender › TC-14 rejects whitespace-only first name @TC-14 @FR-03 @API-03 @negative (211ms)
+  x  16 [api] › tests\api\03-offenders-create.api.spec.ts:40:9 › API · create offender › TC-15 rejects missing last name @TC-15 @FR-03 @API-03 @negative (271ms)

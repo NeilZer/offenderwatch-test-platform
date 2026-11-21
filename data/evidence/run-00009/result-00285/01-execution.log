@@ -1,0 +1,34 @@
+11:43:23.376 ▶ TC-09 case-insensitive search "cohen" finds Cohen
+   tests/api/02-offenders-search.api.spec.ts · project api
+11:43:23.376   → Before Hooks
+11:43:23.388       → Create request context
+11:43:23.388       ✓ Create request context (1 ms)
+11:43:23.391   ✓ Before Hooks (15 ms)
+11:43:23.392   → GET api/offenders?search=cohen&page=1&pageSize=1000
+11:43:23.393     → GET "api/offenders?search=cohen&page=1&pageSize=1000"
+11:43:23.456     ✓ GET "api/offenders?search=cohen&page=1&pageSize=1000" (63 ms)
+11:43:23.457   ✓ GET api/offenders?search=cohen&page=1&pageSize=1000 (65 ms)
+11:43:23.457   → Expect "toBe"
+11:43:23.457   ✓ Expect "toBe" (0 ms)
+11:43:23.458   → [BUG-07] "cohen" must match David Cohen
+11:43:23.459   ✗ Error: [BUG-07] "cohen" must match David Cohen [BUG-07] "cohen" must match David Cohen (0 ms)
+11:43:23.459   → After Hooks
+11:43:23.476   ✓ After Hooks (17 ms)
+11:43:23.478 ■ ExpectedFailure in 79 ms
+   annotation known-bug: BUG-07 — Search is case-sensitive ("cohen" finds nothing)
+   annotation fail: BUG-07: Search is case-sensitive ("cohen" finds nothing)
+
+--- error 1 ---
+Error: [BUG-07] "cohen" must match David Cohen
+
+expect(received).toContain(expected) // indexOf
+
+Expected value: 1
+Received array: []
+Error: [BUG-07] "cohen" must match David Cohen
+
+expect(received).toContain(expected) // indexOf
+
+Expected value: 1
+Received array: []
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\02-offenders-search.api.spec.ts:45:134

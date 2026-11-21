@@ -1,0 +1,40 @@
+11:53:38.892 ▶ TC-41 location rejects battery above 100
+   tests/api/05-trail.api.spec.ts · project api
+11:53:38.892   → Before Hooks
+11:53:38.895       → Create request context
+11:53:38.896       ✓ Create request context (0 ms)
+11:53:38.899   ✓ Before Hooks (8 ms)
+11:53:38.899   → POST api/offenders
+11:53:38.900     → POST "api/offenders"
+11:53:38.982     ✓ POST "api/offenders" (82 ms)
+11:53:38.983   ✓ POST api/offenders (84 ms)
+11:53:38.991   → POST api/offenders/838/locations
+11:53:38.992     → POST "api/offenders/838/locations"
+11:53:39.078     ✓ POST "api/offenders/838/locations" (86 ms)
+11:53:39.079   ✓ POST api/offenders/838/locations (87 ms)
+11:53:39.079   → [BUG-14] battery above 100 must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/838/locations -> 201 {"ok":true}
+11:53:39.080   ✗ Error: [BUG-14] battery above 100 must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/838/locations -> 201 {"ok":true} [BUG-14] battery above 100 must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/838/locations -> 201 {"ok":true} (0 ms)
+11:53:39.080   → After Hooks
+11:53:39.080       → DELETE api/offenders/838
+11:53:39.081         → DELETE "api/offenders/838"
+11:53:39.170         ✓ DELETE "api/offenders/838" (89 ms)
+11:53:39.172       ✓ DELETE api/offenders/838 (91 ms)
+11:53:39.191   ✓ After Hooks (111 ms)
+11:53:39.192 ■ ExpectedFailure in 288 ms
+   annotation known-bug: BUG-14 — Location points are not validated: invalid coordinates, negative speed, battery and signal out of range all accepted
+   annotation fail: BUG-14: Location points are not validated: invalid coordinates, negative speed, battery and signal out of range all accepted
+
+--- error 1 ---
+Error: [BUG-14] battery above 100 must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/838/locations -> 201 {"ok":true}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 201
+Error: [BUG-14] battery above 100 must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/838/locations -> 201 {"ok":true}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 201
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\05-trail.api.spec.ts:60:108

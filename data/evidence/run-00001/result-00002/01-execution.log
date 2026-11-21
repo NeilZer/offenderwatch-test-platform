@@ -1,0 +1,92 @@
+11:26:17.470 ▶ TC-03 totalPages equals ceil(total / pageSize) for every page size
+   tests/api/01-offenders-paging.api.spec.ts · project api
+11:26:17.470   → Before Hooks
+11:26:17.475       → Create request context
+11:26:17.476       ✓ Create request context (1 ms)
+11:26:17.479   ✓ Before Hooks (15 ms)
+11:26:17.482   → GET api/offenders?page=1&pageSize=1000
+11:26:17.483     → GET "api/offenders?page=1&pageSize=1000"
+11:26:17.551     ✓ GET "api/offenders?page=1&pageSize=1000" (67 ms)
+11:26:17.554   ✓ GET api/offenders?page=1&pageSize=1000 (72 ms)
+11:26:17.554   → GET api/offenders?page=1&pageSize=1
+11:26:17.556     → GET "api/offenders?page=1&pageSize=1"
+11:26:17.623     ✓ GET "api/offenders?page=1&pageSize=1" (68 ms)
+11:26:17.625   ✓ GET api/offenders?page=1&pageSize=1 (70 ms)
+11:26:17.625   → GET api/offenders?page=1&pageSize=2
+11:26:17.627     → GET "api/offenders?page=1&pageSize=2"
+11:26:17.694     ✓ GET "api/offenders?page=1&pageSize=2" (67 ms)
+11:26:17.695   ✓ GET api/offenders?page=1&pageSize=2 (70 ms)
+11:26:17.696   → GET api/offenders?page=1&pageSize=3
+11:26:17.697     → GET "api/offenders?page=1&pageSize=3"
+11:26:17.763     ✓ GET "api/offenders?page=1&pageSize=3" (67 ms)
+11:26:17.764   ✓ GET api/offenders?page=1&pageSize=3 (69 ms)
+11:26:17.764   → GET api/offenders?page=1&pageSize=4
+11:26:17.765     → GET "api/offenders?page=1&pageSize=4"
+11:26:17.832     ✓ GET "api/offenders?page=1&pageSize=4" (67 ms)
+11:26:17.834   ✓ GET api/offenders?page=1&pageSize=4 (69 ms)
+11:26:17.834   → GET api/offenders?page=1&pageSize=5
+11:26:17.835     → GET "api/offenders?page=1&pageSize=5"
+11:26:17.902     ✓ GET "api/offenders?page=1&pageSize=5" (66 ms)
+11:26:17.903   ✓ GET api/offenders?page=1&pageSize=5 (69 ms)
+11:26:17.903   → GET api/offenders?page=1&pageSize=6
+11:26:17.905     → GET "api/offenders?page=1&pageSize=6"
+11:26:17.972     ✓ GET "api/offenders?page=1&pageSize=6" (68 ms)
+11:26:17.973   ✓ GET api/offenders?page=1&pageSize=6 (70 ms)
+11:26:17.974   → GET api/offenders?page=1&pageSize=10
+11:26:17.975     → GET "api/offenders?page=1&pageSize=10"
+11:26:18.043     ✓ GET "api/offenders?page=1&pageSize=10" (68 ms)
+11:26:18.050   ✓ GET api/offenders?page=1&pageSize=10 (76 ms)
+11:26:18.050   → GET api/offenders?page=1&pageSize=11
+11:26:18.052     → GET "api/offenders?page=1&pageSize=11"
+11:26:18.120     ✓ GET "api/offenders?page=1&pageSize=11" (69 ms)
+11:26:18.121   ✓ GET api/offenders?page=1&pageSize=11 (70 ms)
+11:26:18.121   → GET api/offenders?page=1&pageSize=12
+11:26:18.122     → GET "api/offenders?page=1&pageSize=12"
+11:26:18.190     ✓ GET "api/offenders?page=1&pageSize=12" (67 ms)
+11:26:18.191   ✓ GET api/offenders?page=1&pageSize=12 (70 ms)
+11:26:18.191   → GET api/offenders?page=1&pageSize=50
+11:26:18.193     → GET "api/offenders?page=1&pageSize=50"
+11:26:18.259     ✓ GET "api/offenders?page=1&pageSize=50" (67 ms)
+11:26:18.261   ✓ GET api/offenders?page=1&pageSize=50 (69 ms)
+11:26:18.262   → [BUG-01] totalPages must be ceil(total / pageSize)
+11:26:18.268   ✗ Error: [BUG-01] totalPages must be ceil(total / pageSize) [BUG-01] totalPages must be ceil(total / pageSize) (4 ms)
+11:26:18.268   → After Hooks
+11:26:18.285   ✓ After Hooks (19 ms)
+11:26:18.287 ■ ExpectedFailure in 798 ms
+   annotation known-bug: BUG-01 — Pager hides the last (partial) page: totalPages is floor(total/pageSize) instead of ceiling
+   annotation fail: BUG-01: Pager hides the last (partial) page: totalPages is floor(total/pageSize) instead of ceiling
+
+--- error 1 ---
+Error: [BUG-01] totalPages must be ceil(total / pageSize)
+
+expect(received).toEqual(expected) // deep equality
+
+- Expected  - 1
++ Received  + 8
+
+- Array []
++ Array [
++   "pageSize=2: total=11 totalPages=5 expected=6",
++   "pageSize=3: total=11 totalPages=3 expected=4",
++   "pageSize=4: total=11 totalPages=2 expected=3",
++   "pageSize=5: total=11 totalPages=2 expected=3",
++   "pageSize=6: total=11 totalPages=1 expected=2",
++   "pageSize=10: total=11 totalPages=1 expected=2",
++ ]
+Error: [BUG-01] totalPages must be ceil(total / pageSize)
+
+expect(received).toEqual(expected) // deep equality
+
+- Expected  - 1
++ Received  + 8
+
+- Array []
++ Array [
++   "pageSize=2: total=11 totalPages=5 expected=6",
++   "pageSize=3: total=11 totalPages=3 expected=4",
++   "pageSize=4: total=11 totalPages=2 expected=3",
++   "pageSize=5: total=11 totalPages=2 expected=3",
++   "pageSize=6: total=11 totalPages=1 expected=2",
++   "pageSize=10: total=11 totalPages=1 expected=2",
++ ]
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\01-offenders-paging.api.spec.ts:51:91

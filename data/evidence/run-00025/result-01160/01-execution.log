@@ -1,0 +1,40 @@
+13:49:22.954 ▶ TC-41 location rejects longitude below -180
+   tests/api/05-trail.api.spec.ts · project api
+13:49:22.955   → Before Hooks
+13:49:22.958       → Create request context
+13:49:22.958       ✓ Create request context (1 ms)
+13:49:22.961   ✓ Before Hooks (9 ms)
+13:49:22.961   → POST api/offenders
+13:49:22.961     → POST "api/offenders"
+13:49:23.041     ✓ POST "api/offenders" (80 ms)
+13:49:23.042   ✓ POST api/offenders (81 ms)
+13:49:23.048   → POST api/offenders/1108/locations
+13:49:23.049     → POST "api/offenders/1108/locations"
+13:49:23.130     ✓ POST "api/offenders/1108/locations" (81 ms)
+13:49:23.131   ✓ POST api/offenders/1108/locations (82 ms)
+13:49:23.132   → [BUG-14] longitude below -180 must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1108/locations -> 201 {"ok":true}
+13:49:23.133   ✗ Error: [BUG-14] longitude below -180 must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1108/locations -> 201 {"ok":true} [BUG-14] longitude below -180 must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1108/locations -> 201 {"ok":true} (1 ms)
+13:49:23.133   → After Hooks
+13:49:23.133       → DELETE api/offenders/1108
+13:49:23.134         → DELETE "api/offenders/1108"
+13:49:23.215         ✓ DELETE "api/offenders/1108" (81 ms)
+13:49:23.226       ✓ DELETE api/offenders/1108 (94 ms)
+13:49:23.273   ✓ After Hooks (141 ms)
+13:49:23.275 ■ ExpectedFailure in 300 ms
+   annotation known-bug: BUG-14 — Location points are not validated: invalid coordinates, negative speed, battery and signal out of range all accepted
+   annotation fail: BUG-14: Location points are not validated: invalid coordinates, negative speed, battery and signal out of range all accepted
+
+--- error 1 ---
+Error: [BUG-14] longitude below -180 must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1108/locations -> 201 {"ok":true}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 201
+Error: [BUG-14] longitude below -180 must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1108/locations -> 201 {"ok":true}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 201
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\05-trail.api.spec.ts:60:108

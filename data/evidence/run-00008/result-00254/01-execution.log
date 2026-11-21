@@ -1,0 +1,21 @@
+11:41:36.645 ▶ TC-49 offender totals match the stored offenders
+   tests/api/06-stats.api.spec.ts · project api
+11:41:36.646   → Before Hooks
+11:41:36.658       → Create request context
+11:41:36.658       ✓ Create request context (0 ms)
+11:41:36.660   ✓ Before Hooks (14 ms)
+11:41:36.660   → GET api/stats
+11:41:36.662     → GET "api/stats"
+11:41:36.727     ✓ GET "api/stats" (64 ms)
+11:41:36.728   ✓ GET api/stats (67 ms)
+11:41:36.728   → GET api/offenders?page=1&pageSize=1000
+11:41:36.729     → GET "api/offenders?page=1&pageSize=1000"
+11:41:36.794     ✓ GET "api/offenders?page=1&pageSize=1000" (65 ms)
+11:41:36.795   ✓ GET api/offenders?page=1&pageSize=1000 (67 ms)
+11:41:36.796   → Expect "toBe"
+11:41:36.796   ✓ Expect "toBe" (0 ms)
+11:41:36.797   → Expect "toBe"
+11:41:36.797   ✓ Expect "toBe" (0 ms)
+11:41:36.797   → After Hooks
+11:41:36.809   ✓ After Hooks (12 ms)
+11:41:36.809 ■ Passed in 145 ms

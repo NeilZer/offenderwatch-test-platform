@@ -1,0 +1,49 @@
+11:54:46.409 ▶ TC-36 clicking a map point shows its recorded data
+   tests/ui/02-trail-map.ui.spec.ts · project ui
+11:54:46.410   → Before Hooks
+11:54:46.419   ✓ Before Hooks (11 ms)
+11:54:46.426   → previous popup should be closed locator('.map.leaflet-container').locator('.leaflet-popup-content')
+11:54:46.438   ✓ previous popup should be closed locator('.map.leaflet-container').locator('.leaflet-popup-content') (17 ms)
+11:54:46.440   → Dispatch "click" locator('.map.leaflet-container').locator('path.leaflet-interactive:not([fill="none"])').first()
+11:54:46.476   ✓ Dispatch "click" locator('.map.leaflet-container').locator('path.leaflet-interactive:not([fill="none"])').first() (36 ms)
+11:54:46.477   → Expect "toBeVisible" locator('.map.leaflet-container').locator('.leaflet-popup-content')
+11:54:46.489   ✓ Expect "toBeVisible" locator('.map.leaflet-container').locator('.leaflet-popup-content') (11 ms)
+11:54:46.528   → Click locator('.map.leaflet-container').locator('.leaflet-popup-close-button')
+11:54:46.592   ✓ Click locator('.map.leaflet-container').locator('.leaflet-popup-close-button') (64 ms)
+11:54:46.594   → Expect "toHaveCount" locator('.map.leaflet-container').locator('.leaflet-popup-content')
+11:54:46.799   ✓ Expect "toHaveCount" locator('.map.leaflet-container').locator('.leaflet-popup-content') (205 ms)
+11:54:46.800   → popup point #1 must exist in the API trail
+11:54:46.800   ✓ popup point #1 must exist in the API trail (0 ms)
+11:54:46.811   → Expect "toEqual"
+11:54:46.811   ✓ Expect "toEqual" (0 ms)
+11:54:46.812   → previous popup should be closed locator('.map.leaflet-container').locator('.leaflet-popup-content')
+11:54:46.821   ✓ previous popup should be closed locator('.map.leaflet-container').locator('.leaflet-popup-content') (9 ms)
+11:54:46.822   → Dispatch "click" locator('.map.leaflet-container').locator('path.leaflet-interactive:not([fill="none"])').nth(8)
+11:54:46.838   ✓ Dispatch "click" locator('.map.leaflet-container').locator('path.leaflet-interactive:not([fill="none"])').nth(8) (16 ms)
+11:54:46.839   → Expect "toBeVisible" locator('.map.leaflet-container').locator('.leaflet-popup-content')
+11:54:46.852   ✓ Expect "toBeVisible" locator('.map.leaflet-container').locator('.leaflet-popup-content') (12 ms)
+11:54:46.879   → Click locator('.map.leaflet-container').locator('.leaflet-popup-close-button')
+11:54:47.282   ✓ Click locator('.map.leaflet-container').locator('.leaflet-popup-close-button') (403 ms)
+11:54:47.284   → Expect "toHaveCount" locator('.map.leaflet-container').locator('.leaflet-popup-content')
+11:54:47.598   ✓ Expect "toHaveCount" locator('.map.leaflet-container').locator('.leaflet-popup-content') (314 ms)
+11:54:47.600   → popup point #9 must exist in the API trail
+11:54:47.600   ✓ popup point #9 must exist in the API trail (0 ms)
+11:54:47.602   → Expect "toEqual"
+11:54:47.603   ✓ Expect "toEqual" (1 ms)
+11:54:47.604   → previous popup should be closed locator('.map.leaflet-container').locator('.leaflet-popup-content')
+11:54:47.620   ✓ previous popup should be closed locator('.map.leaflet-container').locator('.leaflet-popup-content') (16 ms)
+11:54:47.622   → Dispatch "click" locator('.map.leaflet-container').locator('path.leaflet-interactive:not([fill="none"])').nth(15)
+11:54:47.638   ✓ Dispatch "click" locator('.map.leaflet-container').locator('path.leaflet-interactive:not([fill="none"])').nth(15) (16 ms)
+11:54:47.640   → Expect "toBeVisible" locator('.map.leaflet-container').locator('.leaflet-popup-content')
+11:54:47.653   ✓ Expect "toBeVisible" locator('.map.leaflet-container').locator('.leaflet-popup-content') (13 ms)
+11:54:47.681   → Click locator('.map.leaflet-container').locator('.leaflet-popup-close-button')
+11:54:47.730   ✓ Click locator('.map.leaflet-container').locator('.leaflet-popup-close-button') (49 ms)
+11:54:47.732   → Expect "toHaveCount" locator('.map.leaflet-container').locator('.leaflet-popup-content')
+11:54:47.945   ✓ Expect "toHaveCount" locator('.map.leaflet-container').locator('.leaflet-popup-content') (213 ms)
+11:54:47.945   → popup point #16 must exist in the API trail
+11:54:47.945   ✓ popup point #16 must exist in the API trail (0 ms)
+11:54:47.946   → Expect "toEqual"
+11:54:47.947   ✓ Expect "toEqual" (0 ms)
+11:54:47.947   → After Hooks
+11:54:48.142   ✓ After Hooks (194 ms)
+11:54:48.143 ■ Passed in 1710 ms

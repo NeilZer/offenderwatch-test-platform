@@ -1,0 +1,40 @@
+12:27:42.827 ▶ TC-24 PUT rejects empty first name
+   tests/api/04-offenders-update-delete.api.spec.ts · project api
+12:27:42.831   → Before Hooks
+12:27:42.837       → Create request context
+12:27:42.838       ✓ Create request context (1 ms)
+12:27:42.844   ✓ Before Hooks (16 ms)
+12:27:42.844   → POST api/offenders
+12:27:42.847     → POST "api/offenders"
+12:27:42.968     ✓ POST "api/offenders" (122 ms)
+12:27:42.969   ✓ POST api/offenders (126 ms)
+12:27:42.982   → PUT api/offenders/1442
+12:27:42.984     → PUT "api/offenders/1442"
+12:27:43.066     ✓ PUT "api/offenders/1442" (82 ms)
+12:27:43.067   ✓ PUT api/offenders/1442 (85 ms)
+12:27:43.068   → [BUG-13] PUT with empty first name must be rejected: PUT https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/offenders/1442 -> 200 {"id":1442,"firstName":"","lastName":"Friedman","nationalId":"998822672","dateOfBirth":"1985-04-17","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T12:27:43.0979263Z"}
+12:27:43.069   ✗ Error: [BUG-13] PUT with empty first name must be rejected: PUT https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/offenders/1442 -> 200 {"id":1442,"firstName":"","lastName":"Friedman","nationalId":"998822672","dateOfBirth":"1985-04-17","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T12:27:43.0979263Z"} [BUG-13] PUT with empty first name must be rejected: PUT https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/offenders/1442 -> 200 {"id":1442,"firstName":"","lastName":"Friedman","nationalId":"998822672","dateOfBirth":"1985-04-17","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T12:27:43.0979263Z"} (0 ms)
+12:27:43.069   → After Hooks
+12:27:43.070       → DELETE api/offenders/1442
+12:27:43.071         → DELETE "api/offenders/1442"
+12:27:43.216         ✓ DELETE "api/offenders/1442" (145 ms)
+12:27:43.217       ✓ DELETE api/offenders/1442 (147 ms)
+12:27:43.250   ✓ After Hooks (181 ms)
+12:27:43.252 ■ ExpectedFailure in 395 ms
+   annotation known-bug: BUG-13 — PUT /api/offenders/{id} performs no validation at all
+   annotation fail: BUG-13: PUT /api/offenders/{id} performs no validation at all
+
+--- error 1 ---
+Error: [BUG-13] PUT with empty first name must be rejected: PUT https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/offenders/1442 -> 200 {"id":1442,"firstName":"","lastName":"Friedman","nationalId":"998822672","dateOfBirth":"1985-04-17","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T12:27:43.0979263Z"}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 200
+Error: [BUG-13] PUT with empty first name must be rejected: PUT https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/offenders/1442 -> 200 {"id":1442,"firstName":"","lastName":"Friedman","nationalId":"998822672","dateOfBirth":"1985-04-17","riskLevel":"Medium","status":"Active","createdAt":"2026-11-21T12:27:43.0979263Z"}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 200
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\04-offenders-update-delete.api.spec.ts:45:117

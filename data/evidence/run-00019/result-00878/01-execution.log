@@ -1,0 +1,62 @@
+12:27:36.158 ▶ TC-04 following totalPages reaches every offender exactly once
+   tests/api/01-offenders-paging.api.spec.ts · project api
+12:27:36.158   → Before Hooks
+12:27:36.170       → Create request context
+12:27:36.171       ✓ Create request context (1 ms)
+12:27:36.175   ✓ Before Hooks (21 ms)
+12:27:36.176   → GET api/offenders?page=1&pageSize=1000
+12:27:36.177     → GET "api/offenders?page=1&pageSize=1000"
+12:27:36.243     ✓ GET "api/offenders?page=1&pageSize=1000" (66 ms)
+12:27:36.249   ✓ GET api/offenders?page=1&pageSize=1000 (71 ms)
+12:27:36.249   → GET api/offenders?page=1&pageSize=5
+12:27:36.249     → GET "api/offenders?page=1&pageSize=5"
+12:27:36.316     ✓ GET "api/offenders?page=1&pageSize=5" (67 ms)
+12:27:36.317   ✓ GET api/offenders?page=1&pageSize=5 (69 ms)
+12:27:36.318   → GET api/offenders?page=2&pageSize=5
+12:27:36.319     → GET "api/offenders?page=2&pageSize=5"
+12:27:36.383     ✓ GET "api/offenders?page=2&pageSize=5" (64 ms)
+12:27:36.384   ✓ GET api/offenders?page=2&pageSize=5 (66 ms)
+12:27:36.385   → GET api/offenders?page=3&pageSize=5
+12:27:36.387     → GET "api/offenders?page=3&pageSize=5"
+12:27:36.452     ✓ GET "api/offenders?page=3&pageSize=5" (65 ms)
+12:27:36.453   ✓ GET api/offenders?page=3&pageSize=5 (68 ms)
+12:27:36.454   → GET api/offenders?page=4&pageSize=5
+12:27:36.455     → GET "api/offenders?page=4&pageSize=5"
+12:27:36.519     ✓ GET "api/offenders?page=4&pageSize=5" (64 ms)
+12:27:36.521   ✓ GET api/offenders?page=4&pageSize=5 (67 ms)
+12:27:36.521   → GET api/offenders?page=5&pageSize=5
+12:27:36.523     → GET "api/offenders?page=5&pageSize=5"
+12:27:36.586     ✓ GET "api/offenders?page=5&pageSize=5" (63 ms)
+12:27:36.588   ✓ GET api/offenders?page=5&pageSize=5 (67 ms)
+12:27:36.588   → GET api/offenders?page=6&pageSize=5
+12:27:36.589     → GET "api/offenders?page=6&pageSize=5"
+12:27:36.664     ✓ GET "api/offenders?page=6&pageSize=5" (75 ms)
+12:27:36.666   ✓ GET api/offenders?page=6&pageSize=5 (78 ms)
+12:27:36.666   → GET api/offenders?page=7&pageSize=5
+12:27:36.667     → GET "api/offenders?page=7&pageSize=5"
+12:27:36.743     ✓ GET "api/offenders?page=7&pageSize=5" (76 ms)
+12:27:36.744   ✓ GET api/offenders?page=7&pageSize=5 (78 ms)
+12:27:36.746   → no offender may appear on two pages
+12:27:36.746   ✓ no offender may appear on two pages (0 ms)
+12:27:36.747   → [BUG-01] pages 1..7 must contain all 36 offenders
+12:27:36.750   ✗ Error: [BUG-01] pages 1..7 must contain all 36 offenders [BUG-01] pages 1..7 must contain all 36 offenders (2 ms)
+12:27:36.750   → After Hooks
+12:27:36.769   ✓ After Hooks (20 ms)
+12:27:36.770 ■ ExpectedFailure in 586 ms
+   annotation known-bug: BUG-01 — Pager hides the last (partial) page: totalPages is floor(total/pageSize) instead of ceiling
+   annotation fail: BUG-01: Pager hides the last (partial) page: totalPages is floor(total/pageSize) instead of ceiling
+
+--- error 1 ---
+Error: [BUG-01] pages 1..7 must contain all 36 offenders
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 36
+Received: 35
+Error: [BUG-01] pages 1..7 must contain all 36 offenders
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 36
+Received: 35
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\01-offenders-paging.api.spec.ts:73:120

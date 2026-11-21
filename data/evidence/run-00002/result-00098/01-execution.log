@@ -1,0 +1,29 @@
+11:27:32.399 ▶ TC-42 location accepts boundary values: lat -90 / lon -180, battery 100, signal 5
+   tests/api/05-trail.api.spec.ts · project api
+11:27:32.399   → Before Hooks
+11:27:32.403       → Create request context
+11:27:32.404       ✓ Create request context (1 ms)
+11:27:32.406   ✓ Before Hooks (9 ms)
+11:27:32.406   → POST api/offenders
+11:27:32.407     → POST "api/offenders"
+11:27:32.493     ✓ POST "api/offenders" (86 ms)
+11:27:32.494   ✓ POST api/offenders (88 ms)
+11:27:32.501   → POST api/offenders/555/locations
+11:27:32.502     → POST "api/offenders/555/locations"
+11:27:32.586     ✓ POST "api/offenders/555/locations" (84 ms)
+11:27:32.587   ✓ POST api/offenders/555/locations (86 ms)
+11:27:32.587   → POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/555/locations -> 201 {"ok":true}
+11:27:32.587   ✓ POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/555/locations -> 201 {"ok":true} (0 ms)
+11:27:32.587   → GET api/offenders/555/trail
+11:27:32.588     → GET "api/offenders/555/trail"
+11:27:32.654     ✓ GET "api/offenders/555/trail" (66 ms)
+11:27:32.655   ✓ GET api/offenders/555/trail (68 ms)
+11:27:32.655   → Expect "toMatchObject"
+11:27:32.655   ✓ Expect "toMatchObject" (0 ms)
+11:27:32.655   → After Hooks
+11:27:32.656       → DELETE api/offenders/555
+11:27:32.656         → DELETE "api/offenders/555"
+11:27:32.744         ✓ DELETE "api/offenders/555" (88 ms)
+11:27:32.744       ✓ DELETE api/offenders/555 (88 ms)
+11:27:32.755   ✓ After Hooks (100 ms)
+11:27:32.756 ■ Passed in 348 ms

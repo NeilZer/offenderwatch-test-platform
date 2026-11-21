@@ -5,6 +5,8 @@ client/node_modules/
 client/dist/
 server/src/TestPlatform.Api/wwwroot/
 *.log
+# ...but evidence logs ARE deliverables (TM-08 / deliverable 6) — never ignore them
+!data/evidence/**/*.log
 # SQLite write-ahead files (the database itself, data/platform.db, IS committed — deliverable 6)
 data/*.db-wal
 data/*.db-shm

@@ -1,0 +1,102 @@
+13:49:20.605 ▶ TC-32 seeded trails are returned in chronological order
+   tests/api/05-trail.api.spec.ts · project api
+13:49:20.606   → Before Hooks
+13:49:20.611       → Create request context
+13:49:20.611       ✓ Create request context (0 ms)
+13:49:20.615   ✓ Before Hooks (8 ms)
+13:49:20.615   → GET api/offenders/1/trail
+13:49:20.615     → GET "api/offenders/1/trail"
+13:49:20.679     ✓ GET "api/offenders/1/trail" (64 ms)
+13:49:20.680   ✓ GET api/offenders/1/trail (66 ms)
+13:49:20.680   → GET api/offenders/2/trail
+13:49:20.681     → GET "api/offenders/2/trail"
+13:49:20.744     ✓ GET "api/offenders/2/trail" (63 ms)
+13:49:20.745   ✓ GET api/offenders/2/trail (64 ms)
+13:49:20.745   → GET api/offenders/3/trail
+13:49:20.746     → GET "api/offenders/3/trail"
+13:49:20.809     ✓ GET "api/offenders/3/trail" (63 ms)
+13:49:20.809   ✓ GET api/offenders/3/trail (64 ms)
+13:49:20.809   → GET api/offenders/4/trail
+13:49:20.810     → GET "api/offenders/4/trail"
+13:49:20.873     ✓ GET "api/offenders/4/trail" (63 ms)
+13:49:20.874   ✓ GET api/offenders/4/trail (65 ms)
+13:49:20.874   → GET api/offenders/5/trail
+13:49:20.875     → GET "api/offenders/5/trail"
+13:49:20.937     ✓ GET "api/offenders/5/trail" (63 ms)
+13:49:20.938   ✓ GET api/offenders/5/trail (64 ms)
+13:49:20.938   → GET api/offenders/6/trail
+13:49:20.939     → GET "api/offenders/6/trail"
+13:49:21.002     ✓ GET "api/offenders/6/trail" (63 ms)
+13:49:21.003   ✓ GET api/offenders/6/trail (65 ms)
+13:49:21.003   → GET api/offenders/7/trail
+13:49:21.004     → GET "api/offenders/7/trail"
+13:49:21.069     ✓ GET "api/offenders/7/trail" (64 ms)
+13:49:21.070   ✓ GET api/offenders/7/trail (66 ms)
+13:49:21.070   → GET api/offenders/8/trail
+13:49:21.071     → GET "api/offenders/8/trail"
+13:49:21.136     ✓ GET "api/offenders/8/trail" (65 ms)
+13:49:21.137   ✓ GET api/offenders/8/trail (67 ms)
+13:49:21.137   → GET api/offenders/9/trail
+13:49:21.138     → GET "api/offenders/9/trail"
+13:49:21.202     ✓ GET "api/offenders/9/trail" (63 ms)
+13:49:21.203   ✓ GET api/offenders/9/trail (65 ms)
+13:49:21.203   → GET api/offenders/10/trail
+13:49:21.204     → GET "api/offenders/10/trail"
+13:49:21.268     ✓ GET "api/offenders/10/trail" (64 ms)
+13:49:21.269   ✓ GET api/offenders/10/trail (66 ms)
+13:49:21.269   → GET api/offenders/11/trail
+13:49:21.270     → GET "api/offenders/11/trail"
+13:49:21.334     ✓ GET "api/offenders/11/trail" (63 ms)
+13:49:21.335   ✓ GET api/offenders/11/trail (65 ms)
+13:49:21.336   → [BUG-06] trails must be ordered by timestamp
+13:49:21.337   ✗ Error: [BUG-06] trails must be ordered by timestamp [BUG-06] trails must be ordered by timestamp (1 ms)
+13:49:21.337   → After Hooks
+13:49:21.346   ✓ After Hooks (10 ms)
+13:49:21.347 ■ ExpectedFailure in 729 ms
+   annotation known-bug: BUG-06 — Trail is returned and drawn in insertion order, not chronological order
+   annotation fail: BUG-06: Trail is returned and drawn in insertion order, not chronological order
+
+--- error 1 ---
+Error: [BUG-06] trails must be ordered by timestamp
+
+expect(received).toEqual(expected) // deep equality
+
+- Expected  -  1
++ Received  + 13
+
+- Array []
++ Array [
++   "Cohen (id 1)",
++   "Levi (id 2)",
++   "Peretz (id 3)",
++   "Mizrahi (id 4)",
++   "Biton (id 5)",
++   "Azulay (id 6)",
++   "Dahan (id 7)",
++   "Ohana (id 8)",
++   "Gabay (id 9)",
++   "Amar (id 10)",
++   "Malka (id 11)",
++ ]
+Error: [BUG-06] trails must be ordered by timestamp
+
+expect(received).toEqual(expected) // deep equality
+
+- Expected  -  1
++ Received  + 13
+
+- Array []
++ Array [
++   "Cohen (id 1)",
++   "Levi (id 2)",
++   "Peretz (id 3)",
++   "Mizrahi (id 4)",
++   "Biton (id 5)",
++   "Azulay (id 6)",
++   "Dahan (id 7)",
++   "Ohana (id 8)",
++   "Gabay (id 9)",
++   "Amar (id 10)",
++   "Malka (id 11)",
++ ]
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\05-trail.api.spec.ts:28:84

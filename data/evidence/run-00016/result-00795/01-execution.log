@@ -1,0 +1,19 @@
+11:55:41.771 ▶ TC-39 last seen shows the most recent timestamp
+   tests/ui/02-trail-map.ui.spec.ts · project ui
+11:55:41.771   → Before Hooks
+11:55:41.779   ✓ Before Hooks (9 ms)
+11:55:41.780   → Wait for selector locator('section.detail-panel').locator('.latest-card')
+11:55:41.795   ✓ Wait for selector locator('section.detail-panel').locator('.latest-card') (16 ms)
+11:55:41.797   → Evaluate locator('section.detail-panel').locator('.latest-card').locator('.latest-grid > div b')
+11:55:41.813   ✓ Evaluate locator('section.detail-panel').locator('.latest-card').locator('.latest-grid > div b') (12 ms)
+11:55:41.821   → Expect "toBe"
+11:55:41.822   ✓ Expect "toBe" (0 ms)
+11:55:41.822   → After Hooks
+11:55:41.987     → afterAll hook
+11:55:42.000       → the shared screen must not raise browser errors
+11:55:42.000       ✓ the shared screen must not raise browser errors (0 ms)
+11:55:42.005       → Close context
+11:55:42.009       ✓ Close context (4 ms)
+11:55:42.017     ✓ afterAll hook (30 ms)
+11:55:42.017   ✓ After Hooks (195 ms)
+11:55:42.017 ■ Passed in 200 ms

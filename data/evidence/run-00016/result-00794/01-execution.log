@@ -1,0 +1,48 @@
+11:55:41.513 ▶ TC-38 latest reading shows the most recent point
+   tests/ui/02-trail-map.ui.spec.ts · project ui
+11:55:41.513   → Before Hooks
+11:55:41.530   ✓ Before Hooks (17 ms)
+11:55:41.532   → Wait for selector locator('section.detail-panel').locator('.latest-card')
+11:55:41.549   ✓ Wait for selector locator('section.detail-panel').locator('.latest-card') (18 ms)
+11:55:41.551   → Evaluate locator('section.detail-panel').locator('.latest-card').locator('.latest-grid > div b')
+11:55:41.562   ✓ Evaluate locator('section.detail-panel').locator('.latest-card').locator('.latest-grid > div b') (11 ms)
+11:55:41.577   → [BUG-05] readings must come from the newest point #1 (2026-08-09T11:29:00.000Z)
+11:55:41.579   ✗ Error: [BUG-05] readings must come from the newest point #1 (2026-08-09T11:29:00.000Z) [BUG-05] readings must come from the newest point #1 (2026-08-09T11:29:00.000Z) (1 ms)
+11:55:41.579   → After Hooks
+11:55:41.768   ✓ After Hooks (189 ms)
+11:55:41.769 ■ ExpectedFailure in 210 ms
+   annotation known-bug: BUG-05 — "Latest reading" shows the speed, battery and signal of the OLDEST trail point
+   annotation fail: BUG-05: "Latest reading" shows the speed, battery and signal of the OLDEST trail point
+
+--- error 1 ---
+Error: [BUG-05] readings must come from the newest point #1 (2026-08-09T11:29:00.000Z)
+
+expect(received).toEqual(expected) // deep equality
+
+- Expected  - 3
++ Received  + 3
+
+  Object {
+-   "batteryPct": 68,
+-   "signal": 1,
+-   "speedKmh": 23,
++   "batteryPct": 87,
++   "signal": 4,
++   "speedKmh": 38.4,
+  }
+Error: [BUG-05] readings must come from the newest point #1 (2026-08-09T11:29:00.000Z)
+
+expect(received).toEqual(expected) // deep equality
+
+- Expected  - 3
++ Received  + 3
+
+  Object {
+-   "batteryPct": 68,
+-   "signal": 1,
+-   "speedKmh": 23,
++   "batteryPct": 87,
++   "signal": 4,
++   "speedKmh": 38.4,
+  }
+    at C:\Users\Neil\Desktop\SuperCom\tests\ui\02-trail-map.ui.spec.ts:132:7

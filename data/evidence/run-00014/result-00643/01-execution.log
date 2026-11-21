@@ -1,0 +1,39 @@
+11:53:43.450 ▶ TC-01 first page lists 5 offenders sorted by last name
+   tests/ui/01-roster.ui.spec.ts · project ui
+11:53:43.469   → Before Hooks
+11:53:43.470     → beforeEach hook
+11:53:43.480         → Launch browser
+11:53:43.571         ✓ Launch browser (90 ms)
+11:53:43.576         → Create context
+11:53:43.587         ✓ Create context (12 ms)
+11:53:43.596         → Create page
+11:53:43.706         ✓ Create page (110 ms)
+11:53:43.713       → Wait for event "response"
+11:53:43.715       → Wait for event "response"
+11:53:43.716       → Navigate to "./"
+11:53:44.258       ✓ Navigate to "./" (542 ms)
+11:53:44.325       ✓ Wait for event "response" (612 ms)
+11:53:44.327       ✓ Wait for event "response" (612 ms)
+11:53:44.343       → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+11:53:44.376       ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (32 ms)
+11:53:44.377       → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+11:53:44.387       ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (10 ms)
+11:53:44.388     ✓ beforeEach hook (917 ms)
+11:53:44.389       → Create request context
+11:53:44.390       ✓ Create request context (1 ms)
+11:53:44.392   ✓ Before Hooks (923 ms)
+11:53:44.392   → GET api/offenders?page=1&pageSize=1000
+11:53:44.396     → GET "api/offenders?page=1&pageSize=1000"
+11:53:44.657     ✓ GET "api/offenders?page=1&pageSize=1000" (262 ms)
+11:53:44.661   ✓ GET api/offenders?page=1&pageSize=1000 (269 ms)
+11:53:44.686   → Evaluate locator('table.grid:not(.trail-grid) tbody tr')
+11:53:44.721   ✓ Evaluate locator('table.grid:not(.trail-grid) tbody tr') (34 ms)
+11:53:44.722   → Expect "toHaveLength"
+11:53:44.722   ✓ Expect "toHaveLength" (0 ms)
+11:53:44.724   → Expect "toEqual"
+11:53:44.725   ✓ Expect "toEqual" (2 ms)
+11:53:44.725   → After Hooks
+11:53:44.812       → Close context
+11:53:44.818       ✓ Close context (6 ms)
+11:53:44.829   ✓ After Hooks (103 ms)
+11:53:44.830 ■ Passed in 1241 ms

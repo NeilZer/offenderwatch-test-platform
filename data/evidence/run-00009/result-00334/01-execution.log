@@ -1,0 +1,92 @@
+11:43:50.971 ▶ TC-33 trail table is ordered oldest to newest
+   tests/ui/02-trail-map.ui.spec.ts · project ui
+11:43:50.971   → Before Hooks
+11:43:50.980   ✓ Before Hooks (9 ms)
+11:43:50.982   → Evaluate locator('section.detail-panel').locator('.trail-grid tbody tr')
+11:43:51.021   ✓ Evaluate locator('section.detail-panel').locator('.trail-grid tbody tr') (39 ms)
+11:43:51.025   → [BUG-06] table must list points chronologically
+11:43:51.027   ✗ Error: [BUG-06] table must list points chronologically [BUG-06] table must list points chronologically (2 ms)
+11:43:51.027   → After Hooks
+11:43:51.187     → afterEach hook
+11:43:51.188       → Screenshot
+11:43:51.356       ✓ Screenshot (169 ms)
+11:43:51.365     ✓ afterEach hook (175 ms)
+11:43:51.404   ✓ After Hooks (377 ms)
+11:43:51.405 ■ ExpectedFailure in 381 ms
+   annotation known-bug: BUG-06 — Trail is returned and drawn in insertion order, not chronological order
+   annotation fail: BUG-06: Trail is returned and drawn in insertion order, not chronological order
+
+--- error 1 ---
+Error: [BUG-06] table must list points chronologically
+
+expect(received).toEqual(expected) // deep equality
+
+- Expected  - 11
++ Received  + 11
+
+  Array [
+-   7,
+-   11,
+-   4,
++   1,
+    2,
+-   15,
+-   9,
++   3,
++   4,
++   5,
+    6,
+-   12,
+-   16,
++   7,
++   8,
++   9,
+    10,
++   11,
++   12,
+    13,
+-   5,
+-   3,
+    14,
+-   8,
+-   1,
++   15,
++   16,
+  ]
+Error: [BUG-06] table must list points chronologically
+
+expect(received).toEqual(expected) // deep equality
+
+- Expected  - 11
++ Received  + 11
+
+  Array [
+-   7,
+-   11,
+-   4,
++   1,
+    2,
+-   15,
+-   9,
++   3,
++   4,
++   5,
+    6,
+-   12,
+-   16,
++   7,
++   8,
++   9,
+    10,
++   11,
++   12,
+    13,
+-   5,
+-   3,
+    14,
+-   8,
+-   1,
++   15,
++   16,
+  ]
+    at C:\Users\Neil\Desktop\SuperCom\tests\ui\02-trail-map.ui.spec.ts:76:86

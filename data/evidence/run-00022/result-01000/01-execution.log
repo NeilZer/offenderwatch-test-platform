@@ -1,0 +1,39 @@
+12:55:19.538 ▶ TC-01 first page lists 5 offenders sorted by last name
+   tests/ui/01-roster.ui.spec.ts · project ui
+12:55:19.559   → Before Hooks
+12:55:19.559     → beforeEach hook
+12:55:19.574         → Launch browser
+12:55:21.080         ✓ Launch browser (1506 ms)
+12:55:21.086         → Create context
+12:55:21.099         ✓ Create context (13 ms)
+12:55:21.109         → Create page
+12:55:21.321         ✓ Create page (213 ms)
+12:55:21.333       → Wait for event "response"
+12:55:21.335       → Wait for event "response"
+12:55:21.336       → Navigate to "./"
+12:55:29.237       ✓ Navigate to "./" (7900 ms)
+12:55:29.302       ✓ Wait for event "response" (7969 ms)
+12:55:29.303       ✓ Wait for event "response" (7969 ms)
+12:55:29.326       → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+12:55:29.373       ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (48 ms)
+12:55:29.375       → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+12:55:29.389       ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (14 ms)
+12:55:29.389     ✓ beforeEach hook (9829 ms)
+12:55:29.391       → Create request context
+12:55:29.394       ✓ Create request context (3 ms)
+12:55:29.398   ✓ Before Hooks (9839 ms)
+12:55:29.400   → GET api/offenders?page=1&pageSize=1000
+12:55:29.406     → GET "api/offenders?page=1&pageSize=1000"
+12:55:29.691     ✓ GET "api/offenders?page=1&pageSize=1000" (285 ms)
+12:55:29.695   ✓ GET api/offenders?page=1&pageSize=1000 (296 ms)
+12:55:29.720   → Evaluate locator('table.grid:not(.trail-grid) tbody tr')
+12:55:29.751   ✓ Evaluate locator('table.grid:not(.trail-grid) tbody tr') (31 ms)
+12:55:29.752   → Expect "toHaveLength"
+12:55:29.752   ✓ Expect "toHaveLength" (1 ms)
+12:55:29.753   → Expect "toEqual"
+12:55:29.754   ✓ Expect "toEqual" (1 ms)
+12:55:29.754   → After Hooks
+12:55:29.867       → Close context
+12:55:29.889       ✓ Close context (21 ms)
+12:55:29.901   ✓ After Hooks (147 ms)
+12:55:29.902 ■ Passed in 8801 ms

@@ -1,0 +1,39 @@
+11:44:35.902 ▶ TC-01 first page lists 5 offenders sorted by last name
+   tests/ui/01-roster.ui.spec.ts · project ui
+11:44:35.922   → Before Hooks
+11:44:35.922     → beforeEach hook
+11:44:35.933         → Launch browser
+11:44:36.039         ✓ Launch browser (105 ms)
+11:44:36.045         → Create context
+11:44:36.056         ✓ Create context (11 ms)
+11:44:36.067         → Create page
+11:44:36.193         ✓ Create page (126 ms)
+11:44:36.205       → Wait for event "response"
+11:44:36.207       → Wait for event "response"
+11:44:36.209       → Navigate to "./"
+11:44:36.770       ✓ Navigate to "./" (561 ms)
+11:44:36.840       ✓ Wait for event "response" (633 ms)
+11:44:36.843       ✓ Wait for event "response" (638 ms)
+11:44:36.875       → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+11:44:36.921       ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (46 ms)
+11:44:36.923       → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+11:44:36.940       ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (17 ms)
+11:44:36.940     ✓ beforeEach hook (1018 ms)
+11:44:36.942       → Create request context
+11:44:36.943       ✓ Create request context (2 ms)
+11:44:36.947   ✓ Before Hooks (1025 ms)
+11:44:36.948   → GET api/offenders?page=1&pageSize=1000
+11:44:36.954     → GET "api/offenders?page=1&pageSize=1000"
+11:44:37.223     ✓ GET "api/offenders?page=1&pageSize=1000" (269 ms)
+11:44:37.229   ✓ GET api/offenders?page=1&pageSize=1000 (280 ms)
+11:44:37.260   → Evaluate locator('table.grid:not(.trail-grid) tbody tr')
+11:44:37.316   ✓ Evaluate locator('table.grid:not(.trail-grid) tbody tr') (56 ms)
+11:44:37.318   → Expect "toHaveLength"
+11:44:37.318   ✓ Expect "toHaveLength" (1 ms)
+11:44:37.319   → Expect "toEqual"
+11:44:37.321   ✓ Expect "toEqual" (2 ms)
+11:44:37.321   → After Hooks
+11:44:37.397       → Close context
+11:44:37.403       ✓ Close context (6 ms)
+11:44:37.414   ✓ After Hooks (93 ms)
+11:44:37.415 ■ Passed in 1355 ms

@@ -1,0 +1,40 @@
+11:55:23.236 ▶ TC-41 location rejects negative speed
+   tests/api/05-trail.api.spec.ts · project api
+11:55:23.236   → Before Hooks
+11:55:23.239       → Create request context
+11:55:23.239       ✓ Create request context (0 ms)
+11:55:23.242   ✓ Before Hooks (7 ms)
+11:55:23.242   → POST api/offenders
+11:55:23.244     → POST "api/offenders"
+11:55:23.327     ✓ POST "api/offenders" (84 ms)
+11:55:23.328   ✓ POST api/offenders (86 ms)
+11:55:23.336   → POST api/offenders/914/locations
+11:55:23.337     → POST "api/offenders/914/locations"
+11:55:23.418     ✓ POST "api/offenders/914/locations" (82 ms)
+11:55:23.419   ✓ POST api/offenders/914/locations (83 ms)
+11:55:23.419   → [BUG-14] negative speed must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/914/locations -> 201 {"ok":true}
+11:55:23.420   ✗ Error: [BUG-14] negative speed must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/914/locations -> 201 {"ok":true} [BUG-14] negative speed must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/914/locations -> 201 {"ok":true} (0 ms)
+11:55:23.420   → After Hooks
+11:55:23.420       → DELETE api/offenders/914
+11:55:23.421         → DELETE "api/offenders/914"
+11:55:23.500         ✓ DELETE "api/offenders/914" (79 ms)
+11:55:23.501       ✓ DELETE api/offenders/914 (81 ms)
+11:55:23.519   ✓ After Hooks (100 ms)
+11:55:23.520 ■ ExpectedFailure in 271 ms
+   annotation known-bug: BUG-14 — Location points are not validated: invalid coordinates, negative speed, battery and signal out of range all accepted
+   annotation fail: BUG-14: Location points are not validated: invalid coordinates, negative speed, battery and signal out of range all accepted
+
+--- error 1 ---
+Error: [BUG-14] negative speed must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/914/locations -> 201 {"ok":true}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 201
+Error: [BUG-14] negative speed must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/914/locations -> 201 {"ok":true}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 201
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\05-trail.api.spec.ts:60:108

@@ -1,0 +1,156 @@
+11:57:16.005 ▶ TC-27 deleting an offender deletes their trail data
+   tests/api/04-offenders-update-delete.api.spec.ts · project api
+11:57:16.006   → Before Hooks
+11:57:16.010       → Create request context
+11:57:16.011       ✓ Create request context (0 ms)
+11:57:16.013   ✓ Before Hooks (10 ms)
+11:57:16.014   → POST api/offenders
+11:57:16.015     → POST "api/offenders"
+11:57:16.096     ✓ POST "api/offenders" (80 ms)
+11:57:16.097   ✓ POST api/offenders (82 ms)
+11:57:16.106   → POST api/offenders/947/locations
+11:57:16.107     → POST "api/offenders/947/locations"
+11:57:16.194     ✓ POST "api/offenders/947/locations" (87 ms)
+11:57:16.197   ✓ POST api/offenders/947/locations (91 ms)
+11:57:16.197   → POST api/offenders/947/locations
+11:57:16.199     → POST "api/offenders/947/locations"
+11:57:16.281     ✓ POST "api/offenders/947/locations" (83 ms)
+11:57:16.283   ✓ POST api/offenders/947/locations (86 ms)
+11:57:16.283   → POST api/offenders/947/locations
+11:57:16.285     → POST "api/offenders/947/locations"
+11:57:16.371     ✓ POST "api/offenders/947/locations" (86 ms)
+11:57:16.373   ✓ POST api/offenders/947/locations (90 ms)
+11:57:16.373   → POST api/offenders/947/locations
+11:57:16.375     → POST "api/offenders/947/locations"
+11:57:16.458     ✓ POST "api/offenders/947/locations" (82 ms)
+11:57:16.459   ✓ POST api/offenders/947/locations (85 ms)
+11:57:16.459   → GET api/offenders/947/trail
+11:57:16.460     → GET "api/offenders/947/trail"
+11:57:16.524     ✓ GET "api/offenders/947/trail" (64 ms)
+11:57:16.526   ✓ GET api/offenders/947/trail (66 ms)
+11:57:16.577   → GET api/offenders/947/trail
+11:57:16.579     → GET "api/offenders/947/trail"
+11:57:16.643     ✓ GET "api/offenders/947/trail" (64 ms)
+11:57:16.644   ✓ GET api/offenders/947/trail (67 ms)
+11:57:16.644   → Expect "toHaveLength"
+11:57:16.645   ✓ Expect "toHaveLength" (0 ms)
+11:57:16.645   → DELETE api/offenders/947
+11:57:16.646     → DELETE "api/offenders/947"
+11:57:16.725     ✓ DELETE "api/offenders/947" (79 ms)
+11:57:16.726   ✓ DELETE api/offenders/947 (82 ms)
+11:57:16.727   → Expect "toBe"
+11:57:16.727   ✓ Expect "toBe" (0 ms)
+11:57:16.735   → GET api/offenders/947/trail
+11:57:16.736     → GET "api/offenders/947/trail"
+11:57:16.799     ✓ GET "api/offenders/947/trail" (64 ms)
+11:57:16.801   ✓ GET api/offenders/947/trail (66 ms)
+11:57:16.802   → [BUG-02] no trail point may survive the deletion of its offender
+11:57:16.807   ✗ Error: [BUG-02] no trail point may survive the deletion of its offender [BUG-02] no trail point may survive the deletion of its offender (4 ms)
+11:57:16.807   → After Hooks
+11:57:16.819   ✓ After Hooks (12 ms)
+11:57:16.820 ■ ExpectedFailure in 799 ms
+   annotation known-bug: BUG-02 — Deleting an offender leaves their trail points in the system and in the trail-point total
+   annotation fail: BUG-02: Deleting an offender leaves their trail points in the system and in the trail-point total
+
+--- error 1 ---
+Error: [BUG-02] no trail point may survive the deletion of its offender
+
+expect(received).toEqual(expected) // deep equality
+
+- Expected  -  1
++ Received  + 42
+
+- Array []
++ Array [
++   Object {
++     "batteryPct": 70,
++     "id": 816,
++     "lat": 32.087,
++     "lon": 34.783,
++     "offenderId": 947,
++     "signal": 3,
++     "speedKmh": 30,
++     "timestamp": "2026-10-01T10:30:00Z",
++   },
++   Object {
++     "batteryPct": 90,
++     "id": 817,
++     "lat": 32.085,
++     "lon": 34.781,
++     "offenderId": 947,
++     "signal": 5,
++     "speedKmh": 10,
++     "timestamp": "2026-10-01T10:00:00Z",
++   },
++   Object {
++     "batteryPct": 60,
++     "id": 818,
++     "lat": 32.088,
++     "lon": 34.784,
++     "offenderId": 947,
++     "signal": 2,
++     "speedKmh": 40,
++     "timestamp": "2026-10-01T10:45:00Z",
++   },
++   Object {
++     "batteryPct": 80,
++     "id": 819,
++     "lat": 32.086,
++     "lon": 34.782,
++     "offenderId": 947,
++     "signal": 4,
++     "speedKmh": 20,
++     "timestamp": "2026-10-01T10:15:00Z",
++   },
++ ]
+Error: [BUG-02] no trail point may survive the deletion of its offender
+
+expect(received).toEqual(expected) // deep equality
+
+- Expected  -  1
++ Received  + 42
+
+- Array []
++ Array [
++   Object {
++     "batteryPct": 70,
++     "id": 816,
++     "lat": 32.087,
++     "lon": 34.783,
++     "offenderId": 947,
++     "signal": 3,
++     "speedKmh": 30,
++     "timestamp": "2026-10-01T10:30:00Z",
++   },
++   Object {
++     "batteryPct": 90,
++     "id": 817,
++     "lat": 32.085,
++     "lon": 34.781,
++     "offenderId": 947,
++     "signal": 5,
++     "speedKmh": 10,
++     "timestamp": "2026-10-01T10:00:00Z",
++   },
++   Object {
++     "batteryPct": 60,
++     "id": 818,
++     "lat": 32.088,
++     "lon": 34.784,
++     "offenderId": 947,
++     "signal": 2,
++     "speedKmh": 40,
++     "timestamp": "2026-10-01T10:45:00Z",
++   },
++   Object {
++     "batteryPct": 80,
++     "id": 819,
++     "lat": 32.086,
++     "lon": 34.782,
++     "offenderId": 947,
++     "signal": 4,
++     "speedKmh": 20,
++     "timestamp": "2026-10-01T10:15:00Z",
++   },
++ ]
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\04-offenders-update-delete.api.spec.ts:114:104

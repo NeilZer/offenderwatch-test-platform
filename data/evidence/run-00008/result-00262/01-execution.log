@@ -1,0 +1,59 @@
+11:41:56.803 ▶ TC-35 map shows one marker per trail point and a trail line
+   tests/ui/02-trail-map.ui.spec.ts · project ui
+11:41:56.805   → Before Hooks
+11:41:56.805     → beforeAll hook
+11:41:56.815       → Create request context
+11:41:56.815       ✓ Create request context (1 ms)
+11:41:56.820       → GET api/offenders/1/trail
+11:41:56.820         → GET "api/offenders/1/trail"
+11:41:56.885         ✓ GET "api/offenders/1/trail" (66 ms)
+11:41:56.887       ✓ GET api/offenders/1/trail (69 ms)
+11:41:56.915       → Create page
+11:41:56.994       ✓ Create page (80 ms)
+11:41:56.997       → Wait for event "response"
+11:41:56.999       → Wait for event "response"
+11:41:57.000       → Navigate to "./"
+11:41:57.529       ✓ Navigate to "./" (530 ms)
+11:41:57.600       ✓ Wait for event "response" (602 ms)
+11:41:57.602       ✓ Wait for event "response" (606 ms)
+11:41:57.612       → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+11:41:57.665       ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (52 ms)
+11:41:57.666       → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+11:41:57.693       ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (27 ms)
+11:41:57.709       → Wait for event "response"
+11:41:57.710       → Fill "305412876" locator('section.list-panel').locator('input.search')
+11:41:57.742       ✓ Fill "305412876" locator('section.list-panel').locator('input.search') (32 ms)
+11:41:57.823       ✓ Wait for event "response" (113 ms)
+11:41:57.828       → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+11:41:57.839       ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (12 ms)
+11:41:57.840       → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+11:41:57.851       ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (11 ms)
+11:41:57.853       → Wait for event "response"
+11:41:57.855       → Click locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Cohen, David' })
+11:41:57.946       ✓ Click locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Cohen, David' }) (91 ms)
+11:41:57.968       ✓ Wait for event "response" (114 ms)
+11:41:57.975       → Expect "toHaveCount" locator('.map.leaflet-container').locator('path.leaflet-interactive:not([fill="none"])')
+11:41:58.041       ✓ Expect "toHaveCount" locator('.map.leaflet-container').locator('path.leaflet-interactive:not([fill="none"])') (67 ms)
+11:41:58.043       → map should finish its zoom/pan animation
+11:41:58.068         → map should finish its zoom/pan animation
+11:41:58.072         ✗ Error: map should finish its zoom/pan animation map should finish its zoom/pan animation (1 ms)
+11:41:58.340         → map should finish its zoom/pan animation
+11:41:58.342         ✗ Error: map should finish its zoom/pan animation map should finish its zoom/pan animation (1 ms)
+11:41:58.607         → map should finish its zoom/pan animation
+11:41:58.607         ✓ map should finish its zoom/pan animation (0 ms)
+11:41:58.607       ✓ map should finish its zoom/pan animation (564 ms)
+11:41:58.989     ✓ beforeAll hook (2185 ms)
+11:41:59.029   ✓ Before Hooks (2226 ms)
+11:41:59.030   → Expect "toHaveCount" locator('.map.leaflet-container').locator('path.leaflet-interactive:not([fill="none"])')
+11:41:59.045   ✓ Expect "toHaveCount" locator('.map.leaflet-container').locator('path.leaflet-interactive:not([fill="none"])') (15 ms)
+11:41:59.046   → Expect "toHaveCount" locator('.map.leaflet-container').locator('path.leaflet-interactive[fill="none"]')
+11:41:59.058   ✓ Expect "toHaveCount" locator('.map.leaflet-container').locator('path.leaflet-interactive[fill="none"]') (12 ms)
+11:41:59.059   → Expect "toHaveText" locator('section.detail-panel').locator('.trail-table-header h3')
+11:41:59.070   ✓ Expect "toHaveText" locator('section.detail-panel').locator('.trail-table-header h3') (11 ms)
+11:41:59.070   → After Hooks
+11:41:59.070     → afterEach hook
+11:41:59.072       → Screenshot
+11:41:59.235       ✓ Screenshot (164 ms)
+11:41:59.243     ✓ afterEach hook (170 ms)
+11:41:59.252   ✓ After Hooks (181 ms)
+11:41:59.254 ■ Passed in 212 ms

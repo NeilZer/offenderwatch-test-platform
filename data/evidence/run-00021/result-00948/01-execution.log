@@ -1,0 +1,29 @@
+12:54:45.771 ▶ TC-05 list response contract and last-name sort order
+   tests/api/01-offenders-paging.api.spec.ts · project api
+12:54:45.792   → Before Hooks
+12:54:45.802       → Create request context
+12:54:45.805       ✓ Create request context (2 ms)
+12:54:45.810   ✓ Before Hooks (18 ms)
+12:54:45.811   → GET api/offenders?page=1&pageSize=1000
+12:54:45.815     → GET "api/offenders?page=1&pageSize=1000"
+12:54:46.089     ✓ GET "api/offenders?page=1&pageSize=1000" (273 ms)
+12:54:46.091   ✓ GET api/offenders?page=1&pageSize=1000 (280 ms)
+12:54:46.097   → GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?page=1&pageSize=1000 -> 200 {"items":[{"id":10,"firstName":"Noa","lastName":"Amar","nationalId":"205432198","dateOfBirth":"1998-02-06","riskLevel":"Medium","status":"Active","createdAt":"2026-06-10T17:15:00.000Z"},{"id":6,"first…
+12:54:46.097   ✓ GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?page=1&pageSize=1000 -> 200 {"items":[{"id":10,"firstName":"Noa","lastName":"Amar","nationalId":"205432198","dateOfBirth":"1998-02-06","riskLevel":"Medium","status":"Active","createdAt":"2026-06-10T17:15:00.000Z"},{"id":6,"first… (1 ms)
+12:54:46.099   → Expect "toBe"
+12:54:46.099   ✓ Expect "toBe" (0 ms)
+12:54:46.100   → total must be an integer
+12:54:46.100   ✓ total must be an integer (0 ms)
+12:54:46.101   → page must be an integer
+12:54:46.101   ✓ page must be an integer (0 ms)
+12:54:46.101   → pageSize must be an integer
+12:54:46.101   ✓ pageSize must be an integer (0 ms)
+12:54:46.102   → totalPages must be an integer
+12:54:46.102   ✓ totalPages must be an integer (0 ms)
+12:54:46.103   → Expect "toBe"
+12:54:46.103   ✓ Expect "toBe" (0 ms)
+12:54:46.115   → items must be sorted alphabetically by last name
+12:54:46.116   ✓ items must be sorted alphabetically by last name (0 ms)
+12:54:46.116   → After Hooks
+12:54:46.131   ✓ After Hooks (14 ms)
+12:54:46.132 ■ Passed in 324 ms

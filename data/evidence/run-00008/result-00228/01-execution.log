@@ -1,0 +1,32 @@
+11:41:26.260 ▶ TC-20 malformed JSON body returns 400 with an error description
+   tests/api/03-offenders-create.api.spec.ts · project api
+11:41:26.260   → Before Hooks
+11:41:26.268       → Create request context
+11:41:26.268       ✓ Create request context (1 ms)
+11:41:26.271   ✓ Before Hooks (12 ms)
+11:41:26.272   → POST api/offenders
+11:41:26.273     → POST "api/offenders"
+11:41:26.335     ✓ POST "api/offenders" (62 ms)
+11:41:26.337   ✓ POST api/offenders (66 ms)
+11:41:26.339   → Expect "toBe"
+11:41:26.339   ✓ Expect "toBe" (0 ms)
+11:41:26.339   → [BUG-18] 400 response must describe the error
+11:41:26.340   ✗ Error: [BUG-18] 400 response must describe the error [BUG-18] 400 response must describe the error (0 ms)
+11:41:26.341   → After Hooks
+11:41:26.383   ✓ After Hooks (43 ms)
+11:41:26.384 ■ ExpectedFailure in 78 ms
+   annotation known-bug: BUG-18 — Malformed request body returns 400 with an empty body (no error description)
+   annotation fail: BUG-18: Malformed request body returns 400 with an empty body (no error description)
+
+--- error 1 ---
+Error: [BUG-18] 400 response must describe the error
+
+expect(received).not.toBe(expected) // Object.is equality
+
+Expected: not ""
+Error: [BUG-18] 400 response must describe the error
+
+expect(received).not.toBe(expected) // Object.is equality
+
+Expected: not ""
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\03-offenders-create.api.spec.ts:84:101

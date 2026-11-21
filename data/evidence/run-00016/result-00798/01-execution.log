@@ -1,0 +1,47 @@
+11:55:45.113 ▶ TC-19 empty create form shows an error and saves nothing
+   tests/ui/03-offender-crud.ui.spec.ts · project ui
+11:55:45.113   → Before Hooks
+11:55:45.117       → Create context
+11:55:45.121       ✓ Create context (3 ms)
+11:55:45.128       → Create page
+11:55:45.183       ✓ Create page (59 ms)
+11:55:45.185       → Create request context
+11:55:45.186       ✓ Create request context (1 ms)
+11:55:45.188   ✓ Before Hooks (75 ms)
+11:55:45.189   → Wait for event "response"
+11:55:45.190   → Wait for event "response"
+11:55:45.190   → Navigate to "./"
+11:55:45.712   ✓ Navigate to "./" (521 ms)
+11:55:45.780   ✓ Wait for event "response" (591 ms)
+11:55:45.784   ✓ Wait for event "response" (594 ms)
+11:55:45.785   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+11:55:45.817   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (31 ms)
+11:55:45.818   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+11:55:45.828   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (11 ms)
+11:55:45.829   → GET api/stats
+11:55:45.829     → GET "api/stats"
+11:55:45.936     ✓ GET "api/stats" (106 ms)
+11:55:45.938   ✓ GET api/stats (109 ms)
+11:55:45.940   → Click locator('section.list-panel').getByRole('button', { name: '+ Add Offender', exact: true })
+11:55:45.996   ✓ Click locator('section.list-panel').getByRole('button', { name: '+ Add Offender', exact: true }) (56 ms)
+11:55:45.998   → Wait for event "response"
+11:55:45.999   → Click locator('.modal').getByRole('button', { name: 'Create', exact: true })
+11:55:46.034   ✓ Click locator('.modal').getByRole('button', { name: 'Create', exact: true }) (35 ms)
+11:55:46.096   ✓ Wait for event "response" (98 ms)
+11:55:46.104   → Expect "toBe"
+11:55:46.104   ✓ Expect "toBe" (0 ms)
+11:55:46.105   → Expect "toContainText" locator('.banner.error')
+11:55:46.115   ✓ Expect "toContainText" locator('.banner.error') (9 ms)
+11:55:46.127   → form must stay open for correction
+11:55:46.127   ✓ form must stay open for correction (0 ms)
+11:55:46.127   → GET api/stats
+11:55:46.127     → GET "api/stats"
+11:55:46.193     ✓ GET "api/stats" (65 ms)
+11:55:46.194   ✓ GET api/stats (67 ms)
+11:55:46.194   → Expect "toBe"
+11:55:46.194   ✓ Expect "toBe" (0 ms)
+11:55:46.195   → After Hooks
+11:55:46.281       → Close context
+11:55:46.284       ✓ Close context (3 ms)
+11:55:46.291   ✓ After Hooks (96 ms)
+11:55:46.292 ■ Passed in 1162 ms

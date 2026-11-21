@@ -1,0 +1,78 @@
+12:55:12.038 ▶ TC-32 points inserted out of order are returned chronologically
+   tests/api/05-trail.api.spec.ts · project api
+12:55:12.038   → Before Hooks
+12:55:12.046       → Create request context
+12:55:12.049       ✓ Create request context (2 ms)
+12:55:12.051   ✓ Before Hooks (16 ms)
+12:55:12.052   → POST api/offenders
+12:55:12.053     → POST "api/offenders"
+12:55:12.139     ✓ POST "api/offenders" (87 ms)
+12:55:12.140   ✓ POST api/offenders (89 ms)
+12:55:12.147   → POST api/offenders/1492/locations
+12:55:12.149     → POST "api/offenders/1492/locations"
+12:55:12.230     ✓ POST "api/offenders/1492/locations" (81 ms)
+12:55:12.231   ✓ POST api/offenders/1492/locations (83 ms)
+12:55:12.231   → POST api/offenders/1492/locations
+12:55:12.232     → POST "api/offenders/1492/locations"
+12:55:12.314     ✓ POST "api/offenders/1492/locations" (81 ms)
+12:55:12.317   ✓ POST api/offenders/1492/locations (85 ms)
+12:55:12.317   → POST api/offenders/1492/locations
+12:55:12.320     → POST "api/offenders/1492/locations"
+12:55:12.402     ✓ POST "api/offenders/1492/locations" (83 ms)
+12:55:12.403   ✓ POST api/offenders/1492/locations (87 ms)
+12:55:12.404   → POST api/offenders/1492/locations
+12:55:12.405     → POST "api/offenders/1492/locations"
+12:55:12.487     ✓ POST "api/offenders/1492/locations" (82 ms)
+12:55:12.488   ✓ POST api/offenders/1492/locations (85 ms)
+12:55:12.489   → GET api/offenders/1492/trail
+12:55:12.490     → GET "api/offenders/1492/trail"
+12:55:12.554     ✓ GET "api/offenders/1492/trail" (65 ms)
+12:55:12.555   ✓ GET api/offenders/1492/trail (67 ms)
+12:55:12.590   → GET api/offenders/1492/trail
+12:55:12.592     → GET "api/offenders/1492/trail"
+12:55:12.659     ✓ GET "api/offenders/1492/trail" (67 ms)
+12:55:12.660   ✓ GET api/offenders/1492/trail (71 ms)
+12:55:12.661   → [BUG-06] trail must be oldest -> newest
+12:55:12.664   ✗ Error: [BUG-06] trail must be oldest -> newest [BUG-06] trail must be oldest -> newest (1 ms)
+12:55:12.664   → After Hooks
+12:55:12.664       → DELETE api/offenders/1492
+12:55:12.666         → DELETE "api/offenders/1492"
+12:55:12.749         ✓ DELETE "api/offenders/1492" (83 ms)
+12:55:12.751       ✓ DELETE api/offenders/1492 (86 ms)
+12:55:12.774   ✓ After Hooks (110 ms)
+12:55:12.776 ■ ExpectedFailure in 717 ms
+   annotation known-bug: BUG-06 — Trail is returned and drawn in insertion order, not chronological order
+   annotation fail: BUG-06: Trail is returned and drawn in insertion order, not chronological order
+
+--- error 1 ---
+Error: [BUG-06] trail must be oldest -> newest
+
+expect(received).toEqual(expected) // deep equality
+
+- Expected  - 2
++ Received  + 2
+
+  Array [
+-   "2026-10-01T10:00:00Z",
+-   "2026-10-01T10:15:00Z",
+    "2026-10-01T10:30:00Z",
++   "2026-10-01T10:00:00Z",
+    "2026-10-01T10:45:00Z",
++   "2026-10-01T10:15:00Z",
+  ]
+Error: [BUG-06] trail must be oldest -> newest
+
+expect(received).toEqual(expected) // deep equality
+
+- Expected  - 2
++ Received  + 2
+
+  Array [
+-   "2026-10-01T10:00:00Z",
+-   "2026-10-01T10:15:00Z",
+    "2026-10-01T10:30:00Z",
++   "2026-10-01T10:00:00Z",
+    "2026-10-01T10:45:00Z",
++   "2026-10-01T10:15:00Z",
+  ]
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\05-trail.api.spec.ts:42:99

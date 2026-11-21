@@ -1,0 +1,59 @@
+11:44:33.093 ▶ TC-47 counters update after creating offenders and points
+   tests/api/06-stats.api.spec.ts · project api
+11:44:33.093   → Before Hooks
+11:44:33.105       → Create request context
+11:44:33.105       ✓ Create request context (0 ms)
+11:44:33.108   ✓ Before Hooks (17 ms)
+11:44:33.109   → GET api/stats
+11:44:33.111     → GET "api/stats"
+11:44:33.175     ✓ GET "api/stats" (64 ms)
+11:44:33.176   ✓ GET api/stats (67 ms)
+11:44:33.176   → POST api/offenders
+11:44:33.177     → POST "api/offenders"
+11:44:33.260     ✓ POST "api/offenders" (83 ms)
+11:44:33.263   ✓ POST api/offenders (87 ms)
+11:44:33.459   → POST api/offenders/702/locations
+11:44:33.460     → POST "api/offenders/702/locations"
+11:44:33.543     ✓ POST "api/offenders/702/locations" (83 ms)
+11:44:33.544   ✓ POST api/offenders/702/locations (85 ms)
+11:44:33.544   → POST api/offenders/702/locations
+11:44:33.546     → POST "api/offenders/702/locations"
+11:44:33.628     ✓ POST "api/offenders/702/locations" (82 ms)
+11:44:33.629   ✓ POST api/offenders/702/locations (85 ms)
+11:44:33.630   → POST api/offenders/702/locations
+11:44:33.631     → POST "api/offenders/702/locations"
+11:44:33.713     ✓ POST "api/offenders/702/locations" (82 ms)
+11:44:33.714   ✓ POST api/offenders/702/locations (84 ms)
+11:44:33.714   → POST api/offenders/702/locations
+11:44:33.716     → POST "api/offenders/702/locations"
+11:44:33.800     ✓ POST "api/offenders/702/locations" (84 ms)
+11:44:33.802   ✓ POST api/offenders/702/locations (88 ms)
+11:44:33.802   → GET api/offenders/702/trail
+11:44:33.803     → GET "api/offenders/702/trail"
+11:44:33.867     ✓ GET "api/offenders/702/trail" (64 ms)
+11:44:33.868   ✓ GET api/offenders/702/trail (66 ms)
+11:44:33.908   → POST api/offenders
+11:44:33.909     → POST "api/offenders"
+11:44:33.993     ✓ POST "api/offenders" (84 ms)
+11:44:33.995   ✓ POST api/offenders (87 ms)
+11:44:34.005   → GET api/stats
+11:44:34.006     → GET "api/stats"
+11:44:34.071     ✓ GET "api/stats" (65 ms)
+11:44:34.072   ✓ GET api/stats (67 ms)
+11:44:34.073   → two offenders created
+11:44:34.073   ✓ two offenders created (0 ms)
+11:44:34.074   → only the Active one counts as active
+11:44:34.074   ✓ only the Active one counts as active (0 ms)
+11:44:34.074   → points added
+11:44:34.074   ✓ points added (0 ms)
+11:44:34.074   → After Hooks
+11:44:34.075       → DELETE api/offenders/702
+11:44:34.076         → DELETE "api/offenders/702"
+11:44:34.156         ✓ DELETE "api/offenders/702" (80 ms)
+11:44:34.157       ✓ DELETE api/offenders/702 (82 ms)
+11:44:34.168       → DELETE api/offenders/703
+11:44:34.170         → DELETE "api/offenders/703"
+11:44:34.253         ✓ DELETE "api/offenders/703" (83 ms)
+11:44:34.254       ✓ DELETE api/offenders/703 (87 ms)
+11:44:34.277   ✓ After Hooks (202 ms)
+11:44:34.277 ■ Passed in 1163 ms

@@ -1,0 +1,74 @@
+11:44:57.863 ▶ TC-22 changing risk level in the form persists the shown value
+   tests/ui/03-offender-crud.ui.spec.ts · project ui
+11:44:57.864   → Before Hooks
+11:44:57.871       → Create context
+11:44:57.876       ✓ Create context (4 ms)
+11:44:57.880       → Create page
+11:44:57.978       ✓ Create page (98 ms)
+11:44:57.981       → Create request context
+11:44:57.982       ✓ Create request context (1 ms)
+11:44:57.986   ✓ Before Hooks (125 ms)
+11:44:57.986   → POST api/offenders
+11:44:57.988     → POST "api/offenders"
+11:44:58.070     ✓ POST "api/offenders" (82 ms)
+11:44:58.071   ✓ POST api/offenders (84 ms)
+11:44:58.083   → Wait for event "response"
+11:44:58.085   → Wait for event "response"
+11:44:58.086   → Navigate to "./"
+11:44:58.628   ✓ Navigate to "./" (542 ms)
+11:44:58.700   ✓ Wait for event "response" (617 ms)
+11:44:58.702   ✓ Wait for event "response" (617 ms)
+11:44:58.706   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+11:44:58.752   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (45 ms)
+11:44:58.753   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+11:44:58.766   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (13 ms)
+11:44:58.777   → Wait for event "response"
+11:44:58.779   → Fill "998526265" locator('section.list-panel').locator('input.search')
+11:44:58.808   ✓ Fill "998526265" locator('section.list-panel').locator('input.search') (29 ms)
+11:44:58.869   ✓ Wait for event "response" (92 ms)
+11:44:58.874   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+11:44:58.884   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (10 ms)
+11:44:58.885   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+11:44:58.897   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (11 ms)
+11:44:58.898   → Click locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Barak, Ron' }).getByRole('button', { name: 'Edit', exact: true })
+11:44:58.958   ✓ Click locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Barak, Ron' }).getByRole('button', { name: 'Edit', exact: true }) (60 ms)
+11:44:58.959   → Evaluate locator('.modal').locator('label').filter({ hasText: 'Risk level' }).locator('input, select')
+11:44:58.996   ✓ Evaluate locator('.modal').locator('label').filter({ hasText: 'Risk level' }).locator('input, select') (36 ms)
+11:44:58.998   → Select option locator('.modal').locator('label').filter({ hasText: 'Risk level' }).locator('input, select')
+11:44:59.017   ✓ Select option locator('.modal').locator('label').filter({ hasText: 'Risk level' }).locator('input, select') (19 ms)
+11:44:59.047   → Wait for event "response"
+11:44:59.048   → Click locator('.modal').getByRole('button', { name: 'Save', exact: true })
+11:44:59.099   ✓ Click locator('.modal').getByRole('button', { name: 'Save', exact: true }) (51 ms)
+11:44:59.175   ✓ Wait for event "response" (128 ms)
+11:44:59.184   → GET api/offenders/708
+11:44:59.185     → GET "api/offenders/708"
+11:44:59.248     ✓ GET "api/offenders/708" (64 ms)
+11:44:59.250   ✓ GET api/offenders/708 (65 ms)
+11:44:59.251   → [BUG-03] saved risk level must equal the value shown in the form
+11:44:59.252   ✗ Error: [BUG-03] saved risk level must equal the value shown in the form [BUG-03] saved risk level must equal the value shown in the form (0 ms)
+11:44:59.253   → After Hooks
+11:44:59.354       → DELETE api/offenders/708
+11:44:59.355         → DELETE "api/offenders/708"
+11:44:59.436         ✓ DELETE "api/offenders/708" (81 ms)
+11:44:59.438       ✓ DELETE api/offenders/708 (84 ms)
+11:44:59.473       → Close context
+11:44:59.477       ✓ Close context (4 ms)
+11:44:59.492   ✓ After Hooks (240 ms)
+11:44:59.493 ■ ExpectedFailure in 1602 ms
+   annotation known-bug: BUG-03 — Saving the Edit form silently resets the offender's Risk level to "Low"
+   annotation fail: BUG-03: Saving the Edit form silently resets the offender's Risk level to "Low"
+
+--- error 1 ---
+Error: [BUG-03] saved risk level must equal the value shown in the form
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: "Medium"
+Received: "Low"
+Error: [BUG-03] saved risk level must equal the value shown in the form
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: "Medium"
+Received: "Low"
+    at C:\Users\Neil\Desktop\SuperCom\tests\ui\03-offender-crud.ui.spec.ts:103:111

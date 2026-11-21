@@ -1,0 +1,85 @@
+11:55:43.560 ▶ TC-12 operator creates a valid offender
+   tests/ui/03-offender-crud.ui.spec.ts · project ui
+11:55:43.560   → Before Hooks
+11:55:43.567       → Create context
+11:55:43.573       ✓ Create context (3 ms)
+11:55:43.574       → Create page
+11:55:43.637       ✓ Create page (64 ms)
+11:55:43.638       → Create request context
+11:55:43.640       ✓ Create request context (1 ms)
+11:55:43.642   ✓ Before Hooks (82 ms)
+11:55:43.644   → Wait for event "response"
+11:55:43.645   → Wait for event "response"
+11:55:43.645   → Navigate to "./"
+11:55:44.163   ✓ Navigate to "./" (518 ms)
+11:55:44.229   ✓ Wait for event "response" (585 ms)
+11:55:44.230   ✓ Wait for event "response" (586 ms)
+11:55:44.234   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+11:55:44.268   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (34 ms)
+11:55:44.269   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+11:55:44.281   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (11 ms)
+11:55:44.284   → Wait for selector locator('header.topbar').locator('.stats .stat').filter({ has: locator('span').filter({ hasText: /^Offenders$/ }) }).locator('b')
+11:55:44.296   ✓ Wait for selector locator('header.topbar').locator('.stats .stat').filter({ has: locator('span').filter({ hasText: /^Offenders$/ }) }).locator('b') (12 ms)
+11:55:44.313   → Click locator('section.list-panel').getByRole('button', { name: '+ Add Offender', exact: true })
+11:55:44.360   ✓ Click locator('section.list-panel').getByRole('button', { name: '+ Add Offender', exact: true }) (47 ms)
+11:55:44.364   → Evaluate locator('.modal').locator('label').filter({ hasText: 'First name' }).locator('input, select')
+11:55:44.401   ✓ Evaluate locator('.modal').locator('label').filter({ hasText: 'First name' }).locator('input, select') (37 ms)
+11:55:44.402   → Fill "Noam" locator('.modal').locator('label').filter({ hasText: 'First name' }).locator('input, select')
+11:55:44.422   ✓ Fill "Noam" locator('.modal').locator('label').filter({ hasText: 'First name' }).locator('input, select') (19 ms)
+11:55:44.423   → Evaluate locator('.modal').locator('label').filter({ hasText: 'Last name' }).locator('input, select')
+11:55:44.442   ✓ Evaluate locator('.modal').locator('label').filter({ hasText: 'Last name' }).locator('input, select') (18 ms)
+11:55:44.443   → Fill "Hadad" locator('.modal').locator('label').filter({ hasText: 'Last name' }).locator('input, select')
+11:55:44.464   ✓ Fill "Hadad" locator('.modal').locator('label').filter({ hasText: 'Last name' }).locator('input, select') (21 ms)
+11:55:44.465   → Evaluate locator('.modal').locator('label').filter({ hasText: 'National ID' }).locator('input, select')
+11:55:44.482   ✓ Evaluate locator('.modal').locator('label').filter({ hasText: 'National ID' }).locator('input, select') (18 ms)
+11:55:44.483   → Fill "996426941" locator('.modal').locator('label').filter({ hasText: 'National ID' }).locator('input, select')
+11:55:44.503   ✓ Fill "996426941" locator('.modal').locator('label').filter({ hasText: 'National ID' }).locator('input, select') (19 ms)
+11:55:44.504   → Evaluate locator('.modal').locator('label').filter({ hasText: 'Date of birth' }).locator('input, select')
+11:55:44.521   ✓ Evaluate locator('.modal').locator('label').filter({ hasText: 'Date of birth' }).locator('input, select') (18 ms)
+11:55:44.522   → Fill "1985-04-17" locator('.modal').locator('label').filter({ hasText: 'Date of birth' }).locator('input, select')
+11:55:44.541   ✓ Fill "1985-04-17" locator('.modal').locator('label').filter({ hasText: 'Date of birth' }).locator('input, select') (18 ms)
+11:55:44.542   → Evaluate locator('.modal').locator('label').filter({ hasText: 'Risk level' }).locator('input, select')
+11:55:44.556   ✓ Evaluate locator('.modal').locator('label').filter({ hasText: 'Risk level' }).locator('input, select') (15 ms)
+11:55:44.558   → Select option locator('.modal').locator('label').filter({ hasText: 'Risk level' }).locator('input, select')
+11:55:44.574   ✓ Select option locator('.modal').locator('label').filter({ hasText: 'Risk level' }).locator('input, select') (16 ms)
+11:55:44.575   → Evaluate locator('.modal').locator('label').filter({ hasText: 'Status' }).locator('input, select')
+11:55:44.592   ✓ Evaluate locator('.modal').locator('label').filter({ hasText: 'Status' }).locator('input, select') (17 ms)
+11:55:44.593   → Select option locator('.modal').locator('label').filter({ hasText: 'Status' }).locator('input, select')
+11:55:44.610   ✓ Select option locator('.modal').locator('label').filter({ hasText: 'Status' }).locator('input, select') (16 ms)
+11:55:44.612   → Wait for event "response"
+11:55:44.613   → Click locator('.modal').getByRole('button', { name: 'Create', exact: true })
+11:55:44.647   ✓ Click locator('.modal').getByRole('button', { name: 'Create', exact: true }) (33 ms)
+11:55:44.726   ✓ Wait for event "response" (114 ms)
+11:55:44.770   → Expect "toBe"
+11:55:44.771   ✓ Expect "toBe" (0 ms)
+11:55:44.771   → Expect "toHaveText" locator('.banner.toast')
+11:55:44.780   ✓ Expect "toHaveText" locator('.banner.toast') (8 ms)
+11:55:44.781   → Expect "poll toMatchObject"
+11:55:44.782     → Wait for selector locator('header.topbar').locator('.stats .stat').filter({ has: locator('span').filter({ hasText: /^Offenders$/ }) }).locator('b')
+11:55:44.791     ✓ Wait for selector locator('header.topbar').locator('.stats .stat').filter({ has: locator('span').filter({ hasText: /^Offenders$/ }) }).locator('b') (9 ms)
+11:55:44.810     → Expect "toMatchObject"
+11:55:44.811     ✓ Expect "toMatchObject" (1 ms)
+11:55:44.811   ✓ Expect "poll toMatchObject" (30 ms)
+11:55:44.821   → Wait for event "response"
+11:55:44.822   → Fill "996426941" locator('section.list-panel').locator('input.search')
+11:55:44.837   ✓ Fill "996426941" locator('section.list-panel').locator('input.search') (15 ms)
+11:55:44.899   ✓ Wait for event "response" (78 ms)
+11:55:44.904   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+11:55:44.913   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (9 ms)
+11:55:44.915   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+11:55:44.923   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (8 ms)
+11:55:44.924   → row "Hadad, Noam" should be visible locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Hadad, Noam' })
+11:55:44.934   ✓ row "Hadad, Noam" should be visible locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Hadad, Noam' }) (10 ms)
+11:55:44.942   → Evaluate locator('table.grid:not(.trail-grid) tbody tr')
+11:55:44.951   ✓ Evaluate locator('table.grid:not(.trail-grid) tbody tr') (9 ms)
+11:55:44.952   → Expect "toMatchObject"
+11:55:44.952   ✓ Expect "toMatchObject" (0 ms)
+11:55:44.952   → After Hooks
+11:55:45.003       → DELETE api/offenders/926
+11:55:45.004         → DELETE "api/offenders/926"
+11:55:45.085         ✓ DELETE "api/offenders/926" (81 ms)
+11:55:45.086       ✓ DELETE api/offenders/926 (83 ms)
+11:55:45.101       → Close context
+11:55:45.105       ✓ Close context (3 ms)
+11:55:45.111   ✓ After Hooks (160 ms)
+11:55:45.112 ■ Passed in 1535 ms

@@ -1,0 +1,59 @@
+11:43:23.686 ▶ TC-11 special characters and no-match terms return an empty result
+   tests/api/02-offenders-search.api.spec.ts · project api
+11:43:23.686   → Before Hooks
+11:43:23.691       → Create request context
+11:43:23.691       ✓ Create request context (1 ms)
+11:43:23.694   ✓ Before Hooks (9 ms)
+11:43:23.694   → GET api/offenders?search=%25&page=1&pageSize=5
+11:43:23.696     → GET "api/offenders?search=%25&page=1&pageSize=5"
+11:43:23.759     ✓ GET "api/offenders?search=%25&page=1&pageSize=5" (63 ms)
+11:43:23.760   ✓ GET api/offenders?search=%25&page=1&pageSize=5 (66 ms)
+11:43:23.761   → search "%": GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?search=%25&page=1&pageSize=5 -> 200 {"items":[],"total":0,"page":1,"pageSize":5,"totalPages":1}
+11:43:23.761   ✓ search "%": GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?search=%25&page=1&pageSize=5 -> 200 {"items":[],"total":0,"page":1,"pageSize":5,"totalPages":1} (0 ms)
+11:43:23.762   → search "%" must be treated literally
+11:43:23.762   ✓ search "%" must be treated literally (1 ms)
+11:43:23.763   → Expect "toEqual"
+11:43:23.764   ✓ Expect "toEqual" (0 ms)
+11:43:23.764   → GET api/offenders?search=_&page=1&pageSize=5
+11:43:23.765     → GET "api/offenders?search=_&page=1&pageSize=5"
+11:43:23.827     ✓ GET "api/offenders?search=_&page=1&pageSize=5" (63 ms)
+11:43:23.828   ✓ GET api/offenders?search=_&page=1&pageSize=5 (64 ms)
+11:43:23.829   → search "_": GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?search=_&page=1&pageSize=5 -> 200 {"items":[],"total":0,"page":1,"pageSize":5,"totalPages":1}
+11:43:23.830   ✓ search "_": GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?search=_&page=1&pageSize=5 -> 200 {"items":[],"total":0,"page":1,"pageSize":5,"totalPages":1} (0 ms)
+11:43:23.830   → search "_" must be treated literally
+11:43:23.830   ✓ search "_" must be treated literally (0 ms)
+11:43:23.832   → Expect "toEqual"
+11:43:23.832   ✓ Expect "toEqual" (0 ms)
+11:43:23.832   → GET api/offenders?search=%27&page=1&pageSize=5
+11:43:23.833     → GET "api/offenders?search=%27&page=1&pageSize=5"
+11:43:23.897     ✓ GET "api/offenders?search=%27&page=1&pageSize=5" (63 ms)
+11:43:23.898   ✓ GET api/offenders?search=%27&page=1&pageSize=5 (66 ms)
+11:43:23.899   → search "'": GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?search=%27&page=1&pageSize=5 -> 200 {"items":[],"total":0,"page":1,"pageSize":5,"totalPages":1}
+11:43:23.899   ✓ search "'": GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?search=%27&page=1&pageSize=5 -> 200 {"items":[],"total":0,"page":1,"pageSize":5,"totalPages":1} (0 ms)
+11:43:23.899   → search "'" must be treated literally
+11:43:23.899   ✓ search "'" must be treated literally (0 ms)
+11:43:23.900   → Expect "toEqual"
+11:43:23.901   ✓ Expect "toEqual" (0 ms)
+11:43:23.901   → GET api/offenders?search=%22&page=1&pageSize=5
+11:43:23.902     → GET "api/offenders?search=%22&page=1&pageSize=5"
+11:43:23.964     ✓ GET "api/offenders?search=%22&page=1&pageSize=5" (63 ms)
+11:43:23.966   ✓ GET api/offenders?search=%22&page=1&pageSize=5 (65 ms)
+11:43:23.967   → search """: GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?search=%22&page=1&pageSize=5 -> 200 {"items":[],"total":0,"page":1,"pageSize":5,"totalPages":1}
+11:43:23.967   ✓ search """: GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?search=%22&page=1&pageSize=5 -> 200 {"items":[],"total":0,"page":1,"pageSize":5,"totalPages":1} (0 ms)
+11:43:23.968   → search """ must be treated literally
+11:43:23.968   ✓ search """ must be treated literally (0 ms)
+11:43:23.968   → Expect "toEqual"
+11:43:23.969   ✓ Expect "toEqual" (0 ms)
+11:43:23.969   → GET api/offenders?search=zzzz-no-such-offender&page=1&pageSize=5
+11:43:23.970     → GET "api/offenders?search=zzzz-no-such-offender&page=1&pageSize=5"
+11:43:24.032     ✓ GET "api/offenders?search=zzzz-no-such-offender&page=1&pageSize=5" (62 ms)
+11:43:24.034   ✓ GET api/offenders?search=zzzz-no-such-offender&page=1&pageSize=5 (65 ms)
+11:43:24.035   → search "zzzz-no-such-offender": GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?search=zzzz-no-such-offender&page=1&pageSize=5 -> 200 {"items":[],"total":0,"page":1,"pageSize":5,"totalPages":1}
+11:43:24.035   ✓ search "zzzz-no-such-offender": GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?search=zzzz-no-such-offender&page=1&pageSize=5 -> 200 {"items":[],"total":0,"page":1,"pageSize":5,"totalPages":1} (0 ms)
+11:43:24.035   → search "zzzz-no-such-offender" must be treated literally
+11:43:24.035   ✓ search "zzzz-no-such-offender" must be treated literally (0 ms)
+11:43:24.036   → Expect "toEqual"
+11:43:24.036   ✓ Expect "toEqual" (0 ms)
+11:43:24.036   → After Hooks
+11:43:24.050   ✓ After Hooks (14 ms)
+11:43:24.050 ■ Passed in 351 ms

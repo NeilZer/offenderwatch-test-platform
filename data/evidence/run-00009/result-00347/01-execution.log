@@ -1,0 +1,83 @@
+11:44:06.729 ▶ TC-43 invalid location values are rejected with a visible error
+   tests/ui/04-locations-and-stats.ui.spec.ts · project ui
+11:44:06.730   → Before Hooks
+11:44:06.732       → Create context
+11:44:06.735       ✓ Create context (3 ms)
+11:44:06.743       → Create page
+11:44:06.807       ✓ Create page (66 ms)
+11:44:06.808       → Create request context
+11:44:06.809       ✓ Create request context (1 ms)
+11:44:06.811   ✓ Before Hooks (85 ms)
+11:44:06.812   → POST api/offenders
+11:44:06.813     → POST "api/offenders"
+11:44:06.895     ✓ POST "api/offenders" (82 ms)
+11:44:06.896   ✓ POST api/offenders (84 ms)
+11:44:06.910   → Wait for event "response"
+11:44:06.912   → Wait for event "response"
+11:44:06.913   → Navigate to "./"
+11:44:07.445   ✓ Navigate to "./" (533 ms)
+11:44:07.515   ✓ Wait for event "response" (605 ms)
+11:44:07.520   ✓ Wait for event "response" (608 ms)
+11:44:07.525   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+11:44:07.562   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (36 ms)
+11:44:07.563   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+11:44:07.572   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (9 ms)
+11:44:07.582   → Wait for event "response"
+11:44:07.583   → Fill "991317694" locator('section.list-panel').locator('input.search')
+11:44:07.606   ✓ Fill "991317694" locator('section.list-panel').locator('input.search') (23 ms)
+11:44:07.669   ✓ Wait for event "response" (88 ms)
+11:44:07.675   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+11:44:07.686   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (11 ms)
+11:44:07.687   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+11:44:07.697   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (10 ms)
+11:44:07.699   → Wait for event "response"
+11:44:07.700   → Click locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Klein, Yonatan' })
+11:44:07.750   ✓ Click locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Klein, Yonatan' }) (51 ms)
+11:44:07.789   ✓ Wait for event "response" (90 ms)
+11:44:07.802   → Click locator('section.detail-panel').getByRole('button', { name: '+ Add location', exact: true })
+11:44:07.853   ✓ Click locator('section.detail-panel').getByRole('button', { name: '+ Add location', exact: true }) (51 ms)
+11:44:07.854   → Fill "32.1" locator('section.detail-panel').getByPlaceholder('Latitude', { exact: true })
+11:44:07.877   ✓ Fill "32.1" locator('section.detail-panel').getByPlaceholder('Latitude', { exact: true }) (24 ms)
+11:44:07.879   → Fill "34.8" locator('section.detail-panel').getByPlaceholder('Longitude', { exact: true })
+11:44:07.909   ✓ Fill "34.8" locator('section.detail-panel').getByPlaceholder('Longitude', { exact: true }) (30 ms)
+11:44:07.910   → Fill "-5" locator('section.detail-panel').getByPlaceholder('Speed km/h', { exact: true })
+11:44:07.938   ✓ Fill "-5" locator('section.detail-panel').getByPlaceholder('Speed km/h', { exact: true }) (28 ms)
+11:44:07.939   → Fill "150" locator('section.detail-panel').getByPlaceholder('Battery %', { exact: true })
+11:44:07.962   ✓ Fill "150" locator('section.detail-panel').getByPlaceholder('Battery %', { exact: true }) (23 ms)
+11:44:07.965   → Fill "4" locator('section.detail-panel').getByPlaceholder('Signal 1-5', { exact: true })
+11:44:07.992   ✓ Fill "4" locator('section.detail-panel').getByPlaceholder('Signal 1-5', { exact: true }) (27 ms)
+11:44:07.993   → Wait for event "response"
+11:44:07.995   → Wait for event "response"
+11:44:07.997   → Click locator('section.detail-panel').locator('form.loc-form').getByRole('button', { name: 'Add', exact: true })
+11:44:08.056   ✓ Click locator('section.detail-panel').locator('form.loc-form').getByRole('button', { name: 'Add', exact: true }) (60 ms)
+11:44:08.136   ✓ Wait for event "response" (141 ms)
+11:44:08.203   ✓ Wait for event "response" (211 ms)
+11:44:08.204   → [BUG-14] server must reject battery 150 / speed -5
+11:44:08.206   ✗ Error: [BUG-14] server must reject battery 150 / speed -5 [BUG-14] server must reject battery 150 / speed -5 (1 ms)
+11:44:08.207   → After Hooks
+11:44:08.333       → DELETE api/offenders/672
+11:44:08.334         → DELETE "api/offenders/672"
+11:44:08.415         ✓ DELETE "api/offenders/672" (81 ms)
+11:44:08.416       ✓ DELETE api/offenders/672 (83 ms)
+11:44:08.451       → Close context
+11:44:08.456       ✓ Close context (5 ms)
+11:44:08.468   ✓ After Hooks (262 ms)
+11:44:08.469 ■ ExpectedFailure in 1719 ms
+   annotation known-bug: BUG-14 — Location points are not validated: invalid coordinates, negative speed, battery and signal out of range all accepted
+   annotation known-bug: BUG-16 — Add-location form fails silently when the server rejects the point
+   annotation fail: BUG-14: Location points are not validated: invalid coordinates, negative speed, battery and signal out of range all accepted | BUG-16: Add-location form fails silently when the server rejects the point
+
+--- error 1 ---
+Error: [BUG-14] server must reject battery 150 / speed -5
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 201
+Error: [BUG-14] server must reject battery 150 / speed -5
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 201
+    at C:\Users\Neil\Desktop\SuperCom\tests\ui\04-locations-and-stats.ui.spec.ts:55:98

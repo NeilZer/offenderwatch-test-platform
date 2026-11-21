@@ -1,0 +1,29 @@
+11:54:19.840 ▶ TC-13 valid offender is created with 201 and stored as sent
+   tests/api/03-offenders-create.api.spec.ts · project api
+11:54:19.841   → Before Hooks
+11:54:19.848       → Create request context
+11:54:19.848       ✓ Create request context (0 ms)
+11:54:19.850   ✓ Before Hooks (10 ms)
+11:54:19.851   → POST api/offenders
+11:54:19.852     → POST "api/offenders"
+11:54:19.935     ✓ POST "api/offenders" (83 ms)
+11:54:19.936   ✓ POST api/offenders (85 ms)
+11:54:19.965   → POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 201 {"id":854,"firstName":"Itai","lastName":"Elbaz","nationalId":"990210983","dateOfBirth":"1985-04-17","riskLevel":"High","status":"Inactive","createdAt":"2026-11-21T11:54:20.0757079Z"}
+11:54:19.965   ✓ POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 201 {"id":854,"firstName":"Itai","lastName":"Elbaz","nationalId":"990210983","dateOfBirth":"1985-04-17","riskLevel":"High","status":"Inactive","createdAt":"2026-11-21T11:54:20.0757079Z"} (0 ms)
+11:54:19.965   → Expect "toBeGreaterThan"
+11:54:19.965   ✓ Expect "toBeGreaterThan" (0 ms)
+11:54:19.966   → Expect "toMatchObject"
+11:54:19.966   ✓ Expect "toMatchObject" (0 ms)
+11:54:19.966   → GET api/offenders/854
+11:54:19.967     → GET "api/offenders/854"
+11:54:20.034     ✓ GET "api/offenders/854" (67 ms)
+11:54:20.035   ✓ GET api/offenders/854 (68 ms)
+11:54:20.036   → Expect "toMatchObject"
+11:54:20.036   ✓ Expect "toMatchObject" (0 ms)
+11:54:20.036   → After Hooks
+11:54:20.037       → DELETE api/offenders/854
+11:54:20.037         → DELETE "api/offenders/854"
+11:54:20.124         ✓ DELETE "api/offenders/854" (86 ms)
+11:54:20.128       ✓ DELETE api/offenders/854 (91 ms)
+11:54:20.147   ✓ After Hooks (111 ms)
+11:54:20.147 ■ Passed in 292 ms
