@@ -1,0 +1,18 @@
+[
+  {
+    "at": "2026-11-21T11:44:55.888Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/stats",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"totalOffenders\":11,\"activeOffenders\":10,\"totalLocationPoints\":639}"
+  },
+  {
+    "at": "2026-11-21T11:44:56.149Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/stats",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"totalOffenders\":11,\"activeOffenders\":10,\"totalLocationPoints\":639}"
+  }
+]

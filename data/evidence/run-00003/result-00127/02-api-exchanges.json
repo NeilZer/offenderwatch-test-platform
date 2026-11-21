@@ -1,0 +1,40 @@
+[
+  {
+    "at": "2026-11-21T11:28:01.314Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Daniel",
+      "lastName": "Rosen",
+      "nationalId": "992667410",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":568,\"firstName\":\"Daniel\",\"lastName\":\"Rosen\",\"nationalId\":\"992667410\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:28:01.4332529Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:28:01.411Z",
+    "method": "PUT",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/568",
+    "requestBody": {
+      "firstName": "",
+      "lastName": "Rosen",
+      "nationalId": "992667410",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 200,
+    "responseBody": "{\"id\":568,\"firstName\":\"\",\"lastName\":\"Rosen\",\"nationalId\":\"992667410\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:28:01.4332529Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:28:01.497Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/568",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

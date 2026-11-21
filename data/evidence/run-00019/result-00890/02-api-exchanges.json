@@ -1,0 +1,36 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T12:27:39.511Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/stats",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"totalOffenders\":36,\"activeOffenders\":16,\"totalLocationPoints\":1088}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T12:27:39.580Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/offenders",
+    "requestBody": {
+      "firstName": "   ",
+      "lastName": "Harel",
+      "nationalId": "991171953",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 400,
+    "responseBody": "{\"error\":\"First name is required.\"}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T12:27:39.650Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/stats",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"totalOffenders\":36,\"activeOffenders\":16,\"totalLocationPoints\":1088}"
+  }
+]

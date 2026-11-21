@@ -1,0 +1,11 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T12:27:37.611Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/offenders?search=412876&page=1&pageSize=1000",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"items\":[{\"id\":1,\"firstName\":\"David\",\"lastName\":\"Cohen\",\"nationalId\":\"305412876\",\"dateOfBirth\":\"1987-10-01\",\"riskLevel\":\"Low\",\"status\":\"Active\",\"createdAt\":\"2026-06-01T08:15:00.000Z\"},{\"id\":598,\"firstName\":\"Dup\",\"lastName\":\"Colman\",\"nationalId\":\"305412876\",\"dateOfBirth\":\"1990-05-05\",\"riskLevel\":\"Low\",\"status\":\"Active\",\"createdAt\":\"2026-08-21T10:06:15.5941791Z\"},{\"id\":1410,\"firstName\":\"ApiTest\",\"lastName\":\"Duplicate\",\"nationalId\":\"305412876\",\"dateOfBirth\":\"1995-06-15\",\"riskLevel\":\"Low\",\"status\":\"Active\",\"createdAt\":\"2026-11-06T16:05:51.4303126Z\"},{\"id\":82,\"firstName\":\"sss\",\"lastName\":\"sss\",\"nationalId\":\"305412876 \",\"dateOfBirth\":\"1990-01-01\",\"riskLevel\":\"Low\",\"status\":\"Active\",\"createdAt\":\"2026-08-15T17:20:57.6192646Z\"}],\"total\":4,\"page\":1,\"pageSize\":1000,\"totalPages\":1}"
+  }
+]

@@ -1,0 +1,143 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T12:27:55.459Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/stats",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"totalOffenders\":36,\"activeOffenders\":16,\"totalLocationPoints\":1107}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T12:27:55.544Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/offenders",
+    "requestBody": {
+      "firstName": "Roni",
+      "lastName": "Segal",
+      "nationalId": "990233044",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":1462,\"firstName\":\"Roni\",\"lastName\":\"Segal\",\"nationalId\":\"990233044\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T12:27:55.7133930Z\"}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T12:27:55.644Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/offenders/1462/locations",
+    "requestBody": {
+      "lat": 32.087,
+      "lon": 34.783,
+      "speedKmh": 30,
+      "batteryPct": 70,
+      "signal": 3,
+      "timestamp": "2026-10-01T10:30:00Z"
+    },
+    "status": 201,
+    "responseBody": "{\"ok\":true}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T12:27:55.730Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/offenders/1462/locations",
+    "requestBody": {
+      "lat": 32.085,
+      "lon": 34.781,
+      "speedKmh": 10,
+      "batteryPct": 90,
+      "signal": 5,
+      "timestamp": "2026-10-01T10:00:00Z"
+    },
+    "status": 201,
+    "responseBody": "{\"ok\":true}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T12:27:55.814Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/offenders/1462/locations",
+    "requestBody": {
+      "lat": 32.088,
+      "lon": 34.784,
+      "speedKmh": 40,
+      "batteryPct": 60,
+      "signal": 2,
+      "timestamp": "2026-10-01T10:45:00Z"
+    },
+    "status": 201,
+    "responseBody": "{\"ok\":true}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T12:27:55.902Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/offenders/1462/locations",
+    "requestBody": {
+      "lat": 32.086,
+      "lon": 34.782,
+      "speedKmh": 20,
+      "batteryPct": 80,
+      "signal": 4,
+      "timestamp": "2026-10-01T10:15:00Z"
+    },
+    "status": 201,
+    "responseBody": "{\"ok\":true}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T12:27:55.979Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/offenders/1462/trail",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "[{\"id\":1108,\"offenderId\":1462,\"timestamp\":\"2026-10-01T10:30:00Z\",\"lat\":32.087,\"lon\":34.783,\"speedKmh\":30,\"batteryPct\":70,\"signal\":3},{\"id\":1109,\"offenderId\":1462,\"timestamp\":\"2026-10-01T10:00:00Z\",\"lat\":32.085,\"lon\":34.781,\"speedKmh\":10,\"batteryPct\":90,\"signal\":5},{\"id\":1110,\"offenderId\":1462,\"timestamp\":\"2026-10-01T10:45:00Z\",\"lat\":32.088,\"lon\":34.784,\"speedKmh\":40,\"batteryPct\":60,\"signal\":2},{\"id\":1111,\"offenderId\":1462,\"timestamp\":\"2026-10-01T10:15:00Z\",\"lat\":32.086,\"lon\":34.782,\"speedKmh\":20,\"batteryPct\":80,\"signal\":4}]"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T12:27:56.121Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/offenders",
+    "requestBody": {
+      "firstName": "Roni",
+      "lastName": "Segal",
+      "nationalId": "994841543",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Inactive"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":1463,\"firstName\":\"Roni\",\"lastName\":\"Segal\",\"nationalId\":\"994841543\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Inactive\",\"createdAt\":\"2026-11-21T12:27:56.2881164Z\"}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T12:27:56.199Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/stats",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"totalOffenders\":38,\"activeOffenders\":17,\"totalLocationPoints\":1111}"
+  },
+  {
+    "phase": "teardown",
+    "at": "2026-11-21T12:27:56.284Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/offenders/1462",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  },
+  {
+    "phase": "teardown",
+    "at": "2026-11-21T12:27:56.380Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/offenders/1463",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

@@ -1,0 +1,36 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:51:02.334Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/stats",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"totalOffenders\":11,\"activeOffenders\":10,\"totalLocationPoints\":695}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:51:02.418Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Omer",
+      "lastName": "Sasson",
+      "nationalId": "994873526",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Critical",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":781,\"firstName\":\"Omer\",\"lastName\":\"Sasson\",\"nationalId\":\"994873526\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Critical\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:51:02.5609170Z\"}"
+  },
+  {
+    "phase": "teardown",
+    "at": "2026-11-21T11:51:02.510Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/781",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

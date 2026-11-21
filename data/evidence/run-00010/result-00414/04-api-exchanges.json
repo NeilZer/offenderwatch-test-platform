@@ -1,0 +1,33 @@
+[
+  {
+    "at": "2026-11-21T11:44:58.070Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Ron",
+      "lastName": "Barak",
+      "nationalId": "998526265",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "High",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":708,\"firstName\":\"Ron\",\"lastName\":\"Barak\",\"nationalId\":\"998526265\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:44:58.2001098Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:44:59.249Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/708",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"id\":708,\"firstName\":\"Ron\",\"lastName\":\"Barak\",\"nationalId\":\"998526265\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Low\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:44:58.2001098Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:44:59.437Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/708",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

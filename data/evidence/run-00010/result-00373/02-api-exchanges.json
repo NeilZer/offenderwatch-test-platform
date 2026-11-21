@@ -1,0 +1,40 @@
+[
+  {
+    "at": "2026-11-21T11:44:22.796Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Adi",
+      "lastName": "Elbaz",
+      "nationalId": "991748989",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":683,\"firstName\":\"Adi\",\"lastName\":\"Elbaz\",\"nationalId\":\"991748989\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:44:22.9249277Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:44:22.894Z",
+    "method": "PUT",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/683",
+    "requestBody": {
+      "firstName": "Adi",
+      "lastName": "Elbaz",
+      "nationalId": "991748989",
+      "dateOfBirth": "2027-11-21",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 200,
+    "responseBody": "{\"id\":683,\"firstName\":\"Adi\",\"lastName\":\"Elbaz\",\"nationalId\":\"991748989\",\"dateOfBirth\":\"2027-11-21\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:44:22.9249277Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:44:22.981Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/683",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

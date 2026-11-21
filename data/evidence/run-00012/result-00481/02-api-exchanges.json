@@ -1,0 +1,42 @@
+[
+  {
+    "at": "2026-11-21T11:47:03.902Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?search=%25&page=1&pageSize=5",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"items\":[],\"total\":0,\"page\":1,\"pageSize\":5,\"totalPages\":1}"
+  },
+  {
+    "at": "2026-11-21T11:47:03.972Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?search=_&page=1&pageSize=5",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"items\":[],\"total\":0,\"page\":1,\"pageSize\":5,\"totalPages\":1}"
+  },
+  {
+    "at": "2026-11-21T11:47:04.041Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?search=%27&page=1&pageSize=5",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"items\":[],\"total\":0,\"page\":1,\"pageSize\":5,\"totalPages\":1}"
+  },
+  {
+    "at": "2026-11-21T11:47:04.115Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?search=%22&page=1&pageSize=5",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"items\":[],\"total\":0,\"page\":1,\"pageSize\":5,\"totalPages\":1}"
+  },
+  {
+    "at": "2026-11-21T11:47:04.185Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?search=zzzz-no-such-offender&page=1&pageSize=5",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"items\":[],\"total\":0,\"page\":1,\"pageSize\":5,\"totalPages\":1}"
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:55:25.045Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Yael",
+      "lastName": "Rosen",
+      "nationalId": "993601355",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":920,\"firstName\":\"Yael\",\"lastName\":\"Rosen\",\"nationalId\":\"993601355\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:55:25.1754588Z\"}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:55:25.145Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/920/locations",
+    "requestBody": {
+      "lat": 90,
+      "lon": 180,
+      "speedKmh": 0,
+      "batteryPct": 0,
+      "signal": 1
+    },
+    "status": 201,
+    "responseBody": "{\"ok\":true}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:55:25.209Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/920/trail",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "[{\"id\":803,\"offenderId\":920,\"timestamp\":\"2026-11-21T11:55:25.2763174Z\",\"lat\":90,\"lon\":180,\"speedKmh\":0,\"batteryPct\":0,\"signal\":1}]"
+  },
+  {
+    "phase": "teardown",
+    "at": "2026-11-21T11:55:25.294Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/920",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

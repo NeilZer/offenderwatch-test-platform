@@ -1,0 +1,33 @@
+[
+  {
+    "at": "2026-11-21T11:41:23.457Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/stats",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"totalOffenders\":11,\"activeOffenders\":10,\"totalLocationPoints\":551}"
+  },
+  {
+    "at": "2026-11-21T11:41:23.526Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "",
+      "lastName": "Nachum",
+      "nationalId": "998510521",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 400,
+    "responseBody": "{\"error\":\"First name is required.\"}"
+  },
+  {
+    "at": "2026-11-21T11:41:23.615Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/stats",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"totalOffenders\":11,\"activeOffenders\":10,\"totalLocationPoints\":551}"
+  }
+]

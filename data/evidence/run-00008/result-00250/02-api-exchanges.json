@@ -1,0 +1,39 @@
+[
+  {
+    "at": "2026-11-21T11:41:35.536Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Yael",
+      "lastName": "Nachum",
+      "nationalId": "993749091",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":621,\"firstName\":\"Yael\",\"lastName\":\"Nachum\",\"nationalId\":\"993749091\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:41:35.6641265Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:41:35.615Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/621/locations",
+    "requestBody": {
+      "lat": null,
+      "lon": 34.7818,
+      "speedKmh": 12.5,
+      "batteryPct": 80,
+      "signal": 4
+    },
+    "status": 400,
+    "responseBody": ""
+  },
+  {
+    "at": "2026-11-21T11:41:35.703Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/621",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

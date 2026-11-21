@@ -1,0 +1,101 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:57:08.375Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?page=1&pageSize=1000",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"items\":[{\"id\":10,\"firstName\":\"Noa\",\"lastName\":\"Amar\",\"nationalId\":\"205432198\",\"dateOfBirth\":\"1998-02-06\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-10T17:15:00.000Z\"},{\"id\":6,\"firstName\":\"Dana\",\"lastName\":\"Azulay\",\"nationalId\":\"207654321\",\"dateOfBirth\":\"1995-05-09\",\"riskLevel\":\"Low\",\"status\":\"Inactive\",\"createdAt\":\"2026-06-06T13:15:00.000Z\"},{\"id\":5,\"firstName\":\"Yosef\",\"lastName\":\"Biton\",\"nationalId\":\"309871234\",\"dateOfBirth\":\"1969-09-30\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-05T12:15:00.000Z\"},{\"id\":1,\"firstName\":\"David\",\"lastName\":\"Cohen\",\"nationalId\":\"305412876\",\"dateOfBirth\":\"1982-03-07\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-06-01T08:15:00.000Z\"},{\"id\":7,\"firstName\":\"Avi\",\"lastName\":\"Dahan\",\"nationalId\":\"302145687\",\"dateOfBirth\":\"1980-12-02\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-06-07T14:15:00.000Z\"},{\"id\":9,\"firstName\":\"Eli\",\"lastName\":\"Gabay\",\"nationalId\":\"308912345\",\"dateOfBirth\":\"1978-04-25\",\"riskLevel\":\"Low\",\"status\":\"Active\",\"createdAt\":\"2026-06-09T16:15:00.000Z\"},{\"id\":2,\"firstName\":\"Sara\",\"lastName\":\"Levi\",\"nationalId\":\"208934512\",\"dateOfBirth\":\"1990-11-23\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-02T09:15:00.000Z\"},{\"id\":11,\"firstName\":\"Itzik\",\"lastName\":\"Malka\",\"nationalId\":\"303698521\",\"dateOfBirth\":\"1971-10-15\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-06-11T18:15:00.000Z\"},{\"id\":4,\"firstName\":\"Rachel\",\"lastName\":\"Mizrahi\",\"nationalId\":\"204518793\",\"dateOfBirth\":\"1988-01-12\",\"riskLevel\":\"Low\",\"status\":\"Active\",\"createdAt\":\"2026-06-04T11:15:00.000Z\"},{\"id\":8,\"firstName\":\"Maya\",\"lastName\":\"Ohana\",\"nationalId\":\"206789123\",\"dateOfBirth\":\"1992-07-18\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-08T15:15:00.000Z\"},{\"id\":3,\"firstName\":\"Michael\",\"lastName\":\"Peretz\",\"nationalId\":\"301287465\",\"dateOfBirth\":\"1975-06-04\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-06-03T10:15:00.000Z\"}],\"total\":11,\"page\":1,\"pageSize\":1000,\"totalPages\":1}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:57:08.441Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?page=1&pageSize=1",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"items\":[{\"id\":10,\"firstName\":\"Noa\",\"lastName\":\"Amar\",\"nationalId\":\"205432198\",\"dateOfBirth\":\"1998-02-06\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-10T17:15:00.000Z\"}],\"total\":11,\"page\":1,\"pageSize\":1,\"totalPages\":11}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:57:08.509Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?page=1&pageSize=2",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"items\":[{\"id\":10,\"firstName\":\"Noa\",\"lastName\":\"Amar\",\"nationalId\":\"205432198\",\"dateOfBirth\":\"1998-02-06\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-10T17:15:00.000Z\"},{\"id\":6,\"firstName\":\"Dana\",\"lastName\":\"Azulay\",\"nationalId\":\"207654321\",\"dateOfBirth\":\"1995-05-09\",\"riskLevel\":\"Low\",\"status\":\"Inactive\",\"createdAt\":\"2026-06-06T13:15:00.000Z\"}],\"total\":11,\"page\":1,\"pageSize\":2,\"totalPages\":5}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:57:08.575Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?page=1&pageSize=3",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"items\":[{\"id\":10,\"firstName\":\"Noa\",\"lastName\":\"Amar\",\"nationalId\":\"205432198\",\"dateOfBirth\":\"1998-02-06\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-10T17:15:00.000Z\"},{\"id\":6,\"firstName\":\"Dana\",\"lastName\":\"Azulay\",\"nationalId\":\"207654321\",\"dateOfBirth\":\"1995-05-09\",\"riskLevel\":\"Low\",\"status\":\"Inactive\",\"createdAt\":\"2026-06-06T13:15:00.000Z\"},{\"id\":5,\"firstName\":\"Yosef\",\"lastName\":\"Biton\",\"nationalId\":\"309871234\",\"dateOfBirth\":\"1969-09-30\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-05T12:15:00.000Z\"}],\"total\":11,\"page\":1,\"pageSize\":3,\"totalPages\":3}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:57:08.643Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?page=1&pageSize=4",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"items\":[{\"id\":10,\"firstName\":\"Noa\",\"lastName\":\"Amar\",\"nationalId\":\"205432198\",\"dateOfBirth\":\"1998-02-06\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-10T17:15:00.000Z\"},{\"id\":6,\"firstName\":\"Dana\",\"lastName\":\"Azulay\",\"nationalId\":\"207654321\",\"dateOfBirth\":\"1995-05-09\",\"riskLevel\":\"Low\",\"status\":\"Inactive\",\"createdAt\":\"2026-06-06T13:15:00.000Z\"},{\"id\":5,\"firstName\":\"Yosef\",\"lastName\":\"Biton\",\"nationalId\":\"309871234\",\"dateOfBirth\":\"1969-09-30\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-05T12:15:00.000Z\"},{\"id\":1,\"firstName\":\"David\",\"lastName\":\"Cohen\",\"nationalId\":\"305412876\",\"dateOfBirth\":\"1982-03-07\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-06-01T08:15:00.000Z\"}],\"total\":11,\"page\":1,\"pageSize\":4,\"totalPages\":2}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:57:08.710Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?page=1&pageSize=5",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"items\":[{\"id\":10,\"firstName\":\"Noa\",\"lastName\":\"Amar\",\"nationalId\":\"205432198\",\"dateOfBirth\":\"1998-02-06\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-10T17:15:00.000Z\"},{\"id\":6,\"firstName\":\"Dana\",\"lastName\":\"Azulay\",\"nationalId\":\"207654321\",\"dateOfBirth\":\"1995-05-09\",\"riskLevel\":\"Low\",\"status\":\"Inactive\",\"createdAt\":\"2026-06-06T13:15:00.000Z\"},{\"id\":5,\"firstName\":\"Yosef\",\"lastName\":\"Biton\",\"nationalId\":\"309871234\",\"dateOfBirth\":\"1969-09-30\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-05T12:15:00.000Z\"},{\"id\":1,\"firstName\":\"David\",\"lastName\":\"Cohen\",\"nationalId\":\"305412876\",\"dateOfBirth\":\"1982-03-07\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-06-01T08:15:00.000Z\"},{\"id\":7,\"firstName\":\"Avi\",\"lastName\":\"Dahan\",\"nationalId\":\"302145687\",\"dateOfBirth\":\"1980-12-02\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-06-07T14:15:00.000Z\"}],\"total\":11,\"page\":1,\"pageSize\":5,\"totalPages\":2}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:57:08.778Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?page=1&pageSize=6",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"items\":[{\"id\":10,\"firstName\":\"Noa\",\"lastName\":\"Amar\",\"nationalId\":\"205432198\",\"dateOfBirth\":\"1998-02-06\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-10T17:15:00.000Z\"},{\"id\":6,\"firstName\":\"Dana\",\"lastName\":\"Azulay\",\"nationalId\":\"207654321\",\"dateOfBirth\":\"1995-05-09\",\"riskLevel\":\"Low\",\"status\":\"Inactive\",\"createdAt\":\"2026-06-06T13:15:00.000Z\"},{\"id\":5,\"firstName\":\"Yosef\",\"lastName\":\"Biton\",\"nationalId\":\"309871234\",\"dateOfBirth\":\"1969-09-30\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-05T12:15:00.000Z\"},{\"id\":1,\"firstName\":\"David\",\"lastName\":\"Cohen\",\"nationalId\":\"305412876\",\"dateOfBirth\":\"1982-03-07\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-06-01T08:15:00.000Z\"},{\"id\":7,\"firstName\":\"Avi\",\"lastName\":\"Dahan\",\"nationalId\":\"302145687\",\"dateOfBirth\":\"1980-12-02\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-06-07T14:15:00.000Z\"},{\"id\":9,\"firstName\":\"Eli\",\"lastName\":\"Gabay\",\"nationalId\":\"308912345\",\"dateOfBirth\":\"1978-04-25\",\"riskLevel\":\"Low\",\"status\":\"Active\",\"createdAt\":\"2026-06-09T16:15:00.000Z\"}],\"total\":11,\"page\":1,\"pageSize\":6,\"totalPages\":1}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:57:08.845Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?page=1&pageSize=10",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"items\":[{\"id\":10,\"firstName\":\"Noa\",\"lastName\":\"Amar\",\"nationalId\":\"205432198\",\"dateOfBirth\":\"1998-02-06\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-10T17:15:00.000Z\"},{\"id\":6,\"firstName\":\"Dana\",\"lastName\":\"Azulay\",\"nationalId\":\"207654321\",\"dateOfBirth\":\"1995-05-09\",\"riskLevel\":\"Low\",\"status\":\"Inactive\",\"createdAt\":\"2026-06-06T13:15:00.000Z\"},{\"id\":5,\"firstName\":\"Yosef\",\"lastName\":\"Biton\",\"nationalId\":\"309871234\",\"dateOfBirth\":\"1969-09-30\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-05T12:15:00.000Z\"},{\"id\":1,\"firstName\":\"David\",\"lastName\":\"Cohen\",\"nationalId\":\"305412876\",\"dateOfBirth\":\"1982-03-07\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-06-01T08:15:00.000Z\"},{\"id\":7,\"firstName\":\"Avi\",\"lastName\":\"Dahan\",\"nationalId\":\"302145687\",\"dateOfBirth\":\"1980-12-02\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-06-07T14:15:00.000Z\"},{\"id\":9,\"firstName\":\"Eli\",\"lastName\":\"Gabay\",\"nationalId\":\"308912345\",\"dateOfBirth\":\"1978-04-25\",\"riskLevel\":\"Low\",\"status\":\"Active\",\"createdAt\":\"2026-06-09T16:15:00.000Z\"},{\"id\":2,\"firstName\":\"Sara\",\"lastName\":\"Levi\",\"nationalId\":\"208934512\",\"dateOfBirth\":\"1990-11-23\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-02T09:15:00.000Z\"},{\"id\":11,\"firstName\":\"Itzik\",\"lastName\":\"Malka\",\"nationalId\":\"303698521\",\"dateOfBirth\":\"1971-10-15\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-06-11T18:15:00.000Z\"},{\"id\":4,\"firstName\":\"Rachel\",\"lastName\":\"Mizrahi\",\"nationalId\":\"204518793\",\"dateOfBirth\":\"1988-01-12\",\"riskLevel\":\"Low\",\"status\":\"Active\",\"createdAt\":\"2026-06-04T11:15:00.000Z\"},{\"id\":8,\"firstName\":\"Maya\",\"lastName\":\"Ohana\",\"nationalId\":\"206789123\",\"dateOfBirth\":\"1992-07-18\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-08T15:15:00.000Z\"}],\"total\":11,\"page\":1,\"pageSize\":10,\"totalPages\":1}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:57:08.919Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?page=1&pageSize=11",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"items\":[{\"id\":10,\"firstName\":\"Noa\",\"lastName\":\"Amar\",\"nationalId\":\"205432198\",\"dateOfBirth\":\"1998-02-06\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-10T17:15:00.000Z\"},{\"id\":6,\"firstName\":\"Dana\",\"lastName\":\"Azulay\",\"nationalId\":\"207654321\",\"dateOfBirth\":\"1995-05-09\",\"riskLevel\":\"Low\",\"status\":\"Inactive\",\"createdAt\":\"2026-06-06T13:15:00.000Z\"},{\"id\":5,\"firstName\":\"Yosef\",\"lastName\":\"Biton\",\"nationalId\":\"309871234\",\"dateOfBirth\":\"1969-09-30\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-05T12:15:00.000Z\"},{\"id\":1,\"firstName\":\"David\",\"lastName\":\"Cohen\",\"nationalId\":\"305412876\",\"dateOfBirth\":\"1982-03-07\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-06-01T08:15:00.000Z\"},{\"id\":7,\"firstName\":\"Avi\",\"lastName\":\"Dahan\",\"nationalId\":\"302145687\",\"dateOfBirth\":\"1980-12-02\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-06-07T14:15:00.000Z\"},{\"id\":9,\"firstName\":\"Eli\",\"lastName\":\"Gabay\",\"nationalId\":\"308912345\",\"dateOfBirth\":\"1978-04-25\",\"riskLevel\":\"Low\",\"status\":\"Active\",\"createdAt\":\"2026-06-09T16:15:00.000Z\"},{\"id\":2,\"firstName\":\"Sara\",\"lastName\":\"Levi\",\"nationalId\":\"208934512\",\"dateOfBirth\":\"1990-11-23\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-02T09:15:00.000Z\"},{\"id\":11,\"firstName\":\"Itzik\",\"lastName\":\"Malka\",\"nationalId\":\"303698521\",\"dateOfBirth\":\"1971-10-15\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-06-11T18:15:00.000Z\"},{\"id\":4,\"firstName\":\"Rachel\",\"lastName\":\"Mizrahi\",\"nationalId\":\"204518793\",\"dateOfBirth\":\"1988-01-12\",\"riskLevel\":\"Low\",\"status\":\"Active\",\"createdAt\":\"2026-06-04T11:15:00.000Z\"},{\"id\":8,\"firstName\":\"Maya\",\"lastName\":\"Ohana\",\"nationalId\":\"206789123\",\"dateOfBirth\":\"1992-07-18\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-08T15:15:00.000Z\"},{\"id\":3,\"firstName\":\"Michael\",\"lastName\":\"Peretz\",\"nationalId\":\"301287465\",\"dateOfBirth\":\"1975-06-04\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-06-03T10:15:00.000Z\"}],\"total\":11,\"page\":1,\"pageSize\":11,\"totalPages\":1}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:57:08.984Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?page=1&pageSize=12",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"items\":[{\"id\":10,\"firstName\":\"Noa\",\"lastName\":\"Amar\",\"nationalId\":\"205432198\",\"dateOfBirth\":\"1998-02-06\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-10T17:15:00.000Z\"},{\"id\":6,\"firstName\":\"Dana\",\"lastName\":\"Azulay\",\"nationalId\":\"207654321\",\"dateOfBirth\":\"1995-05-09\",\"riskLevel\":\"Low\",\"status\":\"Inactive\",\"createdAt\":\"2026-06-06T13:15:00.000Z\"},{\"id\":5,\"firstName\":\"Yosef\",\"lastName\":\"Biton\",\"nationalId\":\"309871234\",\"dateOfBirth\":\"1969-09-30\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-05T12:15:00.000Z\"},{\"id\":1,\"firstName\":\"David\",\"lastName\":\"Cohen\",\"nationalId\":\"305412876\",\"dateOfBirth\":\"1982-03-07\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-06-01T08:15:00.000Z\"},{\"id\":7,\"firstName\":\"Avi\",\"lastName\":\"Dahan\",\"nationalId\":\"302145687\",\"dateOfBirth\":\"1980-12-02\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-06-07T14:15:00.000Z\"},{\"id\":9,\"firstName\":\"Eli\",\"lastName\":\"Gabay\",\"nationalId\":\"308912345\",\"dateOfBirth\":\"1978-04-25\",\"riskLevel\":\"Low\",\"status\":\"Active\",\"createdAt\":\"2026-06-09T16:15:00.000Z\"},{\"id\":2,\"firstName\":\"Sara\",\"lastName\":\"Levi\",\"nationalId\":\"208934512\",\"dateOfBirth\":\"1990-11-23\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-02T09:15:00.000Z\"},{\"id\":11,\"firstName\":\"Itzik\",\"lastName\":\"Malka\",\"nationalId\":\"303698521\",\"dateOfBirth\":\"1971-10-15\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-06-11T18:15:00.000Z\"},{\"id\":4,\"firstName\":\"Rachel\",\"lastName\":\"Mizrahi\",\"nationalId\":\"204518793\",\"dateOfBirth\":\"1988-01-12\",\"riskLevel\":\"Low\",\"status\":\"Active\",\"createdAt\":\"2026-06-04T11:15:00.000Z\"},{\"id\":8,\"firstName\":\"Maya\",\"lastName\":\"Ohana\",\"nationalId\":\"206789123\",\"dateOfBirth\":\"1992-07-18\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-08T15:15:00.000Z\"},{\"id\":3,\"firstName\":\"Michael\",\"lastName\":\"Peretz\",\"nationalId\":\"301287465\",\"dateOfBirth\":\"1975-06-04\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-06-03T10:15:00.000Z\"}],\"total\":11,\"page\":1,\"pageSize\":12,\"totalPages\":1}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:57:09.049Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?page=1&pageSize=50",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"items\":[{\"id\":10,\"firstName\":\"Noa\",\"lastName\":\"Amar\",\"nationalId\":\"205432198\",\"dateOfBirth\":\"1998-02-06\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-10T17:15:00.000Z\"},{\"id\":6,\"firstName\":\"Dana\",\"lastName\":\"Azulay\",\"nationalId\":\"207654321\",\"dateOfBirth\":\"1995-05-09\",\"riskLevel\":\"Low\",\"status\":\"Inactive\",\"createdAt\":\"2026-06-06T13:15:00.000Z\"},{\"id\":5,\"firstName\":\"Yosef\",\"lastName\":\"Biton\",\"nationalId\":\"309871234\",\"dateOfBirth\":\"1969-09-30\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-05T12:15:00.000Z\"},{\"id\":1,\"firstName\":\"David\",\"lastName\":\"Cohen\",\"nationalId\":\"305412876\",\"dateOfBirth\":\"1982-03-07\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-06-01T08:15:00.000Z\"},{\"id\":7,\"firstName\":\"Avi\",\"lastName\":\"Dahan\",\"nationalId\":\"302145687\",\"dateOfBirth\":\"1980-12-02\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-06-07T14:15:00.000Z\"},{\"id\":9,\"firstName\":\"Eli\",\"lastName\":\"Gabay\",\"nationalId\":\"308912345\",\"dateOfBirth\":\"1978-04-25\",\"riskLevel\":\"Low\",\"status\":\"Active\",\"createdAt\":\"2026-06-09T16:15:00.000Z\"},{\"id\":2,\"firstName\":\"Sara\",\"lastName\":\"Levi\",\"nationalId\":\"208934512\",\"dateOfBirth\":\"1990-11-23\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-02T09:15:00.000Z\"},{\"id\":11,\"firstName\":\"Itzik\",\"lastName\":\"Malka\",\"nationalId\":\"303698521\",\"dateOfBirth\":\"1971-10-15\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-06-11T18:15:00.000Z\"},{\"id\":4,\"firstName\":\"Rachel\",\"lastName\":\"Mizrahi\",\"nationalId\":\"204518793\",\"dateOfBirth\":\"1988-01-12\",\"riskLevel\":\"Low\",\"status\":\"Active\",\"createdAt\":\"2026-06-04T11:15:00.000Z\"},{\"id\":8,\"firstName\":\"Maya\",\"lastName\":\"Ohana\",\"nationalId\":\"206789123\",\"dateOfBirth\":\"1992-07-18\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-06-08T15:15:00.000Z\"},{\"id\":3,\"firstName\":\"Michael\",\"lastName\":\"Peretz\",\"nationalId\":\"301287465\",\"dateOfBirth\":\"1975-06-04\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-06-03T10:15:00.000Z\"}],\"total\":11,\"page\":1,\"pageSize\":50,\"totalPages\":1}"
+  }
+]

@@ -1,0 +1,40 @@
+[
+  {
+    "at": "2026-11-21T11:47:08.669Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Roni",
+      "lastName": "Sasson",
+      "nationalId": "996896895",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":756,\"firstName\":\"Roni\",\"lastName\":\"Sasson\",\"nationalId\":\"996896895\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:47:08.8025599Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:47:08.764Z",
+    "method": "PUT",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/756",
+    "requestBody": {
+      "firstName": "Roni",
+      "lastName": "Sasson",
+      "nationalId": "305412876",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 200,
+    "responseBody": "{\"id\":756,\"firstName\":\"Roni\",\"lastName\":\"Sasson\",\"nationalId\":\"305412876\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:47:08.8025599Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:47:08.848Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/756",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

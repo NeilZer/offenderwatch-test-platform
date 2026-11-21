@@ -1,0 +1,40 @@
+[
+  {
+    "at": "2026-11-21T11:43:27.861Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Lior",
+      "lastName": "Katz",
+      "nationalId": "990202242",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":645,\"firstName\":\"Lior\",\"lastName\":\"Katz\",\"nationalId\":\"990202242\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:43:27.9897071Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:43:27.949Z",
+    "method": "PUT",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/645",
+    "requestBody": {
+      "firstName": "Lior",
+      "lastName": "Katz",
+      "nationalId": "990202242",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Extreme",
+      "status": "Active"
+    },
+    "status": 200,
+    "responseBody": "{\"id\":645,\"firstName\":\"Lior\",\"lastName\":\"Katz\",\"nationalId\":\"990202242\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Extreme\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:43:27.9897071Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:43:28.030Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/645",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

@@ -1,0 +1,43 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T13:50:42.636Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Omer",
+      "lastName": "Nachum",
+      "nationalId": "993311001",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":1129,\"firstName\":\"Omer\",\"lastName\":\"Nachum\",\"nationalId\":\"993311001\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T13:50:42.8750240Z\"}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T13:50:42.728Z",
+    "method": "PUT",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1129",
+    "requestBody": {
+      "firstName": "",
+      "lastName": "Nachum",
+      "nationalId": "993311001",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 200,
+    "responseBody": "{\"id\":1129,\"firstName\":\"\",\"lastName\":\"Nachum\",\"nationalId\":\"993311001\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T13:50:42.8750240Z\"}"
+  },
+  {
+    "phase": "teardown",
+    "at": "2026-11-21T13:50:42.812Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1129",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

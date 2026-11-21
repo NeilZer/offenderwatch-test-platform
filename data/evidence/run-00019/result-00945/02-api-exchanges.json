@@ -1,0 +1,36 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T12:28:40.782Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/offenders",
+    "requestBody": {
+      "firstName": "Michal",
+      "lastName": "Katz",
+      "nationalId": "993160168",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":1470,\"firstName\":\"Michal\",\"lastName\":\"Katz\",\"nationalId\":\"993160168\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T12:28:40.9447376Z\"}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T12:28:42.427Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/offenders/1470/trail",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "[{\"id\":1117,\"offenderId\":1470,\"timestamp\":\"2026-11-21T12:28:42.3502948Z\",\"lat\":32.0901,\"lon\":34.7802,\"speedKmh\":18.5,\"batteryPct\":77,\"signal\":4}]"
+  },
+  {
+    "phase": "teardown",
+    "at": "2026-11-21T12:28:42.646Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/offenders/1470",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

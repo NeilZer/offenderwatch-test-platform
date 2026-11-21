@@ -1,0 +1,10 @@
+[
+  {
+    "at": "2026-11-21T11:43:58.076Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/667",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

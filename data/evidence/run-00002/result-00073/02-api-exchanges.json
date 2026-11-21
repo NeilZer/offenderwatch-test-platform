@@ -1,0 +1,25 @@
+[
+  {
+    "at": "2026-11-21T11:27:23.954Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Lior",
+      "lastName": "Weiss",
+      "nationalId": "305412876",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":534,\"firstName\":\"Lior\",\"lastName\":\"Weiss\",\"nationalId\":\"305412876\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:27:24.0766786Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:27:24.053Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/534",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

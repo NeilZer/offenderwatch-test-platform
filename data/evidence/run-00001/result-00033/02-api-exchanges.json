@@ -1,0 +1,39 @@
+[
+  {
+    "at": "2026-11-21T11:26:25.955Z",
+    "method": "PUT",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/987654",
+    "requestBody": {
+      "firstName": "Ariel",
+      "lastName": "Katz",
+      "nationalId": "993599055",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 404,
+    "responseBody": "{\"error\":\"Offender not found.\"}"
+  },
+  {
+    "at": "2026-11-21T11:26:26.022Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/987654",
+    "requestBody": null,
+    "status": 404,
+    "responseBody": "{\"error\":\"Offender not found.\"}"
+  },
+  {
+    "at": "2026-11-21T11:26:26.089Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/987654/locations",
+    "requestBody": {
+      "lat": 32.0853,
+      "lon": 34.7818,
+      "speedKmh": 12.5,
+      "batteryPct": 80,
+      "signal": 4
+    },
+    "status": 404,
+    "responseBody": "{\"error\":\"Offender not found.\"}"
+  }
+]

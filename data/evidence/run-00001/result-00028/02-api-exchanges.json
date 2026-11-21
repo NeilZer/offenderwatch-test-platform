@@ -1,0 +1,40 @@
+[
+  {
+    "at": "2026-11-21T11:26:24.166Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Yonatan",
+      "lastName": "Hadad",
+      "nationalId": "999192296",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":507,\"firstName\":\"Yonatan\",\"lastName\":\"Hadad\",\"nationalId\":\"999192296\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:26:24.2791932Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:26:24.261Z",
+    "method": "PUT",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/507",
+    "requestBody": {
+      "firstName": "Yonatan",
+      "lastName": "Hadad",
+      "nationalId": "305412876",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 200,
+    "responseBody": "{\"id\":507,\"firstName\":\"Yonatan\",\"lastName\":\"Hadad\",\"nationalId\":\"305412876\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:26:24.2791932Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:26:24.364Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/507",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

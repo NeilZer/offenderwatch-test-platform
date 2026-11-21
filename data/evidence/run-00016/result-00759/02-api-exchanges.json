@@ -1,0 +1,43 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:55:18.077Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Lior",
+      "lastName": "Hadad",
+      "nationalId": "995810007",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":903,\"firstName\":\"Lior\",\"lastName\":\"Hadad\",\"nationalId\":\"995810007\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:55:18.2169531Z\"}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:55:18.172Z",
+    "method": "PUT",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/903",
+    "requestBody": {
+      "firstName": "Lior",
+      "lastName": "Hadad",
+      "nationalId": "995810007",
+      "dateOfBirth": "2027-11-21",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 200,
+    "responseBody": "{\"id\":903,\"firstName\":\"Lior\",\"lastName\":\"Hadad\",\"nationalId\":\"995810007\",\"dateOfBirth\":\"2027-11-21\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:55:18.2169531Z\"}"
+  },
+  {
+    "phase": "teardown",
+    "at": "2026-11-21T11:55:18.255Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/903",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

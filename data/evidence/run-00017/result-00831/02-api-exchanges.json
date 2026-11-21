@@ -1,0 +1,43 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:57:14.753Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Ron",
+      "lastName": "Hadad",
+      "nationalId": "997547842",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":943,\"firstName\":\"Ron\",\"lastName\":\"Hadad\",\"nationalId\":\"997547842\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:57:14.8962389Z\"}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:57:14.844Z",
+    "method": "PUT",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/943",
+    "requestBody": {
+      "firstName": "Ron",
+      "lastName": "Hadad",
+      "nationalId": "997547842",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Extreme",
+      "status": "Active"
+    },
+    "status": 200,
+    "responseBody": "{\"id\":943,\"firstName\":\"Ron\",\"lastName\":\"Hadad\",\"nationalId\":\"997547842\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Extreme\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:57:14.8962389Z\"}"
+  },
+  {
+    "phase": "teardown",
+    "at": "2026-11-21T11:57:14.928Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/943",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

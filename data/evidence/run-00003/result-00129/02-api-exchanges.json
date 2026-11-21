@@ -1,0 +1,40 @@
+[
+  {
+    "at": "2026-11-21T11:28:01.896Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Tamar",
+      "lastName": "Shapiro",
+      "nationalId": "990985795",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":570,\"firstName\":\"Tamar\",\"lastName\":\"Shapiro\",\"nationalId\":\"990985795\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:28:02.0141452Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:28:01.988Z",
+    "method": "PUT",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/570",
+    "requestBody": {
+      "firstName": "Tamar",
+      "lastName": "Shapiro",
+      "nationalId": "990985795",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Extreme",
+      "status": "Active"
+    },
+    "status": 200,
+    "responseBody": "{\"id\":570,\"firstName\":\"Tamar\",\"lastName\":\"Shapiro\",\"nationalId\":\"990985795\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Extreme\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:28:02.0141452Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:28:02.078Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/570",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

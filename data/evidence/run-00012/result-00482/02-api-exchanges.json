@@ -1,0 +1,33 @@
+[
+  {
+    "at": "2026-11-21T11:47:04.333Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Michal",
+      "lastName": "Nachum",
+      "nationalId": "998413527",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "High",
+      "status": "Inactive"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":744,\"firstName\":\"Michal\",\"lastName\":\"Nachum\",\"nationalId\":\"998413527\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"High\",\"status\":\"Inactive\",\"createdAt\":\"2026-11-21T11:47:04.4637610Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:47:04.477Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/744",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"id\":744,\"firstName\":\"Michal\",\"lastName\":\"Nachum\",\"nationalId\":\"998413527\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"High\",\"status\":\"Inactive\",\"createdAt\":\"2026-11-21T11:47:04.4637610Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:47:04.569Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/744",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

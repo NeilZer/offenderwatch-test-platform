@@ -1,0 +1,33 @@
+[
+  {
+    "at": "2026-11-21T11:26:21.448Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/stats",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"totalOffenders\":11,\"activeOffenders\":10,\"totalLocationPoints\":466}"
+  },
+  {
+    "at": "2026-11-21T11:26:21.536Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Adi",
+      "lastName": "Friedman",
+      "nationalId": "998769615",
+      "dateOfBirth": "2027-11-21",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":498,\"firstName\":\"Adi\",\"lastName\":\"Friedman\",\"nationalId\":\"998769615\",\"dateOfBirth\":\"2027-11-21\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:26:21.6496864Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:26:21.637Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/498",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

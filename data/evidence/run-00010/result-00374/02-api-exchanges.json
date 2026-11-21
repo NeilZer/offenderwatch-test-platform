@@ -1,0 +1,40 @@
+[
+  {
+    "at": "2026-11-21T11:44:23.100Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Ron",
+      "lastName": "Avraham",
+      "nationalId": "996423049",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":684,\"firstName\":\"Ron\",\"lastName\":\"Avraham\",\"nationalId\":\"996423049\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:44:23.2289252Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:44:23.201Z",
+    "method": "PUT",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/684",
+    "requestBody": {
+      "firstName": "Ron",
+      "lastName": "Avraham",
+      "nationalId": "996423049",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Extreme",
+      "status": "Active"
+    },
+    "status": 200,
+    "responseBody": "{\"id\":684,\"firstName\":\"Ron\",\"lastName\":\"Avraham\",\"nationalId\":\"996423049\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Extreme\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:44:23.2289252Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:44:23.287Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/684",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

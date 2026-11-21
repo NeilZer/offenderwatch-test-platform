@@ -1,0 +1,48 @@
+[
+  {
+    "at": "2026-11-21T11:44:22.029Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Omer",
+      "lastName": "Harel",
+      "nationalId": "992231792",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Low",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":681,\"firstName\":\"Omer\",\"lastName\":\"Harel\",\"nationalId\":\"992231792\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Low\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:44:22.1578688Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:44:22.187Z",
+    "method": "PUT",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/681",
+    "requestBody": {
+      "firstName": "Shira",
+      "lastName": "Harel",
+      "nationalId": "990184762",
+      "dateOfBirth": "1979-12-31",
+      "riskLevel": "High",
+      "status": "Inactive"
+    },
+    "status": 200,
+    "responseBody": "{\"id\":681,\"firstName\":\"Shira\",\"lastName\":\"Harel\",\"nationalId\":\"990184762\",\"dateOfBirth\":\"1979-12-31\",\"riskLevel\":\"High\",\"status\":\"Inactive\",\"createdAt\":\"2026-11-21T11:44:22.1578688Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:44:22.258Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/681",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"id\":681,\"firstName\":\"Shira\",\"lastName\":\"Harel\",\"nationalId\":\"990184762\",\"dateOfBirth\":\"1979-12-31\",\"riskLevel\":\"High\",\"status\":\"Inactive\",\"createdAt\":\"2026-11-21T11:44:22.1578688Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:44:22.345Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/681",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

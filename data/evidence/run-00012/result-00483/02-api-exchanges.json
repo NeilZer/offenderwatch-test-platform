@@ -1,0 +1,33 @@
+[
+  {
+    "at": "2026-11-21T11:47:04.680Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/stats",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"totalOffenders\":11,\"activeOffenders\":10,\"totalLocationPoints\":668}"
+  },
+  {
+    "at": "2026-11-21T11:47:04.745Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "",
+      "lastName": "Elbaz",
+      "nationalId": "990621162",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 400,
+    "responseBody": "{\"error\":\"First name is required.\"}"
+  },
+  {
+    "at": "2026-11-21T11:47:04.812Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/stats",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"totalOffenders\":11,\"activeOffenders\":10,\"totalLocationPoints\":668}"
+  }
+]

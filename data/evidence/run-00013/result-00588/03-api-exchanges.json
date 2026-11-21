@@ -1,0 +1,27 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:51:38.264Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Adi",
+      "lastName": "Sasson",
+      "nationalId": "998427600",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":812,\"firstName\":\"Adi\",\"lastName\":\"Sasson\",\"nationalId\":\"998427600\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:51:38.4045088Z\"}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:51:39.383Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?search=998427600&page=1&pageSize=1000",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"items\":[],\"total\":0,\"page\":1,\"pageSize\":1000,\"totalPages\":1}"
+  }
+]

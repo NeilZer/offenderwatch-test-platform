@@ -1,0 +1,11 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:54:31.935Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/987654/trail",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "[]"
+  }
+]

@@ -1,0 +1,48 @@
+[
+  {
+    "at": "2026-11-21T11:41:26.495Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Noam",
+      "lastName": "Rosen",
+      "nationalId": "990741926",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Low",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":603,\"firstName\":\"Noam\",\"lastName\":\"Rosen\",\"nationalId\":\"990741926\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Low\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:41:26.6220671Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:41:26.593Z",
+    "method": "PUT",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/603",
+    "requestBody": {
+      "firstName": "Hila",
+      "lastName": "Elbaz",
+      "nationalId": "990572564",
+      "dateOfBirth": "1979-12-31",
+      "riskLevel": "High",
+      "status": "Inactive"
+    },
+    "status": 200,
+    "responseBody": "{\"id\":603,\"firstName\":\"Hila\",\"lastName\":\"Elbaz\",\"nationalId\":\"990572564\",\"dateOfBirth\":\"1979-12-31\",\"riskLevel\":\"High\",\"status\":\"Inactive\",\"createdAt\":\"2026-11-21T11:41:26.6220671Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:41:26.665Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/603",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"id\":603,\"firstName\":\"Hila\",\"lastName\":\"Elbaz\",\"nationalId\":\"990572564\",\"dateOfBirth\":\"1979-12-31\",\"riskLevel\":\"High\",\"status\":\"Inactive\",\"createdAt\":\"2026-11-21T11:41:26.6220671Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:41:26.758Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/603",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

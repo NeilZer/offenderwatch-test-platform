@@ -1,0 +1,20 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T12:55:56.749Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/stats",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"totalOffenders\":38,\"activeOffenders\":18,\"totalLocationPoints\":1146}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T12:55:57.045Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/stats",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"totalOffenders\":38,\"activeOffenders\":18,\"totalLocationPoints\":1146}"
+  }
+]

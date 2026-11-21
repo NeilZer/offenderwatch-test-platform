@@ -1,0 +1,27 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T12:56:05.631Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/offenders",
+    "requestBody": {
+      "firstName": "Shira",
+      "lastName": "Katz",
+      "nationalId": "991393066",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":1514,\"firstName\":\"Shira\",\"lastName\":\"Katz\",\"nationalId\":\"991393066\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T12:56:05.8279869Z\"}"
+  },
+  {
+    "phase": "teardown",
+    "at": "2026-11-21T12:56:07.376Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/api/offenders/1514",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

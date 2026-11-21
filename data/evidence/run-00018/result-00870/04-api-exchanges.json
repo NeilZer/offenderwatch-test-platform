@@ -1,0 +1,36 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T12:05:48.288Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Daniel",
+      "lastName": "Shapiro",
+      "nationalId": "991883591",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "High",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":1005,\"firstName\":\"Daniel\",\"lastName\":\"Shapiro\",\"nationalId\":\"991883591\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T12:05:48.4187688Z\"}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T12:05:49.412Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1005",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"id\":1005,\"firstName\":\"Ron\",\"lastName\":\"Shapiro\",\"nationalId\":\"991883591\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Low\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T12:05:48.4187688Z\"}"
+  },
+  {
+    "phase": "teardown",
+    "at": "2026-11-21T12:05:49.555Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1005",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

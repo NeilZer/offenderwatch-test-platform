@@ -1,0 +1,36 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T13:49:14.678Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Michal",
+      "lastName": "Katz",
+      "nationalId": "991213794",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "High",
+      "status": "Inactive"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":1088,\"firstName\":\"Michal\",\"lastName\":\"Katz\",\"nationalId\":\"991213794\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"High\",\"status\":\"Inactive\",\"createdAt\":\"2026-11-21T13:49:14.9135358Z\"}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T13:49:14.826Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1088",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"id\":1088,\"firstName\":\"Michal\",\"lastName\":\"Katz\",\"nationalId\":\"991213794\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"High\",\"status\":\"Inactive\",\"createdAt\":\"2026-11-21T13:49:14.9135358Z\"}"
+  },
+  {
+    "phase": "teardown",
+    "at": "2026-11-21T13:49:14.912Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1088",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

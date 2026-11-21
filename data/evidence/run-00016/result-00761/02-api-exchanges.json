@@ -1,0 +1,43 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:55:18.655Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Lior",
+      "lastName": "Shapiro",
+      "nationalId": "990233161",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":905,\"firstName\":\"Lior\",\"lastName\":\"Shapiro\",\"nationalId\":\"990233161\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:55:18.7930579Z\"}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:55:18.745Z",
+    "method": "PUT",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/905",
+    "requestBody": {
+      "firstName": "Lior",
+      "lastName": "Shapiro",
+      "nationalId": "305412876",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 200,
+    "responseBody": "{\"id\":905,\"firstName\":\"Lior\",\"lastName\":\"Shapiro\",\"nationalId\":\"305412876\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:55:18.7930579Z\"}"
+  },
+  {
+    "phase": "teardown",
+    "at": "2026-11-21T11:55:18.831Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/905",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

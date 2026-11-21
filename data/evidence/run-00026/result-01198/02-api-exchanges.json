@@ -1,0 +1,43 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T13:50:42.929Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Omer",
+      "lastName": "Rosen",
+      "nationalId": "996289471",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":1130,\"firstName\":\"Omer\",\"lastName\":\"Rosen\",\"nationalId\":\"996289471\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T13:50:43.1678563Z\"}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T13:50:43.018Z",
+    "method": "PUT",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1130",
+    "requestBody": {
+      "firstName": "Omer",
+      "lastName": "Rosen",
+      "nationalId": "996289471",
+      "dateOfBirth": "2027-11-21",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 200,
+    "responseBody": "{\"id\":1130,\"firstName\":\"Omer\",\"lastName\":\"Rosen\",\"nationalId\":\"996289471\",\"dateOfBirth\":\"2027-11-21\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T13:50:43.1678563Z\"}"
+  },
+  {
+    "phase": "teardown",
+    "at": "2026-11-21T13:50:43.105Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1130",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

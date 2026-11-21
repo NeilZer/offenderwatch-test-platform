@@ -1,0 +1,48 @@
+[
+  {
+    "at": "2026-11-21T11:26:22.902Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Ariel",
+      "lastName": "Shapiro",
+      "nationalId": "994111626",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Low",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":503,\"firstName\":\"Ariel\",\"lastName\":\"Shapiro\",\"nationalId\":\"994111626\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Low\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:26:23.0135288Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:26:22.995Z",
+    "method": "PUT",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/503",
+    "requestBody": {
+      "firstName": "Michal",
+      "lastName": "Segal",
+      "nationalId": "999540388",
+      "dateOfBirth": "1979-12-31",
+      "riskLevel": "High",
+      "status": "Inactive"
+    },
+    "status": 200,
+    "responseBody": "{\"id\":503,\"firstName\":\"Michal\",\"lastName\":\"Segal\",\"nationalId\":\"999540388\",\"dateOfBirth\":\"1979-12-31\",\"riskLevel\":\"High\",\"status\":\"Inactive\",\"createdAt\":\"2026-11-21T11:26:23.0135288Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:26:23.065Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/503",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"id\":503,\"firstName\":\"Michal\",\"lastName\":\"Segal\",\"nationalId\":\"999540388\",\"dateOfBirth\":\"1979-12-31\",\"riskLevel\":\"High\",\"status\":\"Inactive\",\"createdAt\":\"2026-11-21T11:26:23.0135288Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:26:23.151Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/503",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

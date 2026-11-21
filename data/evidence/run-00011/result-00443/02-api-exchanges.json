@@ -1,0 +1,40 @@
+[
+  {
+    "at": "2026-11-21T11:45:45.524Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Daniel",
+      "lastName": "Tal",
+      "nationalId": "991809387",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":721,\"firstName\":\"Daniel\",\"lastName\":\"Tal\",\"nationalId\":\"991809387\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:45:45.6538552Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:45:45.613Z",
+    "method": "PUT",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/721",
+    "requestBody": {
+      "firstName": "",
+      "lastName": "Tal",
+      "nationalId": "991809387",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 200,
+    "responseBody": "{\"id\":721,\"firstName\":\"\",\"lastName\":\"Tal\",\"nationalId\":\"991809387\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:45:45.6538552Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:45:45.697Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/721",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

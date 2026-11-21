@@ -1,0 +1,43 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:51:04.606Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Daniel",
+      "lastName": "Segal",
+      "nationalId": "992568221",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":788,\"firstName\":\"Daniel\",\"lastName\":\"Segal\",\"nationalId\":\"992568221\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:51:04.7516609Z\"}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:51:04.696Z",
+    "method": "PUT",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/788",
+    "requestBody": {
+      "firstName": "Daniel",
+      "lastName": "Segal",
+      "nationalId": "305412876",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 200,
+    "responseBody": "{\"id\":788,\"firstName\":\"Daniel\",\"lastName\":\"Segal\",\"nationalId\":\"305412876\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:51:04.7516609Z\"}"
+  },
+  {
+    "phase": "teardown",
+    "at": "2026-11-21T11:51:04.783Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/788",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

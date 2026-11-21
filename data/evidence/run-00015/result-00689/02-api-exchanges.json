@@ -1,0 +1,43 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:54:23.729Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Adi",
+      "lastName": "Klein",
+      "nationalId": "996138444",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":865,\"firstName\":\"Adi\",\"lastName\":\"Klein\",\"nationalId\":\"996138444\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:54:23.8815601Z\"}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:54:23.821Z",
+    "method": "PUT",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/865",
+    "requestBody": {
+      "firstName": "Adi",
+      "lastName": "Klein",
+      "nationalId": "996138444",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Extreme",
+      "status": "Active"
+    },
+    "status": 200,
+    "responseBody": "{\"id\":865,\"firstName\":\"Adi\",\"lastName\":\"Klein\",\"nationalId\":\"996138444\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Extreme\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:54:23.8815601Z\"}"
+  },
+  {
+    "phase": "teardown",
+    "at": "2026-11-21T11:54:23.909Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/865",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "at": "2026-11-21T11:27:58.249Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Omer",
+      "lastName": "Sasson",
+      "nationalId": "996203595",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "High",
+      "status": "Inactive"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":559,\"firstName\":\"Omer\",\"lastName\":\"Sasson\",\"nationalId\":\"996203595\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"High\",\"status\":\"Inactive\",\"createdAt\":\"2026-11-21T11:27:58.2113230Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:27:58.347Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/559",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"id\":559,\"firstName\":\"Omer\",\"lastName\":\"Sasson\",\"nationalId\":\"996203595\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"High\",\"status\":\"Inactive\",\"createdAt\":\"2026-11-21T11:27:58.2113230Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:27:58.434Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/559",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

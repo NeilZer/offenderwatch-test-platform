@@ -1,0 +1,33 @@
+[
+  {
+    "at": "2026-11-21T11:43:59.555Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Adi",
+      "lastName": "Weiss",
+      "nationalId": "997155687",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "High",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":668,\"firstName\":\"Adi\",\"lastName\":\"Weiss\",\"nationalId\":\"997155687\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:43:59.6827428Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:44:00.673Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/668",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"id\":668,\"firstName\":\"Shira\",\"lastName\":\"Weiss\",\"nationalId\":\"997155687\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Low\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:43:59.6827428Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:44:00.833Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/668",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

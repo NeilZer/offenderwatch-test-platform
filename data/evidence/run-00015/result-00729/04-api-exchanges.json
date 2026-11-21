@@ -1,0 +1,36 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:54:56.956Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Adi",
+      "lastName": "Nachum",
+      "nationalId": "990983828",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "High",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":889,\"firstName\":\"Adi\",\"lastName\":\"Nachum\",\"nationalId\":\"990983828\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:54:57.1025348Z\"}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T11:54:58.127Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/889",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"id\":889,\"firstName\":\"Adi\",\"lastName\":\"Nachum\",\"nationalId\":\"990983828\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Low\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:54:57.1025348Z\"}"
+  },
+  {
+    "phase": "teardown",
+    "at": "2026-11-21T11:54:58.316Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/889",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

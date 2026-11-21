@@ -1,0 +1,36 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T12:05:53.597Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Ron",
+      "lastName": "Friedman",
+      "nationalId": "994448704",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":1008,\"firstName\":\"Ron\",\"lastName\":\"Friedman\",\"nationalId\":\"994448704\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T12:05:53.7438781Z\"}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T12:05:55.106Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1008/trail",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "[{\"id\":874,\"offenderId\":1008,\"timestamp\":\"2026-11-21T12:05:55.0120863Z\",\"lat\":32.0901,\"lon\":34.7802,\"speedKmh\":18.5,\"batteryPct\":77,\"signal\":4}]"
+  },
+  {
+    "phase": "teardown",
+    "at": "2026-11-21T12:05:55.314Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1008",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

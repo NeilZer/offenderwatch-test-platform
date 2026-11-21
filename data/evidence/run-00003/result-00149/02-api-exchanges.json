@@ -1,0 +1,47 @@
+[
+  {
+    "at": "2026-11-21T11:28:09.056Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Tamar",
+      "lastName": "Shapiro",
+      "nationalId": "990707705",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":587,\"firstName\":\"Tamar\",\"lastName\":\"Shapiro\",\"nationalId\":\"990707705\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T11:28:09.1744669Z\"}"
+  },
+  {
+    "at": "2026-11-21T11:28:09.144Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/587/locations",
+    "requestBody": {
+      "lat": -90,
+      "lon": -180,
+      "speedKmh": 12.5,
+      "batteryPct": 100,
+      "signal": 5
+    },
+    "status": 201,
+    "responseBody": "{\"ok\":true}"
+  },
+  {
+    "at": "2026-11-21T11:28:09.210Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/587/trail",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "[{\"id\":539,\"offenderId\":587,\"timestamp\":\"2026-11-21T11:28:09.2672460Z\",\"lat\":-90,\"lon\":-180,\"speedKmh\":12.5,\"batteryPct\":100,\"signal\":5}]"
+  },
+  {
+    "at": "2026-11-21T11:28:09.293Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/587",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]
