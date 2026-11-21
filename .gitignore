@@ -1,0 +1,13 @@
+# build output
+**/bin/
+**/obj/
+client/node_modules/
+client/dist/
+server/src/TestPlatform.Api/wwwroot/
+*.log
+# SQLite write-ahead files (the database itself, data/platform.db, IS committed — deliverable 6)
+data/*.db-wal
+data/*.db-shm
+# session-cookie keys (secret, machine-specific) and TypeScript build cache
+data/keys/
+*.tsbuildinfo
