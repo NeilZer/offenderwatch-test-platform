@@ -98,7 +98,10 @@ This works the same for old runs: open any past run, or **Open** in a test's his
 - The 11 original offenders (protected ids, `1-11`) are **never** touched.
 - Every record is re-checked before deletion; anything that doesn't match is left alone and reported.
 - Location points can't be deleted on their own. After their offender is deleted the platform checks the
-  application: still there = **"Left in the app — BUG-02"**, really gone = **"Removed with its offender (verified)"**.
+  application: still there = **"Left in the app — BUG-02 (verified)"**, proven gone = **"Removed with its
+  offender (verified)"**, and if the reply proves nothing = **"Unknown — could not verify"**.
+- The checkbox **"Only data still (or possibly) in the application"** shows everything that may still be
+  there, including points left by BUG-02 and unverified records.
 
 ### Schedule a nightly run
 **Schedules → + Add schedule** → pick **Every night at 02:00** (or type a cron expression) → environment →
@@ -131,8 +134,8 @@ Without a webhook, alerts are only listed on the page.
 | Label | Colour | Meaning |
 |---|---|---|
 | ✓ Passed | green | the requirement works |
-| ✕ Known bug | orange | fails because of a documented bug; expected |
-| ! Failed | red | **unexpected** failure: a new problem, needs attention |
+| ✕ Known bug | orange | fails because of a documented bug (with that bug's tag in the error); expected |
+| ! Failed | red | **unexpected** failure: a new problem, needs attention. Also used when a known-bug test fails for a *different* reason. |
 | ↻ Bug fixed? | blue | was expected to fail but passed; retest the bug |
 | ■ Stopped / – Skipped | grey | didn't run to the end |
 

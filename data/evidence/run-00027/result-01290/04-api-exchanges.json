@@ -1,0 +1,36 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T16:19:13.305Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Tamar",
+      "lastName": "Rosen",
+      "nationalId": "992893937",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "High",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":1189,\"firstName\":\"Tamar\",\"lastName\":\"Rosen\",\"nationalId\":\"992893937\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"High\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T16:19:13.6647570Z\"}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T16:19:14.399Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1189",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"id\":1189,\"firstName\":\"Tamar\",\"lastName\":\"Rosen\",\"nationalId\":\"992893937\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Low\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T16:19:13.6647570Z\"}"
+  },
+  {
+    "phase": "teardown",
+    "at": "2026-11-21T16:19:14.542Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1189",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

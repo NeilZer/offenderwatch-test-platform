@@ -1,0 +1,17 @@
+16:18:29.758 ▶ TC-08 search by national ID (suffix) "412876" finds Cohen
+   tests/api/02-offenders-search.api.spec.ts · project api
+16:18:29.758   → Before Hooks
+16:18:29.768       → Create request context
+16:18:29.768       ✓ Create request context (0 ms)
+16:18:29.771   ✓ Before Hooks (13 ms)
+16:18:29.771   → GET api/offenders?search=412876&page=1&pageSize=1000
+16:18:29.773     → GET "api/offenders?search=412876&page=1&pageSize=1000"
+16:18:29.837     ✓ GET "api/offenders?search=412876&page=1&pageSize=1000" (64 ms)
+16:18:29.839   ✓ GET api/offenders?search=412876&page=1&pageSize=1000 (67 ms)
+16:18:29.840   → GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?search=412876&page=1&pageSize=1000 -> 200 {"items":[{"id":1,"firstName":"David","lastName":"Cohen","nationalId":"305412876","dateOfBirth":"1982-03-07","riskLevel":"High","status":"Active","createdAt":"2026-06-01T08:15:00.000Z"}],"total":1,"pa…
+16:18:29.840   ✓ GET https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?search=412876&page=1&pageSize=1000 -> 200 {"items":[{"id":1,"firstName":"David","lastName":"Cohen","nationalId":"305412876","dateOfBirth":"1982-03-07","riskLevel":"High","status":"Active","createdAt":"2026-06-01T08:15:00.000Z"}],"total":1,"pa… (0 ms)
+16:18:29.841   → Expect "toContain"
+16:18:29.842   ✓ Expect "toContain" (0 ms)
+16:18:29.842   → After Hooks
+16:18:29.860   ✓ After Hooks (17 ms)
+16:18:29.861 ■ Passed in 82 ms

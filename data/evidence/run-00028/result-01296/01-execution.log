@@ -1,0 +1,26 @@
+16:19:36.260 ▶ ZZRULECHECK known-bug test failing WITH its tag
+   tests/api/zz-temp-rule-check.api.spec.ts · project api
+16:19:36.262   → Before Hooks
+16:19:36.262   ✓ Before Hooks (7 ms)
+16:19:36.263   → [BUG-01] the documented defect
+16:19:36.264   ✗ Error: [BUG-01] the documented defect [BUG-01] the documented defect (1 ms)
+16:19:36.264   → After Hooks
+16:19:36.274   ✓ After Hooks (11 ms)
+16:19:36.275 ■ ExpectedFailure in 2 ms
+   annotation known-bug: BUG-01 — Pager hides the last (partial) page: totalPages is floor(total/pageSize) instead of ceiling
+   annotation fail: BUG-01: Pager hides the last (partial) page: totalPages is floor(total/pageSize) instead of ceiling
+
+--- error 1 ---
+Error: [BUG-01] the documented defect
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 2
+Received: 1
+Error: [BUG-01] the documented defect
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 2
+Received: 1
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\zz-temp-rule-check.api.spec.ts:10:47

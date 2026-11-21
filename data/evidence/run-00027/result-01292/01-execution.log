@@ -1,0 +1,33 @@
+16:19:15.955 ▶ TC-46 top-bar counters equal the stats API
+   tests/ui/04-locations-and-stats.ui.spec.ts · project ui
+16:19:15.955   → Before Hooks
+16:19:15.961       → Create context
+16:19:15.964       ✓ Create context (4 ms)
+16:19:15.968       → Create page
+16:19:16.027       ✓ Create page (59 ms)
+16:19:16.029       → Create request context
+16:19:16.029       ✓ Create request context (1 ms)
+16:19:16.031   ✓ Before Hooks (75 ms)
+16:19:16.032   → Wait for event "response"
+16:19:16.033   → Wait for event "response"
+16:19:16.034   → Navigate to "./"
+16:19:16.552   ✓ Navigate to "./" (518 ms)
+16:19:16.618   ✓ Wait for event "response" (586 ms)
+16:19:16.620   ✓ Wait for event "response" (586 ms)
+16:19:16.623   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+16:19:16.658   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (35 ms)
+16:19:16.658   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+16:19:16.667   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (9 ms)
+16:19:16.668   → Wait for selector locator('header.topbar').locator('.stats .stat').filter({ has: locator('span').filter({ hasText: /^Offenders$/ }) }).locator('b')
+16:19:16.678   ✓ Wait for selector locator('header.topbar').locator('.stats .stat').filter({ has: locator('span').filter({ hasText: /^Offenders$/ }) }).locator('b') (9 ms)
+16:19:16.693   → GET api/stats
+16:19:16.694     → GET "api/stats"
+16:19:16.757     ✓ GET "api/stats" (64 ms)
+16:19:16.758   ✓ GET api/stats (65 ms)
+16:19:16.758   → Expect "toEqual"
+16:19:16.758   ✓ Expect "toEqual" (0 ms)
+16:19:16.759   → After Hooks
+16:19:16.827       → Close context
+16:19:16.830       ✓ Close context (2 ms)
+16:19:16.837   ✓ After Hooks (78 ms)
+16:19:16.837 ■ Passed in 867 ms

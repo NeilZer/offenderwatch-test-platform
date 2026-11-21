@@ -1,0 +1,36 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T16:18:35.451Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Hila",
+      "lastName": "Elbaz",
+      "nationalId": "995251035",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":1168,\"firstName\":\"Hila\",\"lastName\":\"Elbaz\",\"nationalId\":\"995251035\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T16:18:35.8044811Z\"}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T16:18:35.538Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1168",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T16:18:35.612Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1168",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": ""
+  }
+]

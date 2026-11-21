@@ -1,0 +1,78 @@
+16:19:11.597 ▶ TC-21 editing the first name keeps the other fields unchanged
+   tests/ui/03-offender-crud.ui.spec.ts · project ui
+16:19:11.597   → Before Hooks
+16:19:11.601       → Create context
+16:19:11.605       ✓ Create context (4 ms)
+16:19:11.610       → Create page
+16:19:11.673       ✓ Create page (63 ms)
+16:19:11.674       → Create request context
+16:19:11.675       ✓ Create request context (0 ms)
+16:19:11.677   ✓ Before Hooks (82 ms)
+16:19:11.677   → POST api/offenders
+16:19:11.678     → POST "api/offenders"
+16:19:11.760     ✓ POST "api/offenders" (82 ms)
+16:19:11.761   ✓ POST api/offenders (84 ms)
+16:19:11.771   → Wait for event "response"
+16:19:11.774   → Wait for event "response"
+16:19:11.776   → Navigate to "./"
+16:19:12.305   ✓ Navigate to "./" (529 ms)
+16:19:12.372   ✓ Wait for event "response" (600 ms)
+16:19:12.374   ✓ Wait for event "response" (600 ms)
+16:19:12.377   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+16:19:12.407   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (30 ms)
+16:19:12.408   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+16:19:12.417   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (8 ms)
+16:19:12.427   → Wait for event "response"
+16:19:12.428   → Fill "997216119" locator('section.list-panel').locator('input.search')
+16:19:12.446   ✓ Fill "997216119" locator('section.list-panel').locator('input.search') (19 ms)
+16:19:12.509   ✓ Wait for event "response" (82 ms)
+16:19:12.515   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+16:19:12.527   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (12 ms)
+16:19:12.528   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+16:19:12.540   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (12 ms)
+16:19:12.541   → Click locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Avraham, Ron' }).getByRole('button', { name: 'Edit', exact: true })
+16:19:12.622   ✓ Click locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Avraham, Ron' }).getByRole('button', { name: 'Edit', exact: true }) (80 ms)
+16:19:12.652   → Expect "toMatchObject"
+16:19:12.652   ✓ Expect "toMatchObject" (0 ms)
+16:19:12.654   → Evaluate locator('.modal').locator('label').filter({ hasText: 'First name' }).locator('input, select')
+16:19:12.688   ✓ Evaluate locator('.modal').locator('label').filter({ hasText: 'First name' }).locator('input, select') (34 ms)
+16:19:12.689   → Fill "Yael" locator('.modal').locator('label').filter({ hasText: 'First name' }).locator('input, select')
+16:19:12.716   ✓ Fill "Yael" locator('.modal').locator('label').filter({ hasText: 'First name' }).locator('input, select') (26 ms)
+16:19:12.718   → Wait for event "response"
+16:19:12.720   → Click locator('.modal').getByRole('button', { name: 'Save', exact: true })
+16:19:12.768   ✓ Click locator('.modal').getByRole('button', { name: 'Save', exact: true }) (49 ms)
+16:19:12.851   ✓ Wait for event "response" (133 ms)
+16:19:12.856   → GET api/offenders/1188
+16:19:12.858     → GET "api/offenders/1188"
+16:19:12.922     ✓ GET "api/offenders/1188" (64 ms)
+16:19:12.922   ✓ GET api/offenders/1188 (67 ms)
+16:19:12.923   → Expect "toBe"
+16:19:12.923   ✓ Expect "toBe" (0 ms)
+16:19:12.924   → [BUG-03] untouched risk level must stay High
+16:19:12.925   ✗ Error: [BUG-03] untouched risk level must stay High [BUG-03] untouched risk level must stay High (1 ms)
+16:19:12.925   → After Hooks
+16:19:13.008       → DELETE api/offenders/1188
+16:19:13.008         → DELETE "api/offenders/1188"
+16:19:13.089         ✓ DELETE "api/offenders/1188" (80 ms)
+16:19:13.090       ✓ DELETE api/offenders/1188 (82 ms)
+16:19:13.127       → Close context
+16:19:13.130       ✓ Close context (3 ms)
+16:19:13.140   ✓ After Hooks (215 ms)
+16:19:13.141 ■ ExpectedFailure in 1525 ms
+   annotation known-bug: BUG-03 — Saving the Edit form silently resets the offender's Risk level to "Low"
+   annotation fail: BUG-03: Saving the Edit form silently resets the offender's Risk level to "Low"
+
+--- error 1 ---
+Error: [BUG-03] untouched risk level must stay High
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: "High"
+Received: "Low"
+Error: [BUG-03] untouched risk level must stay High
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: "High"
+Received: "Low"
+    at C:\Users\Neil\Desktop\SuperCom\tests\ui\03-offender-crud.ui.spec.ts:80:91

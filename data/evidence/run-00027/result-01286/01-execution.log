@@ -1,0 +1,76 @@
+16:19:07.045 ▶ TC-37 an out-of-range signal value does not crash the console
+   tests/ui/02-trail-map.ui.spec.ts · project ui
+16:19:07.045   → Before Hooks
+16:19:07.057       → Create context
+16:19:07.057       ✓ Create context (3 ms)
+16:19:07.060       → Create page
+16:19:07.128       ✓ Create page (68 ms)
+16:19:07.129       → Create request context
+16:19:07.130       ✓ Create request context (1 ms)
+16:19:07.133   ✓ Before Hooks (89 ms)
+16:19:07.134   → POST api/offenders
+16:19:07.135     → POST "api/offenders"
+16:19:07.217     ✓ POST "api/offenders" (82 ms)
+16:19:07.221   ✓ POST api/offenders (87 ms)
+16:19:07.262   → POST api/offenders/1186/locations
+16:19:07.264     → POST "api/offenders/1186/locations"
+16:19:07.348     ✓ POST "api/offenders/1186/locations" (84 ms)
+16:19:07.350   ✓ POST api/offenders/1186/locations (88 ms)
+16:19:07.350   → GET api/offenders/1186/trail
+16:19:07.351     → GET "api/offenders/1186/trail"
+16:19:07.417     ✓ GET "api/offenders/1186/trail" (65 ms)
+16:19:07.418   ✓ GET api/offenders/1186/trail (68 ms)
+16:19:07.428   → Wait for event "response"
+16:19:07.429   → Wait for event "response"
+16:19:07.430   → Navigate to "./"
+16:19:07.957   ✓ Navigate to "./" (527 ms)
+16:19:08.023   ✓ Wait for event "response" (595 ms)
+16:19:08.026   ✓ Wait for event "response" (598 ms)
+16:19:08.029   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+16:19:08.060   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (31 ms)
+16:19:08.061   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+16:19:08.071   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (10 ms)
+16:19:08.082   → Wait for event "response"
+16:19:08.083   → Fill "993175493" locator('section.list-panel').locator('input.search')
+16:19:08.102   ✓ Fill "993175493" locator('section.list-panel').locator('input.search') (20 ms)
+16:19:08.166   ✓ Wait for event "response" (83 ms)
+16:19:08.172   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+16:19:08.180   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (8 ms)
+16:19:08.181   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+16:19:08.190   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (10 ms)
+16:19:08.191   → Wait for event "response"
+16:19:08.192   → Click locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Segal, Ron' })
+16:19:08.239   ✓ Click locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Segal, Ron' }) (46 ms)
+16:19:08.276   ✓ Wait for event "response" (84 ms)
+16:19:08.277   → trail should render (or the app should visibly crash)
+16:19:08.309     → trail should render (or the app should visibly crash)
+16:19:08.309     ✓ trail should render (or the app should visibly crash) (0 ms)
+16:19:08.309   ✓ trail should render (or the app should visibly crash) (33 ms)
+16:19:08.322   → [BUG-15] console must not go blank
+16:19:08.324   ✗ Error: [BUG-15] console must not go blank [BUG-15] console must not go blank (0 ms)
+16:19:08.324   → After Hooks
+16:19:08.406       → DELETE api/offenders/1186
+16:19:08.407         → DELETE "api/offenders/1186"
+16:19:08.490         ✓ DELETE "api/offenders/1186" (82 ms)
+16:19:08.491       ✓ DELETE api/offenders/1186 (85 ms)
+16:19:08.611       → Close context
+16:19:08.617       ✓ Close context (6 ms)
+16:19:08.629   ✓ After Hooks (305 ms)
+16:19:08.631 ■ ExpectedFailure in 1561 ms
+   annotation known-bug: BUG-15 — A trail point with signal outside 1–5 crashes the whole console to a blank page
+   annotation fail: BUG-15: A trail point with signal outside 1–5 crashes the whole console to a blank page
+
+--- error 1 ---
+Error: [BUG-15] console must not go blank
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: false
+Received: true
+Error: [BUG-15] console must not go blank
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: false
+Received: true
+    at C:\Users\Neil\Desktop\SuperCom\tests\ui\02-trail-map.ui.spec.ts:162:92

@@ -66,11 +66,17 @@ public class TestDataService(PlatformDbContext db, IHttpClientFactory http, RunE
         await events.TestDataChanged();
     }
 
-    public async Task<IReadOnlyList<TestDataDto>> ListAsync(int? environmentId, bool onlyActive, CancellationToken ct)
+    /// <param name="stillInApplication">Only records that are (or may still be) in the application: waiting for
+    /// clean-up, failed clean-ups, orphaned points (BUG-02) and records whose state could not be verified.</param>
+    public async Task<IReadOnlyList<TestDataDto>> ListAsync(int? environmentId, bool stillInApplication, CancellationToken ct)
     {
         var query = db.TestData.AsNoTracking();
         if (environmentId is not null) query = query.Where(t => t.EnvironmentId == environmentId);
-        if (onlyActive) query = query.Where(t => t.State == TestDataState.Active);
+        if (stillInApplication)
+        {
+            var states = TestDataStates.StillInApplication.ToList();
+            query = query.Where(t => states.Contains(t.State));
+        }
         var records = await query.OrderByDescending(t => t.Id).Take(1000).ToListAsync(ct);
         var names = await db.Environments.AsNoTracking().ToDictionaryAsync(e => e.Id, e => e.Name, ct);
         return records.Select(r => r.ToDto(r.EnvironmentId is { } id && names.TryGetValue(id, out var n) ? n : null)).ToList();
@@ -127,7 +133,7 @@ public class TestDataService(PlatformDbContext db, IHttpClientFactory http, RunE
                         prot++;
                         break;
                     case CleanupGuard.Decision.SkipIdentityMismatch:
-                        Resolve(record, TestDataState.AlreadyGone, $"Id now belongs to a different record (national ID {liveNationalId}) — NOT deleted.");
+                        Resolve(record, TestDataState.IdentityChanged, $"Id now belongs to a different record (national ID {liveNationalId}) — NOT deleted.");
                         skipped++;
                         details.Add($"Offender {record.ExternalId}: identity changed, left untouched");
                         break;
@@ -167,59 +173,98 @@ public class TestDataService(PlatformDbContext db, IHttpClientFactory http, RunE
     }
 
     /// <summary>
-    /// After an offender is deleted, decide what happened to its location points — by ASKING the application,
-    /// never by assumption: points the trail still returns are "left in the application" (BUG-02 — the app
-    /// does not cascade, and has no endpoint to delete a single point); only points that are really gone are
-    /// "removed with their offender". If the check itself fails, the points are reported as left (the safe,
-    /// observed default under BUG-02) with the reason in the note.
+    /// Decides what happened to an offender's location points — by ASKING the application, never by assumption:
+    ///  - only when the offender was really deleted (DeletedByTest / CleanedByPlatform / AlreadyGone);
+    ///    a Protected or still-waiting parent was not deleted, so its points are left untouched;
+    ///  - an id now owned by a different record (IdentityChanged): the trail belongs to someone else and
+    ///    proves nothing about our points → Unverified;
+    ///  - otherwise the trail is read: still returned → OrphanedInApplication (BUG-02), proven gone →
+    ///    RemovedWithParent, and anything the reply cannot prove → Unverified (never shown as verified).
     /// </summary>
     private async Task ResolveChildrenAsync(TestDataRecord parent, CancellationToken ct)
     {
-        if (parent.Kind != TestDataKind.Offender || CleanupGuard.IsWaitingForCleanup(parent.State)) return;
+        if (parent.Kind != TestDataKind.Offender) return;
+        var parentDeleted = TestDataStates.ParentDeleted.Contains(parent.State);
+        if (!parentDeleted && parent.State != TestDataState.IdentityChanged) return;
+
         var children = await db.TestData
             .Where(t => t.Kind == TestDataKind.LocationPoint && t.ParentExternalId == parent.ExternalId
                         && t.EnvironmentBaseUrl == parent.EnvironmentBaseUrl && t.State == TestDataState.Active)
             .ToListAsync(ct);
         if (children.Count == 0) return;
 
-        var (stillPresent, checkError) = await ReadTrailPointIdsAsync(parent.EnvironmentBaseUrl, parent.ExternalId, ct);
+        if (!parentDeleted)
+        {
+            foreach (var child in children)
+            {
+                Resolve(child, TestDataState.Unverified,
+                    "Not verified: the offender id now belongs to a different record, so its trail says nothing about this point.");
+            }
+            return;
+        }
+
+        var check = await CheckTrailAsync(parent.EnvironmentBaseUrl, parent.ExternalId, ct);
         foreach (var child in children)
         {
-            if (checkError is null && !stillPresent.Contains(child.ExternalId))
+            if (check.Outcome == TrailOutcome.Unknown)
             {
-                Resolve(child, TestDataState.RemovedWithParent, "Verified: no longer returned by the application after its offender was deleted.");
+                Resolve(child, TestDataState.Unverified, $"Not verified: {check.Reason}");
+            }
+            else if (check.PointIds.Contains(child.ExternalId))
+            {
+                Resolve(child, TestDataState.OrphanedInApplication,
+                    "Verified: still returned by the application after its offender was deleted (BUG-02). The app has no endpoint to delete a single point.");
             }
             else
             {
-                Resolve(child, TestDataState.OrphanedInApplication, checkError is null
-                    ? "Verified: still returned by the application after its offender was deleted (BUG-02). The app has no endpoint to delete a single point."
-                    : $"Assumed still in the application (BUG-02) — the check failed: {checkError}");
+                Resolve(child, TestDataState.RemovedWithParent, "Verified: no longer returned by the application after its offender was deleted.");
             }
         }
     }
 
-    /// <summary>Ids of the points the application still returns for an offender (empty when the trail is gone).</summary>
-    private async Task<(IReadOnlySet<string> Ids, string? Error)> ReadTrailPointIdsAsync(string baseUrl, string offenderId, CancellationToken ct)
+    private enum TrailOutcome { Read, Unknown }
+
+    private sealed record TrailCheck(TrailOutcome Outcome, IReadOnlySet<string> PointIds, string? Reason)
+    {
+        public static TrailCheck Points(IReadOnlySet<string> ids) => new(TrailOutcome.Read, ids, null);
+        public static TrailCheck Unknown(string reason) => new(TrailOutcome.Unknown, new HashSet<string>(), reason);
+    }
+
+    /// <summary>
+    /// Reads an offender's trail and accepts ONLY replies that prove something:
+    ///   404 → the trail is gone (no points) · 200 with a JSON array whose items all carry an id → those points.
+    /// Everything else — empty body, JSON that is not an array (e.g. {}), items without an id, other status codes,
+    /// network errors — is Unknown. A reply we cannot interpret must never become "verified gone".
+    /// </summary>
+    private async Task<TrailCheck> CheckTrailAsync(string baseUrl, string offenderId, CancellationToken ct)
     {
         try
         {
             var client = http.CreateClient("target");
             client.BaseAddress = new Uri(baseUrl.EndsWith('/') ? baseUrl : baseUrl + "/");
             var response = await client.GetAsync($"api/offenders/{offenderId}/trail", ct);
-            if (response.StatusCode == HttpStatusCode.NotFound) return (new HashSet<string>(), null);
-            response.EnsureSuccessStatusCode();
+            if (response.StatusCode == HttpStatusCode.NotFound) return TrailCheck.Points(new HashSet<string>());
+            if (!response.IsSuccessStatusCode) return TrailCheck.Unknown($"the trail request answered HTTP {(int)response.StatusCode}.");
+
             var body = await response.Content.ReadAsStringAsync(ct);
-            if (string.IsNullOrWhiteSpace(body)) return (new HashSet<string>(), null);
+            if (string.IsNullOrWhiteSpace(body)) return TrailCheck.Unknown("the trail request returned an empty body.");
             using var json = JsonDocument.Parse(body);
-            var ids = json.RootElement.ValueKind == JsonValueKind.Array
-                ? json.RootElement.EnumerateArray().Select(p => p.TryGetProperty("id", out var id) ? id.ToString() : "").ToHashSet()
-                : new HashSet<string>();
-            return (ids, null);
+            if (json.RootElement.ValueKind != JsonValueKind.Array)
+                return TrailCheck.Unknown($"the trail reply was JSON {json.RootElement.ValueKind}, not a list of points.");
+
+            var ids = new HashSet<string>();
+            foreach (var point in json.RootElement.EnumerateArray())
+            {
+                if (point.ValueKind != JsonValueKind.Object || !point.TryGetProperty("id", out var id))
+                    return TrailCheck.Unknown("the trail reply contained an entry without an id.");
+                ids.Add(id.ToString());
+            }
+            return TrailCheck.Points(ids);
         }
         catch (Exception ex) when (ex is HttpRequestException or TaskCanceledException or JsonException)
         {
             logger.LogWarning(ex, "Could not verify the trail of offender {Id}", offenderId);
-            return (new HashSet<string>(), ex.Message);
+            return TrailCheck.Unknown($"the trail could not be read ({ex.Message}).");
         }
     }
 

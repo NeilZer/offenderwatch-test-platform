@@ -72,8 +72,9 @@ public class EvidenceController(PlatformDbContext db, EvidenceStore store) : Con
 public class TestDataController(TestDataService testData) : ControllerBase
 {
     [HttpGet]
+    /// <param name="activeOnly">Only records that are (or may still be) in the application.</param>
     public Task<IReadOnlyList<TestDataDto>> List([FromQuery] int? environmentId, [FromQuery] bool activeOnly = false, CancellationToken ct = default) =>
-        testData.ListAsync(environmentId, activeOnly, ct);
+        testData.ListAsync(environmentId, stillInApplication: activeOnly, ct);
 
     [HttpPost("clean")]
     [Authorize(Policy = AuthSetup.OperatorPolicy)]

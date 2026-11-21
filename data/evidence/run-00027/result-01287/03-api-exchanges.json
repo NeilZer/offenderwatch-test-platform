@@ -1,0 +1,11 @@
+[
+  {
+    "phase": "teardown",
+    "at": "2026-11-21T16:19:10.407Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1187",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

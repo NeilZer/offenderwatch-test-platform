@@ -1,0 +1,26 @@
+16:19:36.209 ▶ ZZRULECHECK known-bug test failing WITHOUT its tag
+   tests/api/zz-temp-rule-check.api.spec.ts · project api
+16:19:36.227   → Before Hooks
+16:19:36.236   ✓ Before Hooks (8 ms)
+16:19:36.242   → something unrelated broke (no bug tag)
+16:19:36.246   ✗ Error: something unrelated broke (no bug tag) something unrelated broke (no bug tag) (2 ms)
+16:19:36.246   → After Hooks
+16:19:36.254   ✓ After Hooks (9 ms)
+16:19:36.257 ■ Failed in 11 ms
+   annotation known-bug: BUG-01 — Pager hides the last (partial) page: totalPages is floor(total/pageSize) instead of ceiling
+   annotation fail: BUG-01: Pager hides the last (partial) page: totalPages is floor(total/pageSize) instead of ceiling
+
+--- error 1 ---
+Error: something unrelated broke (no bug tag)
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 2
+Received: 1
+Error: something unrelated broke (no bug tag)
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 2
+Received: 1
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\zz-temp-rule-check.api.spec.ts:6:55

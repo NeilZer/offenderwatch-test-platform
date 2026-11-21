@@ -1,0 +1,27 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T16:19:14.751Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Michal",
+      "lastName": "Harel",
+      "nationalId": "997351571",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":1190,\"firstName\":\"Michal\",\"lastName\":\"Harel\",\"nationalId\":\"997351571\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T16:19:15.1104579Z\"}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T16:19:15.863Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders?search=997351571&page=1&pageSize=1000",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"items\":[],\"total\":0,\"page\":1,\"pageSize\":1000,\"totalPages\":1}"
+  }
+]

@@ -1,0 +1,62 @@
+16:19:00.850 ▶ TC-30 detail header shows the stored date of birth
+   tests/ui/01-roster.ui.spec.ts · project ui
+16:19:00.850   → Before Hooks
+16:19:00.850     → beforeEach hook
+16:19:00.857         → Create context
+16:19:00.861         ✓ Create context (4 ms)
+16:19:00.866         → Create page
+16:19:00.940         ✓ Create page (75 ms)
+16:19:00.943       → Wait for event "response"
+16:19:00.944       → Wait for event "response"
+16:19:00.945       → Navigate to "./"
+16:19:01.460       ✓ Navigate to "./" (515 ms)
+16:19:01.528       ✓ Wait for event "response" (584 ms)
+16:19:01.529       ✓ Wait for event "response" (587 ms)
+16:19:01.534       → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+16:19:01.567       ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (34 ms)
+16:19:01.568       → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+16:19:01.576       ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (9 ms)
+16:19:01.576     ✓ beforeEach hook (728 ms)
+16:19:01.578       → Create request context
+16:19:01.578       ✓ Create request context (1 ms)
+16:19:01.580   ✓ Before Hooks (733 ms)
+16:19:01.581   → GET api/offenders/4
+16:19:01.582     → GET "api/offenders/4"
+16:19:01.646     ✓ GET "api/offenders/4" (65 ms)
+16:19:01.648   ✓ GET api/offenders/4 (67 ms)
+16:19:01.659   → Wait for event "response"
+16:19:01.661   → Fill "204518793" locator('section.list-panel').locator('input.search')
+16:19:01.684   ✓ Fill "204518793" locator('section.list-panel').locator('input.search') (24 ms)
+16:19:01.745   ✓ Wait for event "response" (87 ms)
+16:19:01.750   → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+16:19:01.760   ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (10 ms)
+16:19:01.762   → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+16:19:01.771   ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (9 ms)
+16:19:01.772   → Wait for event "response"
+16:19:01.773   → Click locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Mizrahi, Rachel' })
+16:19:01.840   ✓ Click locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Mizrahi, Rachel' }) (67 ms)
+16:19:01.880   ✓ Wait for event "response" (108 ms)
+16:19:01.915   → [BUG-04] header DOB must equal the stored DOB
+16:19:01.917   ✗ Error: [BUG-04] header DOB must equal the stored DOB [BUG-04] header DOB must equal the stored DOB (2 ms)
+16:19:01.917   → After Hooks
+16:19:02.065       → Close context
+16:19:02.069       ✓ Close context (3 ms)
+16:19:02.077   ✓ After Hooks (161 ms)
+16:19:02.079 ■ ExpectedFailure in 1208 ms
+   annotation known-bug: BUG-04 — Date of birth is displayed one month too early (January shows as month "00")
+   annotation fail: BUG-04: Date of birth is displayed one month too early (January shows as month "00")
+
+--- error 1 ---
+Error: [BUG-04] header DOB must equal the stored DOB
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: "12/01/1988"
+Received: "12/00/1988"
+Error: [BUG-04] header DOB must equal the stored DOB
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: "12/01/1988"
+Received: "12/00/1988"
+    at C:\Users\Neil\Desktop\SuperCom\tests\ui\01-roster.ui.spec.ts:117:113

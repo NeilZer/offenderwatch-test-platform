@@ -1,0 +1,42 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T16:18:41.555Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Adi",
+      "lastName": "Katz",
+      "nationalId": "996934212",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":1180,\"firstName\":\"Adi\",\"lastName\":\"Katz\",\"nationalId\":\"996934212\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T16:18:41.9088653Z\"}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T16:18:41.628Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1180/locations",
+    "requestBody": {
+      "lat": null,
+      "lon": 34.7818,
+      "speedKmh": 12.5,
+      "batteryPct": 80,
+      "signal": 4
+    },
+    "status": 400,
+    "responseBody": ""
+  },
+  {
+    "phase": "teardown",
+    "at": "2026-11-21T16:18:41.715Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1180",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

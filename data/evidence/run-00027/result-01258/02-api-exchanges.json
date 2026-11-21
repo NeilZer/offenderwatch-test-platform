@@ -1,0 +1,109 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T16:18:38.122Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Ron",
+      "lastName": "Barak",
+      "nationalId": "994697689",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":1170,\"firstName\":\"Ron\",\"lastName\":\"Barak\",\"nationalId\":\"994697689\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T16:18:38.4731995Z\"}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T16:18:38.213Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1170/locations",
+    "requestBody": {
+      "lat": 32.087,
+      "lon": 34.783,
+      "speedKmh": 30,
+      "batteryPct": 70,
+      "signal": 3,
+      "timestamp": "2026-10-01T10:30:00Z"
+    },
+    "status": 201,
+    "responseBody": "{\"ok\":true}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T16:18:38.298Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1170/locations",
+    "requestBody": {
+      "lat": 32.085,
+      "lon": 34.781,
+      "speedKmh": 10,
+      "batteryPct": 90,
+      "signal": 5,
+      "timestamp": "2026-10-01T10:00:00Z"
+    },
+    "status": 201,
+    "responseBody": "{\"ok\":true}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T16:18:38.380Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1170/locations",
+    "requestBody": {
+      "lat": 32.088,
+      "lon": 34.784,
+      "speedKmh": 40,
+      "batteryPct": 60,
+      "signal": 2,
+      "timestamp": "2026-10-01T10:45:00Z"
+    },
+    "status": 201,
+    "responseBody": "{\"ok\":true}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T16:18:38.472Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1170/locations",
+    "requestBody": {
+      "lat": 32.086,
+      "lon": 34.782,
+      "speedKmh": 20,
+      "batteryPct": 80,
+      "signal": 4,
+      "timestamp": "2026-10-01T10:15:00Z"
+    },
+    "status": 201,
+    "responseBody": "{\"ok\":true}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T16:18:38.538Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1170/trail",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "[{\"id\":995,\"offenderId\":1170,\"timestamp\":\"2026-10-01T10:30:00Z\",\"lat\":32.087,\"lon\":34.783,\"speedKmh\":30,\"batteryPct\":70,\"signal\":3},{\"id\":996,\"offenderId\":1170,\"timestamp\":\"2026-10-01T10:00:00Z\",\"lat\":32.085,\"lon\":34.781,\"speedKmh\":10,\"batteryPct\":90,\"signal\":5},{\"id\":997,\"offenderId\":1170,\"timestamp\":\"2026-10-01T10:45:00Z\",\"lat\":32.088,\"lon\":34.784,\"speedKmh\":40,\"batteryPct\":60,\"signal\":2},{\"id\":998,\"offenderId\":1170,\"timestamp\":\"2026-10-01T10:15:00Z\",\"lat\":32.086,\"lon\":34.782,\"speedKmh\":20,\"batteryPct\":80,\"signal\":4}]"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T16:18:38.658Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1170/trail",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "[{\"id\":995,\"offenderId\":1170,\"timestamp\":\"2026-10-01T10:30:00Z\",\"lat\":32.087,\"lon\":34.783,\"speedKmh\":30,\"batteryPct\":70,\"signal\":3},{\"id\":996,\"offenderId\":1170,\"timestamp\":\"2026-10-01T10:00:00Z\",\"lat\":32.085,\"lon\":34.781,\"speedKmh\":10,\"batteryPct\":90,\"signal\":5},{\"id\":997,\"offenderId\":1170,\"timestamp\":\"2026-10-01T10:45:00Z\",\"lat\":32.088,\"lon\":34.784,\"speedKmh\":40,\"batteryPct\":60,\"signal\":2},{\"id\":998,\"offenderId\":1170,\"timestamp\":\"2026-10-01T10:15:00Z\",\"lat\":32.086,\"lon\":34.782,\"speedKmh\":20,\"batteryPct\":80,\"signal\":4}]"
+  },
+  {
+    "phase": "teardown",
+    "at": "2026-11-21T16:18:38.741Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1170",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

@@ -133,7 +133,7 @@ public class CleanupGuardTests
         var states = db.TestData.ToDictionary(t => t.ExternalId, t => t.State);
         Assert.Equal(TestDataState.Protected, states["3"]);
         Assert.Equal(TestDataState.CleanedByPlatform, states["600"]);
-        Assert.Equal(TestDataState.AlreadyGone, states["601"]); // identity changed → left untouched
+        Assert.Equal(TestDataState.IdentityChanged, states["601"]); // the id belongs to someone else → left untouched
         Assert.Equal(TestDataState.AlreadyGone, states["602"]);
         // Point states are VERIFIED against the application, never assumed:
         Assert.Equal(TestDataState.OrphanedInApplication, states["901"]); // still returned after its offender was deleted

@@ -1,0 +1,55 @@
+16:19:02.092 ▶ TC-35 map shows one marker per trail point and a trail line
+   tests/ui/02-trail-map.ui.spec.ts · project ui
+16:19:02.093   → Before Hooks
+16:19:02.093     → beforeAll hook
+16:19:02.103       → Create request context
+16:19:02.103       ✓ Create request context (1 ms)
+16:19:02.104       → GET api/offenders/1/trail
+16:19:02.106         → GET "api/offenders/1/trail"
+16:19:02.170         ✓ GET "api/offenders/1/trail" (65 ms)
+16:19:02.171       ✓ GET api/offenders/1/trail (67 ms)
+16:19:02.199       → Create page
+16:19:02.274       ✓ Create page (75 ms)
+16:19:02.275       → Wait for event "response"
+16:19:02.277       → Wait for event "response"
+16:19:02.279       → Navigate to "./"
+16:19:02.828       ✓ Navigate to "./" (548 ms)
+16:19:02.896       ✓ Wait for event "response" (618 ms)
+16:19:02.897       ✓ Wait for event "response" (621 ms)
+16:19:02.903       → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+16:19:02.939       ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (36 ms)
+16:19:02.941       → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+16:19:02.961       ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (20 ms)
+16:19:02.971       → Wait for event "response"
+16:19:02.972       → Fill "305412876" locator('section.list-panel').locator('input.search')
+16:19:02.994       ✓ Fill "305412876" locator('section.list-panel').locator('input.search') (22 ms)
+16:19:03.057       ✓ Wait for event "response" (86 ms)
+16:19:03.061       → Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr')
+16:19:03.071       ✓ Expect "toHaveCount" locator('table.grid:not(.trail-grid) tbody tr') (10 ms)
+16:19:03.073       → Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first()
+16:19:03.082       ✓ Expect "toContainText" locator('table.grid:not(.trail-grid) tbody tr').first() (9 ms)
+16:19:03.084       → Wait for event "response"
+16:19:03.085       → Click locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Cohen, David' })
+16:19:03.155       ✓ Click locator('table.grid:not(.trail-grid) tbody tr').filter({ hasText: 'Cohen, David' }) (69 ms)
+16:19:03.196       ✓ Wait for event "response" (112 ms)
+16:19:03.202       → Expect "toHaveCount" locator('.map.leaflet-container').locator('path.leaflet-interactive:not([fill="none"])')
+16:19:03.233       ✓ Expect "toHaveCount" locator('.map.leaflet-container').locator('path.leaflet-interactive:not([fill="none"])') (31 ms)
+16:19:03.234       → map should finish its zoom/pan animation
+16:19:03.253         → map should finish its zoom/pan animation
+16:19:03.256         ✗ Error: map should finish its zoom/pan animation map should finish its zoom/pan animation (0 ms)
+16:19:03.520         → map should finish its zoom/pan animation
+16:19:03.521         ✗ Error: map should finish its zoom/pan animation map should finish its zoom/pan animation (1 ms)
+16:19:03.799         → map should finish its zoom/pan animation
+16:19:03.799         ✓ map should finish its zoom/pan animation (0 ms)
+16:19:03.800       ✓ map should finish its zoom/pan animation (566 ms)
+16:19:04.243     ✓ beforeAll hook (2149 ms)
+16:19:04.276   ✓ Before Hooks (2183 ms)
+16:19:04.277   → Expect "toHaveCount" locator('.map.leaflet-container').locator('path.leaflet-interactive:not([fill="none"])')
+16:19:04.292   ✓ Expect "toHaveCount" locator('.map.leaflet-container').locator('path.leaflet-interactive:not([fill="none"])') (15 ms)
+16:19:04.294   → Expect "toHaveCount" locator('.map.leaflet-container').locator('path.leaflet-interactive[fill="none"]')
+16:19:04.306   ✓ Expect "toHaveCount" locator('.map.leaflet-container').locator('path.leaflet-interactive[fill="none"]') (13 ms)
+16:19:04.307   → Expect "toHaveText" locator('section.detail-panel').locator('.trail-table-header h3')
+16:19:04.318   ✓ Expect "toHaveText" locator('section.detail-panel').locator('.trail-table-header h3') (10 ms)
+16:19:04.318   → After Hooks
+16:19:04.327   ✓ After Hooks (9 ms)
+16:19:04.329 ■ Passed in 44 ms

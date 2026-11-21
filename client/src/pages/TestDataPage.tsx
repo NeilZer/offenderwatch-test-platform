@@ -20,7 +20,9 @@ const STATE_LABEL: Record<string, { label: string; tone: string }> = {
   Protected: { label: 'Protected (seeded)', tone: 'info' },
   CleanupFailed: { label: 'Clean-up failed — retried next time', tone: 'critical' },
   RemovedWithParent: { label: 'Removed with its offender (verified)', tone: 'good' },
-  OrphanedInApplication: { label: 'Left in the app — BUG-02', tone: 'serious' },
+  OrphanedInApplication: { label: 'Left in the app — BUG-02 (verified)', tone: 'serious' },
+  Unverified: { label: 'Unknown — could not verify', tone: 'warning' },
+  IdentityChanged: { label: 'Id now belongs to another record — not deleted', tone: 'info' },
 };
 
 export function TestDataPage() {
@@ -55,6 +57,7 @@ export function TestDataPage() {
   const waiting = (state: string) => state === 'Active' || state === 'CleanupFailed';
   const activeCount = (records.data ?? []).filter((r) => waiting(r.state)).length;
   const orphanCount = (records.data ?? []).filter((r) => r.state === 'OrphanedInApplication').length;
+  const unverifiedCount = (records.data ?? []).filter((r) => r.state === 'Unverified').length;
   const env = environments.find((e) => e.id === environmentId);
 
   async function clean() {
@@ -80,11 +83,16 @@ export function TestDataPage() {
         <select value={environmentId ?? ''} onChange={(e) => setEnvironmentId(Number(e.target.value))} aria-label="Environment">
           {environments.map((e) => <option key={e.id} value={e.id}>{e.name}</option>)}
         </select>
-        <label className="check"><input type="checkbox" checked={activeOnly} onChange={(e) => setActiveOnly(e.target.checked)} /> Only data still in the application</label>
+        <label className="check" title="Waiting for clean-up, failed clean-ups, points left by BUG-02, and records that could not be verified"><input type="checkbox" checked={activeOnly} onChange={(e) => setActiveOnly(e.target.checked)} /> Only data still (or possibly) in the application</label>
         <span className={`pill ${activeCount ? 'serious' : 'good'}`}>{activeCount} record(s) waiting for clean-up</span>
         {orphanCount > 0 && (
           <span className="pill neutral" title="The application keeps a deleted offender's points and has no endpoint to delete a single point (BUG-02). Verified against the application.">
             {orphanCount} point(s) left in the app (BUG-02)
+          </span>
+        )}
+        {unverifiedCount > 0 && (
+          <span className="pill warning" title="The application's reply could not prove whether these records still exist — see each record's note.">
+            {unverifiedCount} record(s) not verified
           </span>
         )}
       </div>

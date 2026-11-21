@@ -1,0 +1,40 @@
+16:18:32.643 ▶ TC-18 rejects risk level outside Low/Medium/High
+   tests/api/03-offenders-create.api.spec.ts · project api
+16:18:32.643   → Before Hooks
+16:18:32.649       → Create request context
+16:18:32.656       ✓ Create request context (7 ms)
+16:18:32.659   ✓ Before Hooks (18 ms)
+16:18:32.659   → GET api/stats
+16:18:32.660     → GET "api/stats"
+16:18:32.723     ✓ GET "api/stats" (62 ms)
+16:18:32.724   ✓ GET api/stats (66 ms)
+16:18:32.724   → POST api/offenders
+16:18:32.725     → POST "api/offenders"
+16:18:32.807     ✓ POST "api/offenders" (81 ms)
+16:18:32.808   ✓ POST api/offenders (83 ms)
+16:18:32.816   → [BUG-12] risk level outside Low/Medium/High must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 201 {"id":1159,"firstName":"Michal","lastName":"Tal","nationalId":"995480513","dateOfBirth":"1985-04-17","riskLevel":"Critical","status":"Active","createdAt":"2026-11-21T16:18:33.1643146Z"}
+16:18:32.818   ✗ Error: [BUG-12] risk level outside Low/Medium/High must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 201 {"id":1159,"firstName":"Michal","lastName":"Tal","nationalId":"995480513","dateOfBirth":"1985-04-17","riskLevel":"Critical","status":"Active","createdAt":"2026-11-21T16:18:33.1643146Z"} [BUG-12] risk level outside Low/Medium/High must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 201 {"id":1159,"firstName":"Michal","lastName":"Tal","nationalId":"995480513","dateOfBirth":"1985-04-17","riskLevel":"Critical","status":"Active","createdAt":"2026-11-21T16:18:33.1643146Z"} (0 ms)
+16:18:32.818   → After Hooks
+16:18:32.818       → DELETE api/offenders/1159
+16:18:32.819         → DELETE "api/offenders/1159"
+16:18:32.903         ✓ DELETE "api/offenders/1159" (84 ms)
+16:18:32.904       ✓ DELETE api/offenders/1159 (86 ms)
+16:18:32.923   ✓ After Hooks (105 ms)
+16:18:32.924 ■ ExpectedFailure in 264 ms
+   annotation known-bug: BUG-12 — Risk level and Status accept any string (e.g. "Critical", "Deleted")
+   annotation fail: BUG-12: Risk level and Status accept any string (e.g. "Critical", "Deleted")
+
+--- error 1 ---
+Error: [BUG-12] risk level outside Low/Medium/High must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 201 {"id":1159,"firstName":"Michal","lastName":"Tal","nationalId":"995480513","dateOfBirth":"1985-04-17","riskLevel":"Critical","status":"Active","createdAt":"2026-11-21T16:18:33.1643146Z"}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 201
+Error: [BUG-12] risk level outside Low/Medium/High must be rejected: POST https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders -> 201 {"id":1159,"firstName":"Michal","lastName":"Tal","nationalId":"995480513","dateOfBirth":"1985-04-17","riskLevel":"Critical","status":"Active","createdAt":"2026-11-21T16:18:33.1643146Z"}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 400
+Received: 201
+    at C:\Users\Neil\Desktop\SuperCom\tests\api\03-offenders-create.api.spec.ts:48:99

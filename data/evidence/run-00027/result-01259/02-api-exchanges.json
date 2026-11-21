@@ -1,0 +1,42 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T16:18:38.926Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Tamar",
+      "lastName": "Nachum",
+      "nationalId": "994677402",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":1171,\"firstName\":\"Tamar\",\"lastName\":\"Nachum\",\"nationalId\":\"994677402\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T16:18:39.2836832Z\"}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T16:18:39.026Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1171/locations",
+    "requestBody": {
+      "lat": 90.0001,
+      "lon": 34.7818,
+      "speedKmh": 12.5,
+      "batteryPct": 80,
+      "signal": 4
+    },
+    "status": 201,
+    "responseBody": "{\"ok\":true}"
+  },
+  {
+    "phase": "teardown",
+    "at": "2026-11-21T16:18:39.113Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1171",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

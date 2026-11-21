@@ -154,8 +154,29 @@ public enum TestDataKind { Offender, LocationPoint }
 /// Lifecycle of a test-data record. For location points the state is VERIFIED against the application after
 /// their offender is deleted: RemovedWithParent only when the point is really gone; OrphanedInApplication when
 /// the application still returns it (BUG-02: no cascade delete, and there is no endpoint to delete one point).
+/// Unverified: the check could not prove anything (network error, unexpected reply) — never shown as verified.
+/// IdentityChanged: the offender id now belongs to a different record; ours is gone, theirs was NOT deleted.
 /// </summary>
-public enum TestDataState { Active, DeletedByTest, CleanedByPlatform, AlreadyGone, Protected, CleanupFailed, RemovedWithParent, OrphanedInApplication }
+public enum TestDataState
+{
+    Active, DeletedByTest, CleanedByPlatform, AlreadyGone, Protected, CleanupFailed,
+    RemovedWithParent, OrphanedInApplication, Unverified, IdentityChanged,
+}
+
+public static class TestDataStates
+{
+    /// <summary>States meaning "this record is (or may still be) in the application".</summary>
+    public static readonly IReadOnlySet<TestDataState> StillInApplication = new HashSet<TestDataState>
+    {
+        TestDataState.Active, TestDataState.CleanupFailed, TestDataState.OrphanedInApplication, TestDataState.Unverified,
+    };
+
+    /// <summary>Parent states that prove the offender was really deleted — only then are its points checked.</summary>
+    public static readonly IReadOnlySet<TestDataState> ParentDeleted = new HashSet<TestDataState>
+    {
+        TestDataState.DeletedByTest, TestDataState.CleanedByPlatform, TestDataState.AlreadyGone,
+    };
+}
 
 /// <summary>Recurring run (B-04). Survives restarts because it lives in the database.</summary>
 public class Schedule

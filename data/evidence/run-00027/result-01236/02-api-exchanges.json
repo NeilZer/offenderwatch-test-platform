@@ -1,0 +1,36 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T16:18:30.752Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Noam",
+      "lastName": "Friedman",
+      "nationalId": "996274935",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "High",
+      "status": "Inactive"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":1154,\"firstName\":\"Noam\",\"lastName\":\"Friedman\",\"nationalId\":\"996274935\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"High\",\"status\":\"Inactive\",\"createdAt\":\"2026-11-21T16:18:31.0976894Z\"}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T16:18:30.919Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1154",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"id\":1154,\"firstName\":\"Noam\",\"lastName\":\"Friedman\",\"nationalId\":\"996274935\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"High\",\"status\":\"Inactive\",\"createdAt\":\"2026-11-21T16:18:31.0976894Z\"}"
+  },
+  {
+    "phase": "teardown",
+    "at": "2026-11-21T16:18:31.015Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1154",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

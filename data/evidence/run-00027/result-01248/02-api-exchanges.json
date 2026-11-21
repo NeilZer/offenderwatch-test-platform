@@ -1,0 +1,43 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T16:18:33.987Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Itai",
+      "lastName": "Rosen",
+      "nationalId": "992874481",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":1163,\"firstName\":\"Itai\",\"lastName\":\"Rosen\",\"nationalId\":\"992874481\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T16:18:34.3422742Z\"}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T16:18:34.078Z",
+    "method": "PUT",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1163",
+    "requestBody": {
+      "firstName": "",
+      "lastName": "Rosen",
+      "nationalId": "992874481",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 200,
+    "responseBody": "{\"id\":1163,\"firstName\":\"\",\"lastName\":\"Rosen\",\"nationalId\":\"992874481\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T16:18:34.3422742Z\"}"
+  },
+  {
+    "phase": "teardown",
+    "at": "2026-11-21T16:18:34.162Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1163",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  }
+]

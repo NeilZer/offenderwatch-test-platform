@@ -1,0 +1,36 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T16:18:35.172Z",
+    "method": "POST",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders",
+    "requestBody": {
+      "firstName": "Tamar",
+      "lastName": "Segal",
+      "nationalId": "999363407",
+      "dateOfBirth": "1985-04-17",
+      "riskLevel": "Medium",
+      "status": "Active"
+    },
+    "status": 201,
+    "responseBody": "{\"id\":1167,\"firstName\":\"Tamar\",\"lastName\":\"Segal\",\"nationalId\":\"999363407\",\"dateOfBirth\":\"1985-04-17\",\"riskLevel\":\"Medium\",\"status\":\"Active\",\"createdAt\":\"2026-11-21T16:18:35.5300243Z\"}"
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T16:18:35.260Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1167",
+    "requestBody": null,
+    "status": 204,
+    "responseBody": ""
+  },
+  {
+    "phase": "test",
+    "at": "2026-11-21T16:18:35.329Z",
+    "method": "DELETE",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/1167",
+    "requestBody": null,
+    "status": 404,
+    "responseBody": "{\"error\":\"Offender not found.\"}"
+  }
+]

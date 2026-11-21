@@ -1,0 +1,11 @@
+[
+  {
+    "phase": "test",
+    "at": "2026-11-21T16:19:01.647Z",
+    "method": "GET",
+    "url": "https://svcdemoaz.puremonitor.supercom.com/AQApplication/Neil/api/offenders/4",
+    "requestBody": null,
+    "status": 200,
+    "responseBody": "{\"id\":4,\"firstName\":\"Rachel\",\"lastName\":\"Mizrahi\",\"nationalId\":\"204518793\",\"dateOfBirth\":\"1988-01-12\",\"riskLevel\":\"Low\",\"status\":\"Active\",\"createdAt\":\"2026-06-04T11:15:00.000Z\"}"
+  }
+]

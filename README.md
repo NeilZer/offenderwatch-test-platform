@@ -56,7 +56,7 @@ database is created from the EF Core migrations on first start.
 |---|---|
 | `npm start` | one-command start (B-05) |
 | `npm run dev:api` + `npm run dev:client` | development: API on :5080, Vite with hot reload on :5173 (proxies `/api`, `/hubs`, `/swagger`) |
-| `npm test` | 60 platform self-tests (B-06) |
+| `npm test` | 71 platform self-tests (B-06) |
 
 **Configuration** lives in `server/src/TestPlatform.Api/appsettings.json`. No URL is hard-coded in the code (TM-01):
 
@@ -107,8 +107,11 @@ The platform **starts and stops** the process: that's needed for "start from the
 | `POST …/test-data`, `…/test-data/release` | data a scenario created / deleted (TM-06) |
 | `POST …/end` | run finished |
 
-**Expected failures keep their meaning.** Playwright `test.fail()` plus a `known-bug` annotation becomes
-**ExpectedFailure** ("Known bug", orange). A real problem is **Failed** (red). A known-bug test that suddenly
+**Expected failures keep their meaning.** A test marked with `knownBug('BUG-xx')` becomes **ExpectedFailure**
+("Known bug", orange) **only if it failed with its own `[BUG-xx]` tag in the error**. If it failed for any other
+reason (a timeout, a broken selector, a setup error), the reporter records it as **Failed** (red), with the
+message "Expected to fail on BUG-xx, but it failed for a different reason", so `test.fail()` can never hide real
+breakage. This is the same rule the Part 4 dashboard applies. A real problem is **Failed** (red). A known-bug test that suddenly
 passes is **UnexpectedPass** ("Bug fixed?", blue). The three are kept apart in the run view, the history view
 and the totals.
 
@@ -236,9 +239,18 @@ run produced it (`Domain/ReleaseVerdict.cs`, unit-tested):
    clean-up.
 
 **Location points are checked, never assumed.** The application has no endpoint to delete a single point.
-When an offender is deleted, the platform asks the application for its trail:
+Points are only looked at when their offender was **really deleted** (by its test, by the clean-up, or already
+gone); the points of a protected or not-deleted offender are never touched. Then the platform asks the
+application for the trail, and accepts only replies that prove something:
 - points still returned are marked **"Left in the application (BUG-02)"**: the app doesn't cascade the delete;
-- only points that are really gone are marked **"Removed with its offender (verified)"**.
+- points **proven** gone (HTTP 404, or an empty JSON list) are marked **"Removed with its offender (verified)"**;
+- any reply that proves nothing (empty body, JSON that isn't a list, an entry without an id, an error status, a
+  network failure) gives **"Unknown — could not verify"**, never a verified state;
+- if the offender's id now belongs to someone else, the record is **"Id now belongs to another record"**, and its
+  points are *Unknown* (the other person's trail says nothing about ours).
+
+The **"Only data still (or possibly) in the application"** filter shows everything that may still be there:
+waiting for clean-up, failed clean-ups, points left by BUG-02, and unverified records.
 
 The 286 older records that had been labelled "removed" by assumption were all checked against the live
 application on 21/11/2026, found still present, and relabelled by migration `VerifiedOrphanedPoints`.
@@ -254,14 +266,14 @@ application on 21/11/2026, found still present, and relabelled by migration `Ver
 | **B-03** Regression notifications | ✅ | **Notifications**: set a Slack/Teams webhook. A test that **passed the previous time it ran on that environment** and now fails **unexpectedly** triggers it. Known-bug failures never do, and a partial run in between doesn't hide a regression. Every notification is logged, even without a webhook. See run #15. |
 | **B-04** Scheduled runs | ✅ | **Schedules**: cron + time zone, presets (nightly 02:00…). Stored in SQLite, so it survives a restart (tested); its runs show trigger **Scheduled** (run #17). Occurrences missed while the API was down are skipped, not replayed in a burst. |
 | **B-05** One-command startup | ✅ both verified | **Docker:** `npm run docker` (finds the suite folder) or `docker compose up --build`. Verified with Docker Desktop 29.9: a 3.7 GB image (Playwright browsers + ASP.NET Core 8 + the suite) on a fresh volume; a full suite run inside the container gave the same 26 passed / 45 known bug as on Windows, with screenshots stored and verified. The container keeps its database on its own named volume, so it never shares a SQLite file with a platform on the host. Session keys are stored on the data volume, so sign-ins survive a container restart. **Without Docker:** `npm start`. |
-| **B-06** Platform self-tests | ✅ | `npm test`: **60 tests**: history/transitions, flakiness, the go/no-go rules, the clean-up guard end to end (real SQLite from the real migrations + a fake OffenderWatch API; only our own record gets a DELETE; failed clean-ups are retried), append-only triggers, notifier rules, evidence storage (read-only, hash, no partial file after a failed upload, content-type safety). |
+| **B-06** Platform self-tests | ✅ | `npm test`: **71 tests**: history/transitions, flakiness, the go/no-go rules, the clean-up guard end to end (real SQLite from the real migrations + a fake OffenderWatch API; only our own record gets a DELETE; failed clean-ups are retried), append-only triggers, notifier rules, evidence storage (read-only, hash, no partial file after a failed upload, content-type safety). |
 | **B-07** Authentication | ✅ | Sign in as `viewer`: every action button is disabled with a tooltip, and the API answers **403**. The runner uses its own token on the ingestion endpoints only. |
 
 ---
 
 ## 6. The included database (deliverable 6)
 
-`data/platform.db` + `data/evidence/` contain **26 real runs on 2 environments** (history is append-only, so
+`data/platform.db` + `data/evidence/` contain **28 real runs on 2 environments** (history is append-only, so
 nothing was removed):
 
 | Runs | Environment | What they show |
@@ -276,6 +288,8 @@ nothing was removed):
 | **#22** | **Shared (base)** | Full suite on the shared instance: **26 / 45 / 0**. TC-01 and TC-35 show a **Recovery** on this environment. The shared instance had the same number of offenders before and after: every record our tests created was removed. |
 | #23, #24 | Neil (personal) | Verification of review fixes, both stopped on purpose. #23: two *Start run* requests sent at the same instant → one run created, the other rejected with 409 (start lock). #24: an HTML file uploaded as evidence (`evil.html`) is stored and served only as a download (`application/octet-stream`, `nosniff`), never as a page. |
 | #25, #26 | Neil (personal) | Browser tests of the live view: the real-time connection was cut for 10 s mid-run; the page showed *Reconnecting…* and then caught up to 51/51 with no page reload. |
+| #27 | Neil (personal) | Full suite under the stricter rule (a known bug counts as expected only with its own `[BUG-xx]` tag): still **26 / 45 / 0**, so every known-bug test really fails on its documented bug. |
+| #28 | Neil (personal) | Check of that rule with two temporary tests (deleted afterwards): the one failing **without** its tag → **Failed**, the one failing **with** it → *Known bug*. |
 
 ---
 
